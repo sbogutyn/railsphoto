@@ -1,0 +1,63 @@
+body
+{ background: #2C2C2A;
+  color: #929280;
+}
+
+blockquote{border-color: #40403E;}
+
+#site_content
+{ background: url(back.png) repeat;
+  border-color: #40403E;
+}
+
+#menu li a, .side_menu_item a
+{ background: #40403E;
+  color: #929280;
+  border-color: #2C2C2A;
+}
+
+#logo, #logo h1
+{ background: #2C2C2A;
+  color: #40403E;
+  border-color: #974B86;
+}
+
+#content h1
+{ background: transparent;
+  color: #E6E8DC;
+  border-color: #40403E;
+}
+
+#links, #links a:hover, #links a.selected, #links a.selected:hover,
+#content, #content a:hover, .sub
+{ background: transparent;
+  color: #929280;
+}
+
+#links a, #content a
+{ background: transparent;
+  color: #974B86;
+}
+
+#menu
+{ background: #40403E;
+  color: #EEE;
+  border-color: #974B86;
+}
+
+#menu li a:hover, #menu li a.selected, #menu li a.selected:hover
+{ background: #974B86;
+  color: #EEE;
+  border-color: #2C2C2A;
+} 
+
+.side_menu_item a.selected, .side_menu_item a:hover, .side_menu_item a.selected:hover
+{ background: #EEE;
+  color: #929280;
+}
+
+#contact input, #contact textarea, #contact input.submit
+{ background: #2C2C2A; 
+  color: #929280;
+  border-color: #40403E;
+}

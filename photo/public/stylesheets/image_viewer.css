@@ -1,0 +1,39 @@
+/* CSS Image Viewer from CSSplay (www.cssplay.co.uk) */
+
+#gallery 
+{ position: relative; 
+  width: 656px;
+  padding-top: 8px;
+}
+
+#thumbs 
+{ width: 205px; 
+  float: right;
+}
+
+#thumbs a 
+{ display: block; 
+  float: right; 
+  margin: 1px 0px 3px 10px; 
+  width: 50px; 
+  height: 50px; 
+  border: 2px solid #40403E;
+}
+
+#thumbs a img 
+{ width: 50px; 
+  height: 50px; 
+  border: 0;
+}
+
+#thumbs a:hover {border-color: #ddd;}
+
+#thumbs a:hover img 
+{ position: absolute; 
+  width: auto; 
+  height: auto; 
+  right: 196px; 
+  top: 8px; 
+  padding: 2px;
+  border: 2px solid #40403E;
+}

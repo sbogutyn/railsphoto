@@ -1,0 +1,12 @@
+<% form_for (@zdjecie, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :opis %><br />
+    <%= f.text_field :opis %>
+  </p>
+  <p>
+    <%= f.label 'Zdjęcie' %><br />
+    <%= f.file_field :photo %>
+  </p>
+  <p><%= f.submit "Utwórz" %></p>
+<% end %>

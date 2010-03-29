@@ -253,3 +253,661 @@ ActionController::RoutingError (No route matches "/stylesheets/stylesheets.css" 
   /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 22:49:10) [GET]
+  [4;36;1mZdjecie Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: zdjecia: SELECT * FROM "zdjecia" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: zdjecia: SELECT * FROM "zdjecia" ):
+  app/controllers/zdjecia_controller.rb:3:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (404.8ms)
+Rendered rescues/_request_and_response (6.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (4.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (24.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (17.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "zdjecia" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nazwa" varchar(255), "opis" varchar(255), "odnosnik" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100329204810')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mPRAGMA index_list("zdjecia")[0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 22:50:23) [GET]
+  [4;36;1mZdjecie Load (4.3ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 310ms (View: 224, DB: 4) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 22:50:28) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (92.6ms)
+Completed in 231ms (View: 149, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 22:50:56) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"opis"=>"Testowe zdjęcie", "nazwa"=>"Pierwsze", "odnosnik"=>"/images/test1.jpg"}}
+  [4;35;1mZdjecie Create (1.7ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "opis", "updated_at", "nazwa", "odnosnik") VALUES('2010-03-29 20:50:56', 'Testowe zdjęcie', '2010-03-29 20:50:56', 'Pierwsze', '/images/test1.jpg')[0m
+Redirected to http://localhost:3000/zdjecia/1
+Completed in 225ms (DB: 2) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 22:50:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (2.4ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 197ms (View: 92, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 22:51:01) [GET]
+  [4;35;1mZdjecie Load (4.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 284ms (View: 95, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 22:51:05) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (104.6ms)
+Completed in 259ms (View: 166, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 22:51:24) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"opis"=>"Testowe zdjęcie nr 2", "nazwa"=>"Drugie", "odnosnik"=>"/images/test2.jpg"}}
+  [4;36;1mZdjecie Create (1.3ms)[0m   [0;1mINSERT INTO "zdjecia" ("created_at", "opis", "updated_at", "nazwa", "odnosnik") VALUES('2010-03-29 20:51:24', 'Testowe zdjęcie nr 2', '2010-03-29 20:51:24', 'Drugie', '/images/test2.jpg')[0m
+Redirected to http://localhost:3000/zdjecia/2
+Completed in 183ms (DB: 1) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 22:51:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 110ms (View: 42, DB: 2) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 22:51:27) [GET]
+  [4;36;1mZdjecie Load (23.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 308ms (View: 187, DB: 24) | 200 OK [http://localhost/zdjecia]
+  [4;36;1mSQL (3.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to AddPhotosToZdjecia (20100329205754)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: zdjecias: ALTER TABLE "zdjecias" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to AddPhotosToZdjecia (20100329205754)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: zdjecias: ALTER TABLE "zdjecias" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to Nowa (20100329210026)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mALTER TABLE "zdjecia" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "zdjecia" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mALTER TABLE "zdjecia" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100329210026')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mPRAGMA index_list("zdjecia")[0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:17:00) [GET]
+  [4;36;1mZdjecie Load (7.3ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 467ms (View: 387, DB: 7) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 23:17:06) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (47.8ms)
+Completed in 181ms (View: 98, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:17:16) [GET]
+  [4;35;1mZdjecie Load (4.3ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 181ms (View: 118, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:19:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (32.1ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (46.4ms)
+Completed in 283ms (View: 102, DB: 32) | 200 OK [http://localhost/zdjecia/1/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-03-29 23:19:37) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "id"=>"1", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3004-nezyhw-0>, "opis"=>"Testowe zdjęcie", "nazwa"=>"Pierwsze", "odnosnik"=>"/images/test1.jpg"}}
+  [4;35;1mZdjecie Load (3.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: photo
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/1
+Completed in 99ms (DB: 3) | 302 Found [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:19:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (2.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 156ms (View: 88, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:19:41) [GET]
+  [4;35;1mZdjecie Load (4.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 189ms (View: 98, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:19:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (3.7ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (77.3ms)
+Completed in 224ms (View: 89, DB: 4) | 200 OK [http://localhost/zdjecia/2/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-03-29 23:19:56) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "id"=>"2", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3004-thbcju-0>, "opis"=>"Testowe zdjęcie nr 2", "nazwa"=>"Drugie", "odnosnik"=>"/images/test2.jpg"}}
+  [4;35;1mZdjecie Load (2.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+WARNING: Can't mass-assign these protected attributes: photo
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/2
+Completed in 226ms (DB: 2) | 302 Found [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:19:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (3.5ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 139ms (View: 63, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:20:02) [GET]
+  [4;35;1mZdjecie Load (22.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 534ms (View: 83, DB: 22) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:20:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (33.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (132.4ms)
+Completed in 339ms (View: 148, DB: 33) | 200 OK [http://localhost/zdjecia/1/edit]
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to Nowa (20100329210026)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mPRAGMA index_list("zdjecia")[0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:23:36) [GET]
+  [4;36;1mZdjecie Load (8.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 337ms (View: 267, DB: 8) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:23:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (2.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (48.8ms)
+Completed in 288ms (View: 112, DB: 2) | 200 OK [http://localhost/zdjecia/1/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-03-29 23:23:49) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "id"=>"1", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3129-aiaqtu-0>, "opis"=>"Testowe zdjęcie", "nazwa"=>"Pierwsze", "odnosnik"=>"/images/test1.jpg"}}
+  [4;36;1mZdjecie Load (2.4ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/stream20100329-3129-5wgt7y-0 is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/stream20100329-3129-5wgt7y-0 is not recognized by the 'identify' command.>
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (163.2ms)
+Completed in 640ms (View: 181, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-03-29 23:24:09) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "id"=>"1", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3129-1yh5c17-0>, "opis"=>"Testowe zdjęcie", "nazwa"=>"Pierwsze", "odnosnik"=>"/images/test1.jpg"}}
+  [4;35;1mZdjecie Load (2.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/stream20100329-3129-1l4l3y7-0 is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/stream20100329-3129-1l4l3y7-0 is not recognized by the 'identify' command.>
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (682.0ms)
+Completed in 1017ms (View: 699, DB: 3) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:24:16) [GET]
+  [4;36;1mZdjecie Load (3.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 168ms (View: 96, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 23:24:19) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (39.3ms)
+Completed in 202ms (View: 81, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 23:24:35) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3129-1geb6mo-0>, "opis"=>"Brak opisu", "nazwa"=>"Trzecie", "odnosnik"=>""}}
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/stream20100329-3129-oemojd-0 is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /tmp/stream20100329-3129-oemojd-0 is not recognized by the 'identify' command.>
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (108.0ms)
+Completed in 527ms (View: 128, DB: 0) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:30:55) [GET]
+  [4;36;1mZdjecie Load (5.4ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 304ms (View: 255, DB: 5) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:30:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (2.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (100.7ms)
+Completed in 313ms (View: 154, DB: 2) | 200 OK [http://localhost/zdjecia/1/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-03-29 23:31:06) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "id"=>"1", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3318-10sp70g-0>, "opis"=>"Testowe zdjęcie", "nazwa"=>"Pierwsze", "odnosnik"=>"/images/test1.jpg"}}
+  [4;36;1mZdjecie Load (3.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+  [4;35;1mZdjecie Update (2.1ms)[0m   [0mUPDATE "zdjecia" SET "updated_at" = '2010-03-29 21:31:08', "photo_file_name" = 'cat8_gallery__394x400_0.jpg', "photo_file_size" = 41360, "photo_content_type" = 'image/jpeg' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/1/thumb/cat8_gallery__394x400_0.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/1/original/cat8_gallery__394x400_0.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/1/small/cat8_gallery__394x400_0.jpg
+Redirected to http://localhost:3000/zdjecia/1
+Completed in 1678ms (DB: 5) | 302 Found [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:31:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 676ms (View: 565, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:31:11) [GET]
+  [4;35;1mZdjecie Load (3.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 249ms (View: 118, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:31:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (1.7ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (36.6ms)
+Completed in 201ms (View: 71, DB: 2) | 200 OK [http://localhost/zdjecia/2/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-03-29 23:31:30) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "id"=>"2", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3318-1rmenr6-0>, "opis"=>"Testowe zdjęcie nr 2", "nazwa"=>"Drugie", "odnosnik"=>"/images/test2.jpg"}}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mZdjecie Update (2.8ms)[0m   [0;1mUPDATE "zdjecia" SET "updated_at" = '2010-03-29 21:31:31', "photo_file_name" = 'misie-obrazki-3.jpg', "photo_file_size" = 27953, "photo_content_type" = 'image/jpeg' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/2/thumb/misie-obrazki-3.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/2/original/misie-obrazki-3.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/2/small/misie-obrazki-3.jpg
+Redirected to http://localhost:3000/zdjecia/2
+Completed in 1409ms (DB: 5) | 302 Found [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:31:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (5.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 168ms (View: 74, DB: 5) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:31:34) [GET]
+  [4;36;1mZdjecie Load (3.8ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 268ms (View: 123, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 23:33:40) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (43.2ms)
+Completed in 145ms (View: 79, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 23:33:59) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3318-cgt3ai-0>, "opis"=>"Fajny kotek", "nazwa"=>"Fajny kotek", "odnosnik"=>""}}
+  [4;35;1mZdjecie Create (3.3ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type", "nazwa", "odnosnik") VALUES('2010-03-29 21:34:01', 18882, 'Fajny kotek', '2010-03-29 21:34:01', 'angry_wet_cat.jpg', 'image/jpeg', 'Fajny kotek', '')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/3/thumb/angry_wet_cat.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/3/original/angry_wet_cat.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/3/small/angry_wet_cat.jpg
+Redirected to http://localhost:3000/zdjecia/3
+Completed in 1453ms (DB: 3) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:34:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mZdjecie Load (2.1ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 147ms (View: 66, DB: 2) | 200 OK [http://localhost/zdjecia/3]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:34:05) [GET]
+  [4;35;1mZdjecie Load (5.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 304ms (View: 242, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-03-29 23:34:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (24.1ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+Rendered zdjecia/_form (110.1ms)
+Completed in 332ms (View: 145, DB: 24) | 200 OK [http://localhost/zdjecia/1/edit]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:34:16) [GET]
+  [4;35;1mZdjecie Load (5.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 225ms (View: 154, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:34:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (2.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 153ms (View: 56, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:34:21) [GET]
+  [4;35;1mZdjecie Load (5.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 297ms (View: 166, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:34:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (37.5ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 221ms (View: 53, DB: 37) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:34:27) [GET]
+  [4;35;1mZdjecie Load (4.3ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 328ms (View: 210, DB: 4) | 200 OK [http://localhost/zdjecia]
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (36.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (16.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "zdjecia" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "opis" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100329204810')[0m
+Migrating to Nowa (20100329210026)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "zdjecia" ADD "photo_file_name" varchar(255)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "zdjecia" ADD "photo_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "zdjecia" ADD "photo_file_size" integer[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100329210026')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("zdjecia")[0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:51:36) [GET]
+  [4;36;1mZdjecie Load (3.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 229ms (View: 179, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 23:51:40) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (107.4ms)
+Completed in 353ms (View: 228, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 23:51:56) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3880-ai9h1b-0>, "opis"=>"Fajny kot"}}
+  [4;35;1mZdjecie Create (2.6ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-03-29 21:51:57', 18882, 'Fajny kot', '2010-03-29 21:51:57', 'angry_wet_cat.jpg', 'image/jpeg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/1/small/angry_wet_cat.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/1/original/angry_wet_cat.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/1/thumb/angry_wet_cat.jpg
+Redirected to http://localhost:3000/zdjecia/1
+Completed in 1250ms (DB: 3) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:51:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mZdjecie Load (2.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 190ms (View: 119, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:52:03) [GET]
+  [4;35;1mZdjecie Load (2.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 499ms (View: 84, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:54:18) [GET]
+  [4;36;1mZdjecie Load (25.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 247ms (View: 126, DB: 26) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:54:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 132ms (View: 49, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:54:32) [GET]
+  [4;36;1mZdjecie Load (2.3ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 223ms (View: 128, DB: 2) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 23:54:41) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (25.1ms)
+Completed in 193ms (View: 78, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 23:54:57) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3880-11m72ne-0>, "opis"=>"Drugi kot"}}
+  [4;35;1mZdjecie Create (1.7ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-03-29 21:54:58', 41360, 'Drugi kot', '2010-03-29 21:54:58', 'cat8_gallery__394x400_0.jpg', 'image/jpeg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/2/small/cat8_gallery__394x400_0.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/2/original/cat8_gallery__394x400_0.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/2/thumb/cat8_gallery__394x400_0.jpg
+Redirected to http://localhost:3000/zdjecia/2
+Completed in 1301ms (DB: 2) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:54:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 116ms (View: 50, DB: 2) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:55:02) [GET]
+  [4;35;1mZdjecie Load (5.1ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 181ms (View: 124, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-29 23:55:06) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (87.5ms)
+Completed in 238ms (View: 100, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-29 23:55:23) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100329-3880-11w9og9-0>, "opis"=>"I jeszcze miś"}}
+  [4;36;1mZdjecie Create (2.2ms)[0m   [0;1mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-03-29 21:55:24', 27953, 'I jeszcze miś', '2010-03-29 21:55:24', 'misie-obrazki-3.jpg', 'image/jpeg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/3/small/misie-obrazki-3.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/3/original/misie-obrazki-3.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/3/thumb/misie-obrazki-3.jpg
+Redirected to http://localhost:3000/zdjecia/3
+Completed in 1211ms (DB: 2) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:55:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 165ms (View: 86, DB: 2) | 200 OK [http://localhost/zdjecia/3]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:55:27) [GET]
+  [4;36;1mZdjecie Load (33.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 605ms (View: 481, DB: 33) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-29 23:55:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (2.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 136ms (View: 70, DB: 2) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-29 23:55:45) [GET]
+  [4;36;1mZdjecie Load (4.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 258ms (View: 151, DB: 4) | 200 OK [http://localhost/zdjecia]

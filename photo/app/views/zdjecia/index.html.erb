@@ -1,23 +1,16 @@
 <% title "Zdjęcia" %>
 
-<table>
-  <tr>
-    <th>Opis</th>
-    <th>Obrazek</th>
-  </tr>
-  <% for zdjecie in @zdjecia %>
-    <tr>
-      <td><%=h zdjecie.opis %></td>
-      <% if zdjecie.photo.exists? %>
-      <td><%= image_tag zdjecie.photo.url(:thumb) %></td>
-      <% else %>
-      <td>[brak zdjęcia]</td>
-      <% end %>
-      <td><%= link_to "Pokaż", zdjecie %></td>
-      <td><%= link_to "Edycja", edit_zdjecie_path(zdjecie) %></td>
-      <td><%= link_to "Usuń", zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<% for zdjecie in @zdjecia %>
+<div class="zdjecie">
+    <% if zdjecie.photo.exists? %>
+        <a href="zdjecia/<%= zdjecie.id %>"><%= image_tag zdjecie.photo.url(:thumb) %></a>
+    <% else %>
+        <p>[brak zdjęcia]</p>
+    <% end %>
+    <p class="opis"><%=h zdjecie.opis %></p>
+    <%= link_to "Edycja", edit_zdjecie_path(zdjecie) %>
+    <%= link_to "Usuń", zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %>
+</div>
+<% end %>
 
-<p><%= link_to "Nowe zdjęcie", new_zdjecie_path %></p>
+<p><%= link_to "Dodaj zdjęcie", new_zdjecie_path %></p>

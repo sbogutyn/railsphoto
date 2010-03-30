@@ -3,6 +3,7 @@
 ## Już działa:
 
 * Dodany szablon css
+* Dodawanie i oglądanie zdjęć (trzeba zainstalować imagemagick oraz gem paperclip)
 
 ## Do zrobienia:
 

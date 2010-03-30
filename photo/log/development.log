@@ -1164,3 +1164,10 @@ Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 22:56:19) [GET]
 Rendering template within layouts/application
 Rendering zdjecia/index
 Completed in 262ms (View: 101, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:03:56) [GET]
+  [4;36;1mZdjecie Load (6.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 273ms (View: 227, DB: 6) | 200 OK [http://localhost/zdjecia/]

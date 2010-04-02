@@ -4,10 +4,9 @@
 
 * Dodany szablon css
 * Dodawanie i oglądanie zdjęć (trzeba zainstalować imagemagick oraz gem paperclip)
-
+* Logowanie
 ## Do zrobienia:
 
-* Logowanie
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
 * Komentarze do zdjęć

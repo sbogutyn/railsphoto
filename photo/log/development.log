@@ -1171,3 +1171,1105 @@ Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:03:56) [GET]
 Rendering template within layouts/application
 Rendering zdjecia/index
 Completed in 273ms (View: 227, DB: 6) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:44:30) [GET]
+  [4;36;1mZdjecie Load (5.8ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 374ms (View: 325, DB: 6) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:46:26) [GET]
+  [4;35;1mZdjecie Load (3.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 251ms (View: 204, DB: 4) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#zdjecia (for 127.0.0.1 at 2010-03-30 23:47:27) [GET]
+  Parameters: {"id"=>"2"}
+
+ActionController::UnknownAction (No action responded to zdjecia. Actions: create, destroy, edit, index, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:47:34) [GET]
+  [4;36;1mZdjecie Load (3.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 304ms (View: 87, DB: 4) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:49:14) [GET]
+  [4;35;1mZdjecie Load (3.8ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 292ms (View: 145, DB: 4) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-30 23:49:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (2.6ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 219ms (View: 167, DB: 3) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:49:22) [GET]
+  [4;35;1mZdjecie Load (3.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 192ms (View: 149, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-30 23:49:24) [GET]
+
+ActionController::RoutingError (No route matches "/3" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:49:38) [GET]
+  [4;36;1mZdjecie Load (4.0ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 766ms (View: 354, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:52:33) [GET]
+  [4;35;1mZdjecie Load (4.2ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 355ms (View: 304, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:53:39) [GET]
+  [4;36;1mZdjecie Load (3.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 165ms (View: 123, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:53:43) [GET]
+  [4;35;1mZdjecie Load (3.2ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 336ms (View: 230, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:55:37) [GET]
+  [4;36;1mZdjecie Load (4.0ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 461ms (View: 132, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:56:13) [GET]
+  [4;35;1mZdjecie Load (3.6ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 543ms (View: 381, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:56:16) [GET]
+  [4;36;1mZdjecie Load (5.4ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 443ms (View: 393, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:56:30) [GET]
+  [4;35;1mZdjecie Load (55.8ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 182ms (View: 81, DB: 56) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:57:02) [GET]
+  [4;36;1mZdjecie Load (6.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 592ms (View: 297, DB: 7) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-30 23:58:36) [GET]
+  [4;35;1mZdjecie Load (3.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 239ms (View: 195, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:00:53) [GET]
+  [4;36;1mZdjecie Load (3.8ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 395ms (View: 79, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:02:45) [GET]
+  [4;35;1mZdjecie Load (4.2ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+
+ActionView::TemplateError (zdjecie_url failed to generate from {:action=>"show", :controller=>"zdjecia"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["zdjecia", :id] - are they all satisfied?) on line #10 of app/views/zdjecia/index.html.erb:
+7: <li>
+8:     <div class="zdjecie">
+9:         <% if zdjecie.photo.exists? %>
+10:             <a href="<%= zdjecie_path %>/<%= zdjecie.id %>"><%= image_tag zdjecie.photo.url(:thumb) %></a>
+11:         <% else %>
+12:             <p>[brak zdjęcia]</p>
+13:         <% end %>
+
+    (eval):16:in `zdjecie_path'
+    app/views/zdjecia/index.html.erb:10
+    app/views/zdjecia/index.html.erb:6:in `each'
+    app/views/zdjecia/index.html.erb:6
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (801.6ms)
+Rendered rescues/_request_and_response (6.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:03:37) [GET]
+  [4;36;1mZdjecie Load (3.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 354ms (View: 100, DB: 3) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:04:41) [GET]
+  [4;35;1mZdjecie Load (3.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 427ms (View: 269, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:04:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (1.6ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 324ms (View: 274, DB: 2) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:04:50) [GET]
+  [4;35;1mZdjecie Load (3.6ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 183ms (View: 137, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-31 00:05:09) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (29.9ms)
+Completed in 339ms (View: 74, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-31 00:05:37) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100331-2682-1e3php0-0>, "opis"=>"Miś"}}
+  [4;36;1mZdjecie Create (4.0ms)[0m   [0;1mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-03-30 22:05:38', 27953, 'Miś', '2010-03-30 22:05:38', 'misie-obrazki-3.jpg', 'image/jpeg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/4/small/misie-obrazki-3.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/4/original/misie-obrazki-3.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/4/thumb/misie-obrazki-3.jpg
+Redirected to http://localhost:3000/zdjecia/4
+Completed in 1476ms (DB: 4) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:05:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mZdjecie Load (2.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 214ms (View: 60, DB: 2) | 200 OK [http://localhost/zdjecia/4]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:05:42) [GET]
+  [4;36;1mZdjecie Load (3.9ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 616ms (View: 568, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-03-31 00:05:59) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (25.5ms)
+Completed in 88ms (View: 33, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-03-31 00:06:20) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"oWwK2v0h+KFqFut/xXY0UcAy7E/ioFrozxKYa2yaxRU=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100331-2682-1u5jter-0>, "opis"=>"Tapeta"}}
+  [4;35;1mZdjecie Create (2.5ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-03-30 22:06:22', 359790, 'Tapeta', '2010-03-30 22:06:22', 'Firefox_wallpaper.png', 'image/png')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/5/small/Firefox_wallpaper.png
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/5/original/Firefox_wallpaper.png
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/5/thumb/Firefox_wallpaper.png
+Redirected to http://localhost:3000/zdjecia/5
+Completed in 2572ms (DB: 3) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:06:23) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mZdjecie Load (6.6ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 267ms (View: 71, DB: 7) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:06:25) [GET]
+  [4;35;1mZdjecie Load (5.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 444ms (View: 396, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:07:10) [GET]
+  [4;36;1mZdjecie Load (4.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 299ms (View: 133, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:07:46) [GET]
+  [4;35;1mZdjecie Load (5.1ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 425ms (View: 225, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:08:57) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mZdjecie Load (3.1ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 213ms (View: 154, DB: 3) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:09:03) [GET]
+  [4;35;1mZdjecie Load (4.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 706ms (View: 661, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:09:08) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mZdjecie Load (2.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 237ms (View: 52, DB: 2) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:09:35) [GET]
+  [4;35;1mZdjecie Load (7.3ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 373ms (View: 192, DB: 7) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:09:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 91ms (View: 39, DB: 2) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:09:45) [GET]
+  [4;35;1mZdjecie Load (4.6ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 445ms (View: 376, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:10:14) [GET]
+  [4;36;1mZdjecie Load (5.0ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 136ms (View: 86, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-03-31 00:10:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 215ms (View: 40, DB: 2) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-03-31 00:10:22) [GET]
+  [4;36;1mZdjecie Load (16.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 384ms (View: 116, DB: 16) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 00:12:59) [GET]
+  [4;36;1mZdjecie Load (8.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 497ms (View: 427, DB: 9) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 00:13:07) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 327ms (View: 206, DB: 2) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 00:13:10) [GET]
+  [4;36;1mZdjecie Load (4.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 165ms (View: 112, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 00:13:13) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 120ms (View: 54, DB: 2) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 00:13:16) [GET]
+  [4;36;1mZdjecie Load (4.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 165ms (View: 84, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 00:13:33) [GET]
+  [4;35;1mZdjecie Load (4.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 412ms (View: 260, DB: 4) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 00:15:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 106ms (View: 49, DB: 2) | 200 OK [http://localhost/zdjecia/4]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 00:15:42) [GET]
+  [4;35;1mZdjecie Load (6.1ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 327ms (View: 200, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 00:19:37) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mZdjecie Load (2.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 313ms (View: 223, DB: 2) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 00:20:29) [GET]
+  [4;35;1mZdjecie Load (4.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 154ms (View: 77, DB: 5) | 200 OK [http://localhost/zdjecia]
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to Nowa (20100329210026)
+Migrating to CreateUzytkownicy (20100402194354)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE TABLE "uzytkownicy" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100402194354')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mPRAGMA index_list("uzytkownicy")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("zdjecia")[0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 21:52:18) [GET]
+  [4;36;1mZdjecie Load (7.0ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 427ms (View: 371, DB: 7) | 200 OK [http://localhost/zdjecia]
+
+
+Processing UzytkownicyController#new (for 127.0.0.1 at 2010-04-02 21:52:25) [GET]
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+Completed in 261ms (View: 97, DB: 0) | 200 OK [http://localhost/uzytkownicy/new]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 21:54:18) [GET]
+  [4;35;1mZdjecie Load (28.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 360ms (View: 209, DB: 29) | 200 OK [http://localhost/zdjecia]
+
+
+Processing UzytkownicyController#new (for 127.0.0.1 at 2010-04-02 22:02:57) [GET]
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+ERROR: compiling _run_erb_app47views47uzytkownicy47_uzytkownik46html46erb_locals_object_uzytkownik RAISED compile error
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:9: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:10: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n    </li>\n    <li>\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:14: unknown regexp option - l
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:14: syntax error, unexpected $undefined
+...ut_buffer.concat "\n    </li>\n    <li>\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:14: syntax error, unexpected $undefined
+...concat "\n    </li>\n    <li>\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:17: syntax error, unexpected tCONSTANT, expecting ')'
+...ssword_confirmation, "Powtórz hasło" ).to_s); @output_buff...
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:17: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:18: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n    </li>\n    <li> \n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: unknown regexp option - l
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: syntax error, unexpected $undefined
+...ut_buffer.concat "\n    </li>\n  </ol>\n"
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: unterminated string meets end of file
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _run_erb_app47views47uzytkownicy47_uzytkownik46html46erb_locals_object_uzytkownik(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];uzytkownik = local_assigns[:uzytkownik];;@output_buffer = '';  __in_erb_template=true ;  form_for @uzytkownik do |form| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( form.error_messages ).to_s); @output_buffer.concat "\n  <ol class=\"formlist\">\n    <li>\n      "
+
+
+; @output_buffer.concat(( form.label :login, "Login" ).to_s); @output_buffer.concat "\n      "
+; @output_buffer.concat(( form.text_field :login ).to_s); @output_buffer.concat "\n    </li>\n    <li>\n      "
+
+
+; @output_buffer.concat(( form.label :email, "Email ).to_s); @output_buffer.concat "\n      "
+; @output_buffer.concat(( form.text_field :email ).to_s); @output_buffer.concat "\n    </li>\n    <li>\n      "
+
+
+; @output_buffer.concat(( form.label :password, "Hasło" ).to_s); @output_buffer.concat "\n      "
+;  form.password_field :password ; @output_buffer.concat "\n    </li>\n    <li>\n      "
+
+
+; @output_buffer.concat(( form.label :password_confirmation, "Powtórz hasło" ).to_s); @output_buffer.concat "\n      "
+; @output_buffer.concat(( form.password_field :password_confirmation ).to_s); @output_buffer.concat "\n    </li>\n    <li> \n      "
+
+
+; @output_buffer.concat(( form.submit "Zarejestruj" ).to_s); @output_buffer.concat "\n    </li>\n  </ol>\n"
+
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21:in `compile!'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/slavo/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/slavo/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:201:in `render_partial'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:276:in `render'
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/new.html.erb:2:in `_run_erb_app47views47uzytkownicy47new46html46erb'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/slavo/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/slavo/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/slavo/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/slavo/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/slavo/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/slavo/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/slavo/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/slavo/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/home/slavo/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/home/slavo/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/home/slavo/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/slavo/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/home/slavo/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:9: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:10: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n    </li>\n    <li>\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:14: unknown regexp option - l
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:14: syntax error, unexpected $undefined
+...ut_buffer.concat "\n    </li>\n    <li>\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:14: syntax error, unexpected $undefined
+...concat "\n    </li>\n    <li>\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:17: syntax error, unexpected tCONSTANT, expecting ')'
+...ssword_confirmation, "Powtórz hasło" ).to_s); @output_buff...
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:17: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:18: syntax error, unexpected $undefined, expecting ')'
+...o_s); @output_buffer.concat "\n    </li>\n    <li> \n      "
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: unknown regexp option - l
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: syntax error, unexpected $undefined
+...ut_buffer.concat "\n    </li>\n  </ol>\n"
+                              ^
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: unterminated string meets end of file
+/home/slavo/rails/railsphoto/photo/app/views/uzytkownicy/_uzytkownik.html.erb:21: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR) on line #9 of app/views/uzytkownicy/_uzytkownik.html.erb:
+6:       <%= form.text_field :login %>
+7:     </li>
+8:     <li>
+9:       <%= form.label :email, "Email %>
+10:       <%= form.text_field :email %>
+11:     </li>
+12:     <li>
+
+    app/views/uzytkownicy/_uzytkownik.html.erb:21:in `compile!'
+    app/views/uzytkownicy/new.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (663.8ms)
+Rendered rescues/_request_and_response (6.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UzytkownicyController#new (for 127.0.0.1 at 2010-04-02 22:04:07) [GET]
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+Rendered uzytkownicy/_uzytkownik (59.6ms)
+Completed in 291ms (View: 86, DB: 0) | 200 OK [http://localhost/uzytkownicy/new]
+
+
+Processing UzytkownicyController#new (for 127.0.0.1 at 2010-04-02 22:04:47) [GET]
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+Rendered uzytkownicy/_uzytkownik (55.0ms)
+Completed in 284ms (View: 114, DB: 0) | 200 OK [http://localhost/uzytkownicy/new]
+
+
+Processing UzytkownicyController#create (for 127.0.0.1 at 2010-04-02 22:05:04) [POST]
+  Parameters: {"commit"=>"Zarejestruj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "uzytkownik"=>{"password_confirmation"=>"tajne", "password"=>"tajne", "login"=>"slawek", "email"=>"slawek@s.pl"}}
+  [4;36;1mUzytkownik Load (1.0ms)[0m   [0;1mSELECT "uzytkownicy".id FROM "uzytkownicy" WHERE (LOWER("uzytkownicy"."email") = 'slawek@s.pl') LIMIT 1[0m
+  [4;35;1mUzytkownik Load (0.5ms)[0m   [0mSELECT "uzytkownicy".id FROM "uzytkownicy" WHERE (LOWER("uzytkownicy"."login") = 'slawek') LIMIT 1[0m
+  [4;36;1mUzytkownik Load (0.9ms)[0m   [0;1mSELECT "uzytkownicy".id FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = '06f57083e536721473240b284d46ce01e20fcf03fd23935769baa45398516228b155890495085a0ae7900b626fbc37758b3b062b872195885ade9073bb910d2c') LIMIT 1[0m
+  [4;35;1mUzytkownik Create (1.7ms)[0m   [0mINSERT INTO "uzytkownicy" ("created_at", "crypted_password", "updated_at", "password_salt", "persistence_token", "login", "email") VALUES('2010-04-02 20:05:06', '4bf56f71d50ab437b8bbf0c17914f80673817eae5d4c0a283014b84b68a2052d75bb05731f2c167020ef2bf42fd23c64b4019026f12c48abe2bfcd4ce2d44791', '2010-04-02 20:05:06', 'wcKUacTGDatp6GQz7oN2', '06f57083e536721473240b284d46ce01e20fcf03fd23935769baa45398516228b155890495085a0ae7900b626fbc37758b3b062b872195885ade9073bb910d2c', 'slawek', 'slawek@s.pl')[0m
+
+NameError (undefined local variable or method `redirect_to_root_url' for #<UzytkownicyController:0xb5e6a70c>):
+  app/controllers/uzytkownicy_controller.rb:10:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (178.2ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UzytkownicyController#create (for 127.0.0.1 at 2010-04-02 22:06:15) [POST]
+  Parameters: {"commit"=>"Zarejestruj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "uzytkownik"=>{"password_confirmation"=>"tajne", "password"=>"tajne", "login"=>"slawek", "email"=>"slawek@s.pl"}}
+  [4;36;1mUzytkownik Load (2.1ms)[0m   [0;1mSELECT "uzytkownicy".id FROM "uzytkownicy" WHERE (LOWER("uzytkownicy"."email") = 'slawek@s.pl') LIMIT 1[0m
+  [4;35;1mUzytkownik Load (0.9ms)[0m   [0mSELECT "uzytkownicy".id FROM "uzytkownicy" WHERE (LOWER("uzytkownicy"."login") = 'slawek') LIMIT 1[0m
+  [4;36;1mUzytkownik Load (0.5ms)[0m   [0;1mSELECT "uzytkownicy".id FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = '247b7bde8347f010009241ae879bb98502e95ba846c15dac349f83dead87a714f0562ce2381c6e2d5fd1e0e0b6b2979d290b72f201efd48684d3726a5739a0f2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+Rendered uzytkownicy/_uzytkownik (159.7ms)
+Completed in 467ms (View: 168, DB: 4) | 200 OK [http://localhost/uzytkownicy]
+
+
+Processing UzytkownicyController#index (for 127.0.0.1 at 2010-04-02 22:06:38) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, and new):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UzytkownicyController#show (for 127.0.0.1 at 2010-04-02 22:06:45) [GET]
+  Parameters: {"id"=>"edit"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, and new):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UzytkownicyController#show (for 127.0.0.1 at 2010-04-02 22:07:35) [GET]
+  Parameters: {"id"=>"edit"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, and new):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UzytkownicyController#new (for 127.0.0.1 at 2010-04-02 22:07:44) [GET]
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+Rendered uzytkownicy/_uzytkownik (67.3ms)
+Completed in 390ms (View: 76, DB: 0) | 200 OK [http://localhost/uzytkownicy/new]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:24:41) [GET]
+  [4;35;1mZdjecie Load (12.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 166ms (View: 99, DB: 13) | 200 OK [http://localhost/zdjecia/]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-02 22:24:45) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/uzytkownik_sessions/new.html.erb:
+1: <% title "Zaloguj się" %>
+2: 
+3: <% form_for @user_session do |form| %>
+4: <%= form.error_messages %>
+5: <ol class="formList">
+6:   <li>
+
+    app/views/uzytkownik_sessions/new.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (372.7ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-02 22:25:33) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 196ms (View: 57, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:25:41) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;36;1mUzytkownik Load (2.1ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+
+NameError (undefined local variable or method `root_url' for #<UzytkownikSessionsController:0xb5dc46a4>):
+  app/controllers/uzytkownik_sessions_controller.rb:10:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (313.1ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:27:05) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;35;1mUzytkownik Load (10.4ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template uzytkownik_sessions/index.erb in view path app/views):
+  app/controllers/uzytkownik_sessions_controller.rb:10:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:27:51) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;36;1mUzytkownik Load (1.8ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000zdjecia
+Completed in 286ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:28:33) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;35;1mUzytkownik Load (2.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 221ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:29:43) [GET]
+  [4;36;1mZdjecie Load (4.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 169ms (View: 101, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-02 22:29:50) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 661ms (View: 65, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:29:57) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"dupa", "login"=>"inny"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;35;1mUzytkownik Load (0.8ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'inny') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 358ms (View: 105, DB: 1) | 200 OK [http://localhost/uzytkownik_sessions]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:30:04) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;36;1mUzytkownik Load (2.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 154ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:30:05) [GET]
+  [4;35;1mZdjecie Load (4.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 168ms (View: 113, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-02 22:35:27) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+  [4;36;1mUzytkownik Load (2.2ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 240ms (View: 94, DB: 2) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:35:33) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;35;1mUzytkownik Load (2.3ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 314ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:35:34) [GET]
+  [4;36;1mZdjecie Load (3.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 537ms (View: 280, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing UzytkownikSessionsController#destroy (for 127.0.0.1 at 2010-04-02 22:35:37) [GET]
+  [4;36;1mUzytkownik Load (4.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 308ms (DB: 4) | 302 Found [http://localhost/logout]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:35:37) [GET]
+  [4;35;1mZdjecie Load (4.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 268ms (View: 211, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-02 22:39:09) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 361ms (View: 81, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-02 22:39:15) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;36;1mUzytkownik Load (2.5ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 344ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:39:16) [GET]
+  [4;35;1mZdjecie Load (16.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mUzytkownik Load (2.1ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 471ms (View: 407, DB: 19) | 200 OK [http://localhost/]
+
+
+Processing UzytkownicyController#edit (for 127.0.0.1 at 2010-04-02 22:39:22) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownicy/edit
+Rendered uzytkownicy/_uzytkownik (30.2ms)
+Completed in 203ms (View: 67, DB: 2) | 200 OK [http://localhost/uzytkownicy/current/edit]
+
+
+Processing UzytkownikSessionsController#destroy (for 127.0.0.1 at 2010-04-02 22:39:27) [GET]
+  [4;36;1mUzytkownik Load (1.9ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 142ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:39:28) [GET]
+  [4;35;1mZdjecie Load (4.2ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 265ms (View: 214, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 22:39:51) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mZdjecie Load (8.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 258ms (View: 193, DB: 9) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#destroy (for 127.0.0.1 at 2010-04-02 22:39:57) [DELETE]
+  Parameters: {"authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"5"}
+  [4;35;1mZdjecie Load (2.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /home/slavo/rails/railsphoto/photo/public/system/photos/5/original/Firefox_wallpaper.png
+[paperclip] deleting /home/slavo/rails/railsphoto/photo/public/system/photos/5/thumb/Firefox_wallpaper.png
+[paperclip] deleting /home/slavo/rails/railsphoto/photo/public/system/photos/5/small/Firefox_wallpaper.png
+  [4;36;1mZdjecie Destroy (1.0ms)[0m   [0;1mDELETE FROM "zdjecia" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/zdjecia
+Completed in 151ms (DB: 4) | 302 Found [http://localhost/zdjecia/5]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:39:58) [GET]
+  [4;35;1mZdjecie Load (5.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 275ms (View: 202, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-04-02 22:44:48) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (34.5ms)
+Completed in 301ms (View: 191, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-04-02 22:46:25) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100402-2463-5brqdl-0>, "opis"=>"Miś z rowerem"}}
+  [4;36;1mZdjecie Create (23.4ms)[0m   [0;1mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-04-02 20:46:27', 41010, 'Miś z rowerem', '2010-04-02 20:46:27', 'zdjecia-120707-42.jpg', 'image/jpeg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/6/thumb/zdjecia-120707-42.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/6/small/zdjecia-120707-42.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/6/original/zdjecia-120707-42.jpg
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 2114ms (DB: 23) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 22:46:27) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (12.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 1083ms (View: 1007, DB: 12) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:46:31) [GET]
+  [4;36;1mZdjecie Load (5.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 262ms (View: 196, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-04-02 22:49:03) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+Rendered zdjecia/_form (57.9ms)
+Completed in 342ms (View: 267, DB: 0) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-04-02 22:49:37) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100402-2463-qba8gb-0>, "opis"=>"Kolejny kot"}}
+  [4;35;1mZdjecie Create (1.7ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-04-02 20:49:38', 28128, 'Kolejny kot', '2010-04-02 20:49:38', 'funny-cat.jpg', 'image/jpeg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/7/thumb/funny-cat.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/7/small/funny-cat.jpg
+[paperclip] saving /home/slavo/rails/railsphoto/photo/public/system/photos/7/original/funny-cat.jpg
+Redirected to http://localhost:3000/zdjecia/7
+Completed in 1437ms (DB: 2) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-02 22:49:39) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 377ms (View: 225, DB: 2) | 200 OK [http://localhost/zdjecia/7]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:49:42) [GET]
+  [4;35;1mZdjecie Load (6.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 1043ms (View: 260, DB: 6) | 200 OK [http://localhost/zdjecia]

@@ -1,0 +1,24 @@
+<% form_for @uzytkownik do |form| %>
+  <%= form.error_messages %>
+  <ol class="formlist">
+    <li>
+      <%= form.label :login, "Login" %>
+      <%= form.text_field :login %>
+    </li>
+    <li>
+      <%= form.label :email, "Email" %>
+      <%= form.text_field :email %>
+    </li>
+    <li>
+      <%= form.label :password, "Hasło" %>
+      <%= form.password_field :password %>
+    </li>
+    <li>
+      <%= form.label :password_confirmation, "Powtórz hasło" %>
+      <%= form.password_field :password_confirmation %>
+    </li>
+    <li> 
+      <%= form.submit "Zarejestruj" %>
+    </li>
+  </ol>
+<% end %>

@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100329210026) do
+ActiveRecord::Schema.define(:version => 20100402194354) do
+
+  create_table "uzytkownicy", :force => true do |t|
+    t.string   "login"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "zdjecia", :force => true do |t|
     t.string   "opis"

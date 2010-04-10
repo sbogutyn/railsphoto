@@ -2273,3 +2273,195 @@ Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-02 22:49:42) [GET]
 Rendering template within layouts/application
 Rendering zdjecia/index
 Completed in 1043ms (View: 260, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:49:03) [GET]
+  [4;36;1mZdjecie Load (163.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 1372ms (View: 1041, DB: 163) | 200 OK [http://sigma.inf.ug.edu.pl/]
+
+
+Processing ZdjeciaController#show (for 153.19.7.230 at 2010-04-10 11:49:13) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mZdjecie Load (43.7ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 325ms (View: 225, DB: 44) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia/7]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:49:16) [GET]
+  [4;36;1mZdjecie Load (164.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 362ms (View: 190, DB: 165) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia]
+
+
+Processing ZdjeciaController#show (for 153.19.7.230 at 2010-04-10 11:49:18) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mZdjecie Load (82.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 440ms (View: 211, DB: 82) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia/7]
+
+
+Processing UzytkownikSessionsController#new (for 153.19.7.230 at 2010-04-10 11:49:22) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 220ms (View: 34, DB: 0) | 200 OK [http://sigma.inf.ug.edu.pl/login]
+
+
+Processing UzytkownicyController#new (for 153.19.7.230 at 2010-04-10 11:49:24) [GET]
+Rendering template within layouts/application
+Rendering uzytkownicy/new
+Rendered uzytkownicy/_uzytkownik (120.0ms)
+Completed in 425ms (View: 365, DB: 0) | 200 OK [http://sigma.inf.ug.edu.pl/uzytkownicy/new]
+
+
+Processing UzytkownicyController#index (for 153.19.7.230 at 2010-04-10 11:49:29) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, and update):
+  thin (1.2.7) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.7) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.7) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.7) lib/thin/connection.rb:57:in `process'
+  thin (1.2.7) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.7) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.7) lib/thin/server.rb:156:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UzytkownicyController#show (for 153.19.7.230 at 2010-04-10 11:49:37) [GET]
+  Parameters: {"id"=>"show"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  thin (1.2.7) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.7) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.7) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.7) lib/thin/connection.rb:57:in `process'
+  thin (1.2.7) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.7) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.7) lib/thin/server.rb:156:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UzytkownicyController#show (for 153.19.7.230 at 2010-04-10 11:49:39) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  thin (1.2.7) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.7) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.7) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.7) lib/thin/connection.rb:57:in `process'
+  thin (1.2.7) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.2.7) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.7) lib/thin/server.rb:156:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:49:46) [GET]
+  [4;36;1mZdjecie Load (163.9ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 312ms (View: 105, DB: 164) | 200 OK [http://sigma.inf.ug.edu.pl/]
+
+
+Processing ZdjeciaController#show (for 153.19.7.230 at 2010-04-10 11:50:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (118.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 427ms (View: 103, DB: 119) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:50:04) [GET]
+  [4;36;1mZdjecie Load (278.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 909ms (View: 624, DB: 278) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia]
+
+
+Processing ZdjeciaController#show (for 153.19.7.230 at 2010-04-10 11:50:09) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mZdjecie Load (119.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 317ms (View: 67, DB: 119) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia/3]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:50:11) [GET]
+  [4;36;1mZdjecie Load (242.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 522ms (View: 273, DB: 243) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia]
+
+
+Processing ZdjeciaController#show (for 153.19.7.230 at 2010-04-10 11:50:13) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mZdjecie Load (52.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 169ms (View: 25, DB: 52) | 200 OK [http://sigma.inf.ug.edu.pl/zdjecia/4]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:58:22) [GET]
+  [4;36;1mZdjecie Load (203.9ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 647ms (View: 344, DB: 204) | 200 OK [http://sigma.ug.edu.pl/]
+
+
+Processing UzytkownikSessionsController#new (for 153.19.7.230 at 2010-04-10 11:58:29) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 283ms (View: 95, DB: 0) | 200 OK [http://sigma.ug.edu.pl/login]
+
+
+Processing UzytkownikSessionsController#create (for 153.19.7.230 at 2010-04-10 11:58:33) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"QW5hu5yrBG3Dry2ZMZyhzpXP9D4y4E1VJes4nmEeNe4="}
+  [4;35;1mUzytkownik Load (54.3ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://sigma.ug.edu.pl:8010/
+Completed in 381ms (DB: 54) | 302 Found [http://sigma.ug.edu.pl/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:58:34) [GET]
+  [4;36;1mZdjecie Load (250.4ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (121.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 510ms (View: 54, DB: 371) | 200 OK [http://sigma.ug.edu.pl/]
+
+
+Processing UzytkownicyController#edit (for 153.19.7.230 at 2010-04-10 11:58:37) [GET]
+  Parameters: {"id"=>"current"}
+  [4;36;1mUzytkownik Load (81.4ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownicy/edit
+Rendered uzytkownicy/_uzytkownik (82.8ms)
+Completed in 571ms (View: 307, DB: 81) | 200 OK [http://sigma.ug.edu.pl/uzytkownicy/current/edit]
+
+
+Processing UzytkownicyController#edit (for 153.19.7.230 at 2010-04-10 11:58:49) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUzytkownik Load (37.7ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownicy/edit
+Rendered uzytkownicy/_uzytkownik (3.3ms)
+Completed in 304ms (View: 118, DB: 38) | 200 OK [http://sigma.ug.edu.pl/uzytkownicy/current/edit]
+
+
+Processing ZdjeciaController#index (for 153.19.7.230 at 2010-04-10 11:58:55) [GET]
+  [4;36;1mZdjecie Load (163.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (120.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 368ms (View: 78, DB: 284) | 200 OK [http://sigma.ug.edu.pl/]

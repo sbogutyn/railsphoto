@@ -2900,3 +2900,177 @@ Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:55:58) [GET]
 Rendering template within layouts/application
 Rendering zdjecia/index
 Completed in 462ms (View: 349, DB: 9) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:52:26) [GET]
+  [4;36;1mZdjecie Load (11.3ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 1253ms (View: 1078, DB: 11) | 200 OK [http://localhost/zdjecia]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-11 19:52:31) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 321ms (View: 157, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-11 19:52:38) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;35;1mUzytkownik Load (2.5ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 1317ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:52:39) [GET]
+  [4;36;1mZdjecie Load (7.3ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.2ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 425ms (View: 190, DB: 10) | 200 OK [http://localhost/]
+
+
+Processing UzytkownicyController#edit (for 127.0.0.1 at 2010-04-11 19:52:44) [GET]
+  Parameters: {"id"=>"current"}
+  [4;36;1mUzytkownik Load (1.7ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownicy/edit
+Rendered uzytkownicy/_uzytkownik (48.5ms)
+Completed in 360ms (View: 114, DB: 2) | 200 OK [http://localhost/uzytkownicy/current/edit]
+
+
+Processing UzytkownikSessionsController#destroy (for 127.0.0.1 at 2010-04-11 19:53:05) [GET]
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 176ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:53:06) [GET]
+  [4;36;1mZdjecie Load (5.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 326ms (View: 269, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 19:53:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (2.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.9ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (862.8ms)
+Rendered komentarze/_komentarz (3.7ms)
+Rendered komentarze/_komentarz (2.8ms)
+Completed in 1432ms (View: 1240, DB: 5) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:55:33) [GET]
+  [4;36;1mZdjecie Load (8.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 587ms (View: 388, DB: 8) | 200 OK [http://localhost/zdjecia]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-11 19:55:39) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 240ms (View: 65, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-11 19:55:45) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;35;1mUzytkownik Load (4.4ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 1111ms (DB: 4) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:55:47) [GET]
+  [4;36;1mZdjecie Load (5.4ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.3ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 361ms (View: 224, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 19:55:50) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+  [4;35;1mKomentarz Load (0.4ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 7) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 7) [0m
+  [4;35;1mUzytkownik Load (3.3ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 552ms (View: 442, DB: 6) | 200 OK [http://localhost/zdjecia/7]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:55:55) [GET]
+  [4;36;1mZdjecie Load (6.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (1.6ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 321ms (View: 264, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 19:55:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+  [4;35;1mKomentarz Load (1.7ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendered komentarze/_komentarz (577.6ms)
+  [4;35;1mUzytkownik Load (12.9ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 1103ms (View: 863, DB: 17) | 200 OK [http://localhost/zdjecia/3]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 19:56:03) [GET]
+  [4;36;1mZdjecie Load (6.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 781ms (View: 717, DB: 8) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 20:05:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (2.5ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (3.2ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (25.5ms)
+Rendered komentarze/_komentarz (3.2ms)
+Rendered komentarze/_komentarz (3.8ms)
+  [4;35;1mUzytkownik Load (2.8ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 372ms (View: 246, DB: 9) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 20:06:08) [GET]
+  [4;36;1mZdjecie Load (6.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 335ms (View: 277, DB: 9) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 20:08:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (1.7ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (3.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (25.5ms)
+Rendered komentarze/_komentarz (4.1ms)
+Rendered komentarze/_komentarz (4.8ms)
+  [4;35;1mUzytkownik Load (2.2ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 816ms (View: 567, DB: 7) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 20:42:29) [GET]
+  [4;36;1mZdjecie Load (6.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (1.9ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 313ms (View: 201, DB: 8) | 200 OK [http://localhost/]

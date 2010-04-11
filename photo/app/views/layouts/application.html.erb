@@ -8,6 +8,9 @@
   </head>
   <body>
     <div id="container">
+      <div id="page_nav">
+        <%= link_to "Home", root_url %>
+      </div>
       <div id="user_nav">
         <% if current_user %>
           <%= link_to "Edytuj profil", edit_uzytkownik_path(:current) %>

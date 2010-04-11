@@ -7,5 +7,7 @@ ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.singular /^(ox)en/i, '\1'
   inflect.irregular 'zdjecie', 'zdjecia'
   inflect.irregular 'uzytkownik', 'uzytkownicy'
+  inflect.irregular 'komentarz', 'komentarze'
+  inflect.irregular 'galeria', 'galerie'
 #   inflect.uncountable %w( fish sheep )
 end

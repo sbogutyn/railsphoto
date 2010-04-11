@@ -1,0 +1,7 @@
+<% div_for komentarz do %>
+  <p>
+  <strong>Autor: <%=h komentarz.autor %></strong><br />
+  <strong>Dodany <%= time_ago_in_words(komentarz.created_at) %> temu </strong><br />
+  <%= h(komentarz.tresc) %>
+  </p>
+<% end %>

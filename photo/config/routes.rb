@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :zdjecia
+
+  map.resources :zdjecia, :has_many => :komentarze
   map.resources :uzytkownicy
   
   # Logowanie

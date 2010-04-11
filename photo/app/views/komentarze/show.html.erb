@@ -1,0 +1,16 @@
+<% title "Komentarz" %>
+
+<p>
+  <strong>Autor:</strong>
+  <%=h @komentarz.autor %>
+</p>
+<p>
+  <strong>Tresc:</strong>
+  <%=h @komentarz.tresc %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_komentarz_path(@komentarz) %> |
+  <%= link_to "Destroy", @komentarz, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", komentarze_path %>
+</p>

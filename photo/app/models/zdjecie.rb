@@ -4,5 +4,5 @@ class Zdjecie < ActiveRecord::Base
         :thumb=> "200x200#",
         :small  => "300x300>",
     }  
-
+    has_many :komentarze
 end

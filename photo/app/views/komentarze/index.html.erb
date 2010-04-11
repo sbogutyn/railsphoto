@@ -1,0 +1,19 @@
+<% title "Komentarze" %>
+
+<table>
+  <tr>
+    <th>Autor</th>
+    <th>Tresc</th>
+  </tr>
+  <% for komentarz in @komentarze %>
+    <tr>
+      <td><%=h komentarz.autor %></td>
+      <td><%=h komentarz.tresc %></td>
+      <td><%= link_to "Show", komentarz %></td>
+      <td><%= link_to "Edit", edit_komentarz_path(komentarz) %></td>
+      <td><%= link_to "Destroy", komentarz, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Komentarz", new_komentarz_path %></p>

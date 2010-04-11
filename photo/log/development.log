@@ -2465,3 +2465,438 @@ Rendering template within layouts/application
 Rendering zdjecia/index
   [4;35;1mUzytkownik Load (120.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
 Completed in 368ms (View: 78, DB: 284) | 200 OK [http://sigma.ug.edu.pl/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 10:05:28) [GET]
+  [4;36;1mZdjecie Load (7.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 1223ms (View: 700, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 10:05:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.7ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 418ms (View: 355, DB: 2) | 200 OK [http://localhost/zdjecia/2]
+  [4;36;1mSQL (5.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to Nowa (20100329210026)
+Migrating to CreateUzytkownicy (20100402194354)
+Migrating to CreateKomentarze (20100411081350)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE TABLE "komentarze" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "autor" varchar(255), "tresc" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100411081350')[0m
+  [4;35;1mSQL (11.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("komentarze")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("uzytkownicy")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mPRAGMA index_list("zdjecia")[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to Nowa (20100329210026)
+Migrating to CreateUzytkownicy (20100402194354)
+Migrating to CreateKomentarze (20100411081350)
+Migrating to ZmianaKomentarzy (20100411095429)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mALTER TABLE "komentarze" ADD "zdjecie_id" integer[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100411095429')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("komentarze")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("uzytkownicy")[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mPRAGMA index_list("zdjecia")[0m
+  [4;36;1mSQL (15.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateZdjecia (20100329204810)
+Migrating to Nowa (20100329210026)
+Migrating to CreateUzytkownicy (20100402194354)
+Migrating to CreateKomentarze (20100411081350)
+Migrating to ZmianaKomentarzy (20100411095429)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("komentarze")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("uzytkownicy")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("zdjecia")[0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:10:30) [GET]
+  [4;36;1mZdjecie Load (9.4ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 1116ms (View: 971, DB: 9) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:10:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (0.8ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 297ms (View: 211, DB: 3) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing KomentarzeController#index (for 127.0.0.1 at 2010-04-11 12:10:48) [GET]
+  [4;35;1mKomentarz Load (1.6ms)[0m   [0mSELECT * FROM "komentarze" [0m
+Rendering template within layouts/application
+Rendering komentarze/index
+Completed in 193ms (View: 148, DB: 2) | 200 OK [http://localhost/komentarze/]
+
+
+Processing KomentarzeController#new (for 127.0.0.1 at 2010-04-11 12:10:52) [GET]
+Rendering template within layouts/application
+Rendering komentarze/new
+Rendered komentarze/_form (27.9ms)
+Completed in 439ms (View: 376, DB: 0) | 200 OK [http://localhost/komentarze/new]
+
+
+Processing KomentarzeController#create (for 127.0.0.1 at 2010-04-11 12:11:10) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "komentarz"=>{"tresc"=>"Pierwszy komentarz.", "autor"=>"Sławek"}}
+  [4;36;1mKomentarz Create (2.1ms)[0m   [0;1mINSERT INTO "komentarze" ("created_at", "autor", "tresc", "updated_at", "zdjecie_id") VALUES('2010-04-11 10:11:10', 'Sławek', 'Pierwszy komentarz.', '2010-04-11 10:11:10', NULL)[0m
+Redirected to http://localhost:3000/komentarze/1
+Completed in 259ms (DB: 2) | 302 Found [http://localhost/komentarze]
+
+
+Processing KomentarzeController#show (for 127.0.0.1 at 2010-04-11 12:11:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mKomentarz Load (1.7ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering komentarze/show
+Completed in 207ms (View: 157, DB: 2) | 200 OK [http://localhost/komentarze/1]
+
+
+Processing KomentarzeController#index (for 127.0.0.1 at 2010-04-11 12:11:13) [GET]
+  [4;36;1mKomentarz Load (2.4ms)[0m   [0;1mSELECT * FROM "komentarze" [0m
+Rendering template within layouts/application
+Rendering komentarze/index
+Completed in 225ms (View: 156, DB: 2) | 200 OK [http://localhost/komentarze]
+
+
+Processing KomentarzeController#new (for 127.0.0.1 at 2010-04-11 12:11:21) [GET]
+Rendering template within layouts/application
+Rendering komentarze/new
+Rendered komentarze/_form (22.7ms)
+Completed in 215ms (View: 167, DB: 0) | 200 OK [http://localhost/komentarze/new]
+
+
+Processing KomentarzeController#create (for 127.0.0.1 at 2010-04-11 12:11:31) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "komentarz"=>{"tresc"=>"Drugi komentarz.", "autor"=>"Sławek"}}
+  [4;35;1mKomentarz Create (1.2ms)[0m   [0mINSERT INTO "komentarze" ("created_at", "autor", "tresc", "updated_at", "zdjecie_id") VALUES('2010-04-11 10:11:31', 'Sławek', 'Drugi komentarz.', '2010-04-11 10:11:31', NULL)[0m
+Redirected to http://localhost:3000/komentarze/2
+Completed in 337ms (DB: 1) | 302 Found [http://localhost/komentarze]
+
+
+Processing KomentarzeController#show (for 127.0.0.1 at 2010-04-11 12:11:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mKomentarz Load (5.3ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering komentarze/show
+Completed in 347ms (View: 271, DB: 5) | 200 OK [http://localhost/komentarze/2]
+  [4;36;1mKomentarz Load (4.7ms)[0m   [0;1mSELECT * FROM "komentarze" LIMIT 1[0m
+  [4;35;1mKomentarz Update (1.6ms)[0m   [0mUPDATE "komentarze" SET "updated_at" = '2010-04-11 10:12:42', "zdjecie_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mKomentarz Load (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" ORDER BY komentarze.id DESC LIMIT 1[0m
+  [4;35;1mKomentarz Update (0.9ms)[0m   [0mUPDATE "komentarze" SET "updated_at" = '2010-04-11 10:13:04', "zdjecie_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" LIMIT 1[0m
+  [4;35;1mKomentarz Load (1.6ms)[0m   [0mSELECT * FROM "komentarze" LIMIT 1[0m
+  [4;36;1mKomentarz Update (1.1ms)[0m   [0;1mUPDATE "komentarze" SET "updated_at" = '2010-04-11 10:13:39', "zdjecie_id" = 2 WHERE "id" = 1[0m
+  [4;35;1mKomentarz Load (0.0ms)[0m   [0mSELECT * FROM "komentarze" ORDER BY komentarze.id DESC LIMIT 1[0m
+  [4;36;1mKomentarz Update (1.1ms)[0m   [0;1mUPDATE "komentarze" SET "updated_at" = '2010-04-11 10:13:54', "zdjecie_id" = 2 WHERE "id" = 2[0m
+  [4;35;1mKomentarz Load (2.1ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:14:42) [GET]
+  [4;36;1mZdjecie Load (8.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 565ms (View: 458, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:14:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (2.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.4ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+Completed in 416ms (View: 329, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:15:45) [GET]
+  [4;35;1mZdjecie Load (5.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 335ms (View: 245, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:37:13) [GET]
+  [4;36;1mZdjecie Load (10.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 712ms (View: 612, DB: 10) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:37:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.6ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.7ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #20 of app/views/zdjecia/show.html.erb:
+17:   <%= link_to "Pokaż wszystkie", zdjecia_path %>
+18: </p>
+19: 
+20: <% form_for @komentarz do |f| %>
+21:   <%= f.error_messages %>
+22:   <p>
+23:     <%= f.label :autor %><br />
+
+    app/views/zdjecia/show.html.erb:20
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (495.8ms)
+Rendered rescues/_request_and_response (38.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:38:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.5ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (397.6ms)
+Rendered komentarze/_komentarz (3.4ms)
+Completed in 1261ms (View: 723, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:39:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (2.3ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (26.2ms)
+Rendered komentarze/_komentarz (3.1ms)
+Completed in 340ms (View: 247, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:40:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.7ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (29.5ms)
+Rendered komentarze/_komentarz (71.2ms)
+Completed in 447ms (View: 328, DB: 5) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:42:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (2.4ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (109.7ms)
+Rendered komentarze/_komentarz (2.1ms)
+Completed in 593ms (View: 433, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:46:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (2.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.2ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (31.7ms)
+Rendered komentarze/_komentarz (3.3ms)
+Completed in 685ms (View: 521, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing KomentarzeController#create (for 127.0.0.1 at 2010-04-11 12:46:12) [POST]
+  Parameters: {"commit"=>"Dodaj komentarz", "zdjecie_id"=>"2", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "komentarz"=>{"tresc"=>"Trzeci komentarz", "autor"=>"Sławek"}}
+  [4;36;1mKomentarz Create (1.5ms)[0m   [0;1mINSERT INTO "komentarze" ("created_at", "autor", "tresc", "updated_at", "zdjecie_id") VALUES('2010-04-11 10:46:13', 'Sławek', 'Trzeci komentarz', '2010-04-11 10:46:13', NULL)[0m
+
+NoMethodError (undefined method `komentarz_url' for #<KomentarzeController:0xb5edbf74>):
+  app/controllers/komentarze_controller.rb:18:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (396.7ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KomentarzeController#create (for 127.0.0.1 at 2010-04-11 12:48:30) [POST]
+  Parameters: {"commit"=>"Dodaj komentarz", "zdjecie_id"=>"2", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "komentarz"=>{"tresc"=>"Trzeci komentarz", "autor"=>"Sławek"}}
+  [4;35;1mKomentarz Create (1.3ms)[0m   [0mINSERT INTO "komentarze" ("created_at", "autor", "tresc", "updated_at", "zdjecie_id") VALUES('2010-04-11 10:48:30', 'Sławek', 'Trzeci komentarz', '2010-04-11 10:48:30', NULL)[0m
+
+ActionView::MissingTemplate (Missing template komentarze/create.erb in view path app/views):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:48:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (1.6ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (2.3ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (29.9ms)
+Rendered komentarze/_komentarz (3.3ms)
+Completed in 504ms (View: 265, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:54:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.3ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (24.7ms)
+Rendered komentarze/_komentarz (3.7ms)
+Completed in 429ms (View: 233, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:55:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (1.7ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (2.1ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (43.7ms)
+Rendered komentarze/_komentarz (4.8ms)
+Completed in 530ms (View: 444, DB: 4) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing KomentarzeController#create (for 127.0.0.1 at 2010-04-11 12:55:23) [POST]
+  Parameters: {"commit"=>"Dodaj komentarz", "zdjecie_id"=>"2", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "komentarz"=>{"tresc"=>"Trzeci komentarz.", "autor"=>"Sławek"}}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Create (1.4ms)[0m   [0;1mINSERT INTO "komentarze" ("created_at", "autor", "tresc", "updated_at", "zdjecie_id") VALUES('2010-04-11 10:55:23', 'Sławek', 'Trzeci komentarz.', '2010-04-11 10:55:23', 2)[0m
+Redirected to http://localhost:3000/zdjecia/2
+Completed in 178ms (DB: 3) | 302 Found [http://localhost/zdjecia/2/komentarze]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:55:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mZdjecie Load (1.8ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;36;1mKomentarz Load (2.8ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (84.3ms)
+Rendered komentarze/_komentarz (5.2ms)
+Rendered komentarze/_komentarz (3.7ms)
+Completed in 383ms (View: 275, DB: 5) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:55:35) [GET]
+  [4;36;1mZdjecie Load (6.7ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 340ms (View: 200, DB: 7) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:55:38) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mZdjecie Load (2.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+  [4;36;1mKomentarz Load (0.9ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Completed in 336ms (View: 252, DB: 3) | 200 OK [http://localhost/zdjecia/3]
+
+
+Processing KomentarzeController#create (for 127.0.0.1 at 2010-04-11 12:55:50) [POST]
+  Parameters: {"commit"=>"Dodaj komentarz", "zdjecie_id"=>"3", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "komentarz"=>{"tresc"=>"Test.", "autor"=>"Sławek"}}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+  [4;35;1mKomentarz Create (1.1ms)[0m   [0mINSERT INTO "komentarze" ("created_at", "autor", "tresc", "updated_at", "zdjecie_id") VALUES('2010-04-11 10:55:50', 'Sławek', 'Test.', '2010-04-11 10:55:50', 3)[0m
+Redirected to http://localhost:3000/zdjecia/3
+Completed in 200ms (DB: 3) | 302 Found [http://localhost/zdjecia/3/komentarze]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-11 12:55:50) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+  [4;35;1mKomentarz Load (1.6ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendered komentarze/_komentarz (25.3ms)
+Completed in 298ms (View: 215, DB: 4) | 200 OK [http://localhost/zdjecia/3]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-11 12:55:58) [GET]
+  [4;35;1mZdjecie Load (9.3ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 462ms (View: 349, DB: 9) | 200 OK [http://localhost/zdjecia]

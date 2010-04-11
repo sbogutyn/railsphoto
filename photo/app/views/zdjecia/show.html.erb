@@ -16,3 +16,21 @@
   <%= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> |
   <%= link_to "Pokaż wszystkie", zdjecia_path %>
 </p>
+
+<h2> Komentarze: </h2>
+<div id="komentarze">
+  <%= render :partial => @zdjecie.komentarze %>
+</div>
+
+<% form_for [@zdjecie, Komentarz.new] do |f| %>
+  <p>
+    <%= f.label :autor, "Autor" %><br />
+    <%= f.text_field :autor %>
+  </p>
+  <p>
+    <%= f.label :tresc, "Treść" %><br />
+    <%= f.text_area :tresc %>
+    </p>
+    <p> <%= f.submit "Dodaj komentarz" %> <p> 
+<% end %>
+

@@ -5,6 +5,7 @@ class ZdjeciaController < ApplicationController
   
   def show
     @zdjecie = Zdjecie.find(params[:id])
+    @komentarze = @zdjecie.komentarze.all
   end
   
   def new

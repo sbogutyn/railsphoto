@@ -6,13 +6,13 @@
 * Dodawanie i oglądanie zdjęć (trzeba zainstalować imagemagick oraz gem paperclip)
 * Logowanie
 * Komentarze do zdjęć
+* Tagowanie zdjęć
 
 ## Do zrobienia:
 
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
 * Grupy użytkowników
-* Tagowanie zdjęć
 * Kategorie zdjęć
 * System wiadomości
 * Geolokalizacja

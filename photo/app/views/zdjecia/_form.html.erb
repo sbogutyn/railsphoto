@@ -8,5 +8,9 @@
     <%= f.label 'Zdjęcie' %><br />
     <%= f.file_field :photo %>
   </p>
+  <p>
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>
+  </p>
   <p><%= f.submit "Utwórz" %></p>
 <% end %>

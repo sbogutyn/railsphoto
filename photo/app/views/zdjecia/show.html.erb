@@ -17,6 +17,11 @@
   <%= link_to "Pokaż wszystkie", zdjecia_path %>
 </p>
 
+<p>
+<strong>Tagi:</strong>
+<%=h @zdjecie.tag_list %>
+</p>
+
 <h2> Komentarze: </h2>
 <div id="komentarze">
   <%= render :partial => @zdjecie.komentarze %>

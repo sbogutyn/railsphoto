@@ -3341,3 +3341,119 @@ Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-12 22:22:49) [GET]
 Rendering template within layouts/application
 Rendering zdjecia/index
 Completed in 148ms (View: 91, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-12 23:32:33) [GET]
+  [4;36;1mZdjecie Load (5.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.6ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 529ms (View: 412, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-12 23:32:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (2.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mTag Load (1.7ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (3388.8ms)
+Rendered komentarze/_komentarz (4.5ms)
+Rendered komentarze/_komentarz (3.7ms)
+  [4;36;1mUzytkownik Load (2.2ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 4097ms (View: 3945, DB: 8) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-12 23:32:54) [GET]
+  [4;35;1mZdjecie Load (6.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mUzytkownik Load (2.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 360ms (View: 268, DB: 9) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-04-12 23:32:57) [GET]
+Rendering template within layouts/application
+Rendering zdjecia/new
+  [4;35;1mTag Load (2.4ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (132.7ms)
+  [4;36;1mUzytkownik Load (1.9ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 640ms (View: 324, DB: 4) | 200 OK [http://localhost/zdjecia/new]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-04-12 23:36:05) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100412-2019-1u9bq7n-0>, "opis"=>"Kot", "tag_list"=>"kot"}}
+  [4;35;1mZdjecie Create (4.4ms)[0m   [0mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "photo_content_type") VALUES('2010-04-12 21:36:07', 24185, 'Kot', '2010-04-12 21:36:07', 'smiling-cat.jpg', 'image/jpeg')[0m
+  [4;36;1mTag Load (31.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot') [0m
+  [4;35;1mTag Load (0.8ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (1.4ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 8 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 8 AND "taggings".taggable_type = 'Zdjecie')) [0m
+  [4;35;1mTagging Load (0.9ms)[0m   [0mSELECT "taggings".id FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings".taggable_type = 'Zdjecie' AND "taggings".taggable_id = 8 AND "taggings".context = 'tags' AND "taggings".tagger_id IS NULL AND "taggings".tagger_type IS NULL) LIMIT 1[0m
+  [4;36;1mTagging Create (1.4ms)[0m   [0;1mINSERT INTO "taggings" ("tagger_id", "created_at", "tag_id", "taggable_id", "context", "tagger_type", "taggable_type") VALUES(NULL, '2010-04-12 21:36:08', 1, 8, 'tags', NULL, 'Zdjecie')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/testMWSZ/railsphoto/photo/public/system/photos/8/original/smiling-cat.jpg
+[paperclip] saving /home/slavo/rails/testMWSZ/railsphoto/photo/public/system/photos/8/thumb/smiling-cat.jpg
+[paperclip] saving /home/slavo/rails/testMWSZ/railsphoto/photo/public/system/photos/8/small/smiling-cat.jpg
+Redirected to http://localhost:3000/zdjecia/8
+Completed in 3384ms (DB: 40) | 302 Found [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-12 23:36:08) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mZdjecie Load (2.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 8) [0m
+  [4;36;1mKomentarz Load (0.7ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mTag Load (1.8ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+  [4;35;1mUzytkownik Load (2.2ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 828ms (View: 294, DB: 7) | 200 OK [http://localhost/zdjecia/8]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-12 23:36:16) [GET]
+  [4;36;1mZdjecie Load (6.4ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 431ms (View: 312, DB: 9) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-12 23:36:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (2.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mKomentarz Load (1.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mTag Load (2.4ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+  [4;36;1mUzytkownik Load (2.2ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 736ms (View: 574, DB: 8) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-12 23:36:31) [GET]
+  [4;35;1mZdjecie Load (5.3ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mUzytkownik Load (1.7ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 375ms (View: 283, DB: 7) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-12 23:36:35) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mZdjecie Load (2.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 4) [0m
+  [4;36;1mKomentarz Load (0.9ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 4) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mTag Load (1.6ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 4) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 4) [0m
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 405ms (View: 261, DB: 7) | 200 OK [http://localhost/zdjecia/4]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-12 23:36:40) [GET]
+  [4;36;1mZdjecie Load (30.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (2.1ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 821ms (View: 696, DB: 32) | 200 OK [http://localhost/]

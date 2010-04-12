@@ -10,6 +10,8 @@
 
 ## Do zrobienia:
 
+* Wyszukiwanie zdjęć po tagach
+* Chmura tagów
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
 * Grupy użytkowników

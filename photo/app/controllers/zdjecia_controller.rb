@@ -1,7 +1,12 @@
 class ZdjeciaController < ApplicationController
+
   def index
-    @zdjecia = Zdjecie.all
-  end
+    if params[:search]
+      @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
+    else
+      @zdjecia = Zdjecie.all
+    end
+end
   
   def show
     @zdjecie = Zdjecie.find(params[:id])

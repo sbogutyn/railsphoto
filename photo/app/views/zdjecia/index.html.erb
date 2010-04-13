@@ -2,6 +2,15 @@
 <% content_for :head do %>
     <%= stylesheet_link_tag 'zdjecia' %>
 <% end %>
+
+<% form_tag zdjecia_path, :method => 'get' do %>
+  <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Szukaj", :name => nil %>
+  </p>
+<% end %>
+
+
 <ul>
 <% for zdjecie in @zdjecia %>
 <li>

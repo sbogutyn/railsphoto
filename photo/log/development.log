@@ -5592,3 +5592,95 @@ Rendering template within layouts/application
 Rendering zdjecia/index
   [4;35;1mZdjecie Load (2.2ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_kot_995 ON zdjecia_taggings_kot_995.taggable_id = zdjecia.id AND zdjecia_taggings_kot_995.taggable_type = 'Zdjecie' AND zdjecia_taggings_kot_995.tag_id = 1 AND zdjecia_taggings_kot_995.context = 'tags' [0m
 Completed in 149ms (View: 98, DB: 3) | 200 OK [http://localhost/zdjecia?search=kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:20:11) [GET]
+  [4;36;1mZdjecie Load (32.0ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mUzytkownik Load (24.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 1773ms (View: 1401, DB: 56) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:22:19) [GET]
+  Parameters: {"search"=>"kot"}
+  [4;36;1mTag Load (0.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mZdjecie Load (4.0ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_kot_935 ON zdjecia_taggings_kot_935.taggable_id = zdjecia.id AND zdjecia_taggings_kot_935.taggable_type = 'Zdjecie' AND zdjecia_taggings_kot_935.tag_id = 1 AND zdjecia_taggings_kot_935.context = 'tags' [0m
+  [4;36;1mUzytkownik Load (0.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 904ms (View: 608, DB: 4) | 200 OK [http://localhost/zdjecia?search=kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:22:33) [GET]
+  [4;35;1mZdjecie Load (28.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mUzytkownik Load (20.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 796ms (View: 512, DB: 48) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:22:43) [GET]
+  Parameters: {"search"=>"rower"}
+  [4;35;1mTag Load (0.0ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'rower') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mZdjecie Load (0.0ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_rower_344 ON zdjecia_taggings_rower_344.taggable_id = zdjecia.id AND zdjecia_taggings_rower_344.taggable_type = 'Zdjecie' AND zdjecia_taggings_rower_344.tag_id = 7 AND zdjecia_taggings_rower_344.context = 'tags' [0m
+  [4;35;1mUzytkownik Load (24.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 456ms (View: 296, DB: 24) | 200 OK [http://localhost/zdjecia?search=rower]
+
+
+Processing UzytkownikSessionsController#destroy (for 127.0.0.1 at 2010-04-14 19:22:46) [GET]
+  [4;36;1mUzytkownik Load (0.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 252ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:22:47) [GET]
+  [4;35;1mZdjecie Load (4.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 940ms (View: 516, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-14 19:22:51) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 364ms (View: 112, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-14 19:22:58) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;36;1mUzytkownik Load (0.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 1769ms (DB: 0) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:23:00) [GET]
+  [4;35;1mZdjecie Load (12.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mUzytkownik Load (4.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 556ms (View: 388, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing UzytkownicyController#edit (for 127.0.0.1 at 2010-04-14 19:23:06) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUzytkownik Load (0.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering uzytkownicy/edit
+Rendered uzytkownicy/_uzytkownik (96.0ms)
+Completed in 520ms (View: 284, DB: 0) | 200 OK [http://localhost/uzytkownicy/current/edit]
+
+
+Processing UzytkownikSessionsController#destroy (for 127.0.0.1 at 2010-04-14 19:23:11) [GET]
+  [4;36;1mUzytkownik Load (0.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 228ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-14 19:23:12) [GET]
+  [4;35;1mZdjecie Load (16.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 524ms (View: 360, DB: 16) | 200 OK [http://localhost/]

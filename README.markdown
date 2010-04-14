@@ -7,10 +7,11 @@
 * Logowanie
 * Komentarze do zdjęć
 * Tagowanie zdjęć
+* Wyszukiwanie zdjęć po tagach
 
 ## Do zrobienia:
 
-* Wyszukiwanie zdjęć po tagach
+* Kazdy tag w edycji zdjecia powinien byc odnośnikiem do strony z listą zdjęć zawierającą ten tag
 * Chmura tagów
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii

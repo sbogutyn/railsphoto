@@ -7,10 +7,10 @@
 * Logowanie
 * Komentarze do zdjęć
 * Tagowanie zdjęć
+* Wyszukiwanie zdjęć po tagach
 
 ## Do zrobienia:
 
-* Wyszukiwanie zdjęć po tagach
 * Chmura tagów
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii

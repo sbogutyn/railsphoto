@@ -5592,3 +5592,45 @@ Rendering template within layouts/application
 Rendering zdjecia/index
   [4;35;1mZdjecie Load (2.2ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_kot_995 ON zdjecia_taggings_kot_995.taggable_id = zdjecia.id AND zdjecia_taggings_kot_995.taggable_type = 'Zdjecie' AND zdjecia_taggings_kot_995.tag_id = 1 AND zdjecia_taggings_kot_995.context = 'tags' [0m
 Completed in 149ms (View: 98, DB: 3) | 200 OK [http://localhost/zdjecia?search=kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-13 22:07:06) [GET]
+  [4;36;1mZdjecie Load (2.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 143ms (View: 97, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-13 22:07:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mZdjecie Load (1.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 3) [0m
+  [4;36;1mKomentarz Load (1.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mTag Load (1.2ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 3) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 3) [0m
+Rendered komentarze/_komentarz (17.5ms)
+Completed in 168ms (View: 106, DB: 3) | 200 OK [http://localhost/zdjecia/3]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-13 22:07:11) [GET]
+  [4;35;1mZdjecie Load (2.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 148ms (View: 101, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-13 22:12:58) [GET]
+  Parameters: {"search"=>"rower"}
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'rower') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_rower_148 ON zdjecia_taggings_rower_148.taggable_id = zdjecia.id AND zdjecia_taggings_rower_148.taggable_type = 'Zdjecie' AND zdjecia_taggings_rower_148.tag_id = 7 AND zdjecia_taggings_rower_148.context = 'tags' [0m
+Completed in 118ms (View: 70, DB: 2) | 200 OK [http://localhost/zdjecia?search=rower]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-13 22:13:01) [GET]
+  [4;36;1mZdjecie Load (3.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+Completed in 152ms (View: 106, DB: 3) | 200 OK [http://localhost/]

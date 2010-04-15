@@ -3,11 +3,22 @@ class ZdjeciaController < ApplicationController
   def index
     if params[:search]
       @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
+      tag_cloud
     else
       @zdjecia = Zdjecie.all
+      tag_cloud
     end
-end
+  end
   
+  def tag
+    @zdjecia = Zdjecie.tagged_with(params[:id], :on => :tags)
+    tag_cloud
+  end
+
+  def tag_cloud
+    @tags = Zdjecie.tag_counts_on(:tags)
+  end  
+
   def show
     @zdjecie = Zdjecie.find(params[:id])
     @komentarze = @zdjecie.komentarze.all

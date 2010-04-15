@@ -8,10 +8,11 @@
 * Komentarze do zdjęć
 * Tagowanie zdjęć
 * Wyszukiwanie zdjęć po tagach
+* Kazdy tag w edycji zdjecia powinien byc odnośnikiem do strony z listą zdjęć zawierającą ten tag
+* Chmura tagów
 
 ## Do zrobienia:
 
-* Chmura tagów
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
 * Grupy użytkowników

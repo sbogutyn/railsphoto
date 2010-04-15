@@ -19,7 +19,9 @@
 
 <p>
 <strong>Tagi:</strong>
-<%=h @zdjecie.tag_list %>
+<% for tag in @zdjecie.tag_list %>
+  <%= link_to tag, :controller => "zdjecia", :search => tag %>
+<% end %>
 </p>
 
 <h2> Komentarze: </h2>

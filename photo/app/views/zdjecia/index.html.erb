@@ -10,6 +10,9 @@
   </p>
 <% end %>
 
+<% for tag in @tags %>
+  <%= link_to tag.name, { :search => tag.name } %>
+<% end %>
 
 <ul>
 <% for zdjecie in @zdjecia %>

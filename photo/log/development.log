@@ -9917,3 +9917,74 @@ Rendering zdjecia/index
   [4;36;1mTag Load (1.9ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
   [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_komputer_755 ON zdjecia_taggings_komputer_755.taggable_id = zdjecia.id AND zdjecia_taggings_komputer_755.taggable_type = 'Zdjecie' AND zdjecia_taggings_komputer_755.tag_id = 6 AND zdjecia_taggings_komputer_755.context = 'tags' [0m
 Completed in 132ms (View: 83, DB: 4) | 200 OK [http://localhost/zdjecia?search=komputer]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-15 22:52:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (2.5ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (6.8ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mTag Load (3.1ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (1358.4ms)
+Rendered komentarze/_komentarz (3.9ms)
+Rendered komentarze/_komentarz (3.9ms)
+Completed in 3333ms (View: 2478, DB: 12) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-15 22:53:45) [GET]
+  [4;36;1mZdjecie Load (19.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (5.0ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 1123ms (View: 873, DB: 25) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-15 22:54:03) [GET]
+  Parameters: {"search"=>"komputer"}
+  [4;36;1mTag Load (1.3ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'komputer') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (21.9ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (3.3ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_komputer_975 ON zdjecia_taggings_komputer_975.taggable_id = zdjecia.id AND zdjecia_taggings_komputer_975.taggable_type = 'Zdjecie' AND zdjecia_taggings_komputer_975.tag_id = 6 AND zdjecia_taggings_komputer_975.context = 'tags' [0m
+Completed in 865ms (View: 513, DB: 26) | 200 OK [http://localhost/zdjecia?search=komputer]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-15 22:54:09) [GET]
+  Parameters: {"search"=>"kot"}
+  [4;35;1mTag Load (10.0ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (3.9ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (12.9ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_kot_661 ON zdjecia_taggings_kot_661.taggable_id = zdjecia.id AND zdjecia_taggings_kot_661.taggable_type = 'Zdjecie' AND zdjecia_taggings_kot_661.tag_id = 1 AND zdjecia_taggings_kot_661.context = 'tags' [0m
+Completed in 637ms (View: 442, DB: 27) | 200 OK [http://localhost/zdjecia?search=kot]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-15 22:54:12) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 8) [0m
+  [4;35;1mKomentarz Load (1.2ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mTag Load (1.8ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Completed in 872ms (View: 344, DB: 5) | 200 OK [http://localhost/zdjecia/8]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-15 22:54:16) [GET]
+  Parameters: {"search"=>"kot"}
+  [4;36;1mTag Load (10.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (9.5ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (10.2ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_kot_862 ON zdjecia_taggings_kot_862.taggable_id = zdjecia.id AND zdjecia_taggings_kot_862.taggable_type = 'Zdjecie' AND zdjecia_taggings_kot_862.tag_id = 1 AND zdjecia_taggings_kot_862.context = 'tags' [0m
+Completed in 678ms (View: 472, DB: 30) | 200 OK [http://localhost/zdjecia?search=kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-15 22:54:25) [GET]
+  [4;35;1mZdjecie Load (29.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (3.1ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 688ms (View: 421, DB: 33) | 200 OK [http://localhost/]

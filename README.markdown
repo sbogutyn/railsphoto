@@ -16,6 +16,10 @@
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
 * Grupy użytkowników
+* Dodawanie znajomych
+* Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
+* Zmiana rozmiaru zdjęcia podczas dodawania (użyć jCrop)
+* Dostosowanie wyglądu strony do szablonu css
 * Kategorie zdjęć
 * System wiadomości
 * Geolokalizacja

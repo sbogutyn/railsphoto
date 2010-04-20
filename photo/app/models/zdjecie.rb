@@ -6,4 +6,5 @@ class Zdjecie < ActiveRecord::Base
         :small  => "300x300>",
     }
     has_many :komentarze
+    ajaxful_rateable :dimensions => [:ocena], :allow_update => true
 end

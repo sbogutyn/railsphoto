@@ -10,6 +10,7 @@
 * Wyszukiwanie zdjęć po tagach
 * Kazdy tag w edycji zdjecia powinien byc odnośnikiem do strony z listą zdjęć zawierającą ten tag
 * Chmura tagów
+* Ocenianie zdjęć (zalogowany użytkownik może oceniać zdjęcia)
 
 ## Do zrobienia:
 

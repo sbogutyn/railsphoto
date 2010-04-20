@@ -1,6 +1,7 @@
 <% title "Zdjęcia" %>
 <% content_for :head do %>
     <%= stylesheet_link_tag 'zdjecia' %>
+    <%= ajaxful_rating_style %>  
 <% end %>
 
 <% form_tag zdjecia_path, :method => 'get' do %>

@@ -5,6 +5,12 @@
   <%=h @zdjecie.opis %>
 </p>
 <p>
+<%= ratings_for @zdjecie, :dimension => :ocena %>
+</p>
+<% if current_user %>
+  Twoja ocena: <%= ratings_for @zdjecie, :force_static => true, :dimension => :ocena, :small => true, :show_user_rating => true %>
+<% end %>
+<p>
     <% if @zdjecie.photo.exists? %>
     <p><%= image_tag @zdjecie.photo.url(:small) %></p>
     <% else %>

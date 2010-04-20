@@ -125,3 +125,9 @@ pl:
     array:
       sentence_connector: "i"
       skip_last_comma: true
+
+  ajaxful_rating:
+    helper:
+      global_average: "Średnia ocena: {{value}} na {{max}}"
+      user_rating: "Twoja ocena: {{value}} na {{max}}"
+      hover: "Oceń na {{value}} z {{max}}"

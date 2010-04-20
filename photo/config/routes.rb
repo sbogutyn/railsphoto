@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :zdjecia, :has_many => :komentarze
   map.resources :uzytkownicy
+  map.resources :zdjecia, :member => {:rate => :post} 
   
   # Logowanie
   map.login 'login', :controller => 'uzytkownik_sessions', :action => 'new'

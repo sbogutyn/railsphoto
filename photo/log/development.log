@@ -13796,3 +13796,412 @@ Rendering template within layouts/application
 Rendering zdjecia/index
   [4;36;1mTag Load (2.1ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
 Completed in 208ms (View: 129, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:09:22) [GET]
+  [4;36;1mZdjecie Load (6.2ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (3.9ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 652ms (View: 361, DB: 10) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-21 18:09:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mZdjecie Load (11.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 2) [0m
+  [4;35;1mKomentarz Load (2.9ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 2 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mTag Load (1.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 2) [0m
+Rendered komentarze/_komentarz (455.3ms)
+Rendered komentarze/_komentarz (3.4ms)
+Rendered komentarze/_komentarz (2.7ms)
+Completed in 1152ms (View: 910, DB: 18) | 200 OK [http://localhost/zdjecia/2]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:09:44) [GET]
+  [4;36;1mZdjecie Load (8.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (3.6ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 740ms (View: 469, DB: 12) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-21 18:09:47) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+  [4;35;1mKomentarz Load (0.7ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 7) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mTag Load (1.4ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 7) [0m
+Completed in 836ms (View: 421, DB: 7) | 200 OK [http://localhost/zdjecia/7]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:09:52) [GET]
+  [4;36;1mZdjecie Load (5.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (3.5ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 541ms (View: 291, DB: 9) | 200 OK [http://localhost/]
+
+
+Processing UzytkownikSessionsController#new (for 127.0.0.1 at 2010-04-21 18:09:56) [GET]
+Rendering template within layouts/application
+Rendering uzytkownik_sessions/new
+Completed in 252ms (View: 141, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UzytkownikSessionsController#create (for 127.0.0.1 at 2010-04-21 18:10:02) [POST]
+  Parameters: {"uzytkownik_session"=>{"password"=>"tajne", "login"=>"slawek"}, "commit"=>"Zaloguj", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo="}
+  [4;36;1mUzytkownik Load (2.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE (LOWER("uzytkownicy".login) = 'slawek') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 1123ms (DB: 2) | 302 Found [http://localhost/uzytkownik_sessions]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:10:04) [GET]
+  [4;35;1mZdjecie Load (7.3ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (3.0ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mUzytkownik Load (2.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 941ms (View: 655, DB: 12) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-21 18:10:11) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 8) [0m
+  [4;35;1mKomentarz Load (0.8ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mUzytkownik Load (2.1ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mRate Load (0.7ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mTag Load (1.6ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Completed in 960ms (View: 653, DB: 9) | 200 OK [http://localhost/zdjecia/8]
+
+
+Processing ZdjeciaController#rate (for 127.0.0.1 at 2010-04-21 18:10:22) [POST]
+  Parameters: {"small"=>"false", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"8", "stars"=>"5", "dimension"=>"ocena", "show_user_rating"=>"false"}
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 8) [0m
+  [4;35;1mUzytkownik Load (2.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;36;1mRate Load (0.8ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mRate Create (1.7ms)[0m   [0mINSERT INTO "rates" ("rateable_type", "created_at", "rateable_id", "rater_id", "updated_at", "stars", "dimension") VALUES('Zdjecie', '2010-04-21 16:10:22', 8, 1, '2010-04-21 16:10:22', 5, 'ocena')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mRate Load (2.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+Completed in 660ms (View: 264, DB: 11) | 200 OK [http://localhost/zdjecia/8/rate]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:10:29) [GET]
+  [4;35;1mZdjecie Load (19.4ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (3.5ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mUzytkownik Load (2.3ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 520ms (View: 359, DB: 25) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-21 18:10:33) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 8) [0m
+  [4;35;1mKomentarz Load (0.9ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mUzytkownik Load (41.7ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mRate Load (2.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 8 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 8) [0m
+Completed in 1037ms (View: 594, DB: 50) | 200 OK [http://localhost/zdjecia/8]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:10:43) [GET]
+  [4;36;1mZdjecie Load (6.1ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (3.2ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mUzytkownik Load (2.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 764ms (View: 486, DB: 11) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-21 18:10:48) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mZdjecie Load (1.9ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 9) [0m
+  [4;36;1mKomentarz Load (0.7ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 9) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mUzytkownik Load (1.6ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mRate Load (0.9ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mTag Load (1.8ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 9) [0m
+Completed in 1186ms (View: 705, DB: 9) | 200 OK [http://localhost/zdjecia/9]
+
+
+Processing ZdjeciaController#rate (for 127.0.0.1 at 2010-04-21 18:10:53) [POST]
+  Parameters: {"small"=>"false", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"9", "stars"=>"3", "dimension"=>"ocena", "show_user_rating"=>"false"}
+  [4;35;1mZdjecie Load (2.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 9) [0m
+  [4;36;1mUzytkownik Load (2.1ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;35;1mRate Load (0.7ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mRate Create (1.3ms)[0m   [0;1mINSERT INTO "rates" ("rateable_type", "created_at", "rateable_id", "rater_id", "updated_at", "stars", "dimension") VALUES('Zdjecie', '2010-04-21 16:10:53', 9, 1, '2010-04-21 16:10:53', 3, 'ocena')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mRate Load (2.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+Completed in 444ms (View: 148, DB: 11) | 200 OK [http://localhost/zdjecia/9/rate]
+
+
+Processing ZdjeciaController#rate (for 127.0.0.1 at 2010-04-21 18:10:58) [POST]
+  Parameters: {"small"=>"false", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"9", "stars"=>"3", "dimension"=>"ocena", "show_user_rating"=>"false"}
+  [4;36;1mZdjecie Load (2.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 9) [0m
+  [4;35;1mUzytkownik Load (2.2ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;36;1mRate Load (1.7ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+Completed in 941ms (View: 154, DB: 9) | 200 OK [http://localhost/zdjecia/9/rate]
+
+
+Processing ZdjeciaController#rate (for 127.0.0.1 at 2010-04-21 18:11:04) [POST]
+  Parameters: {"small"=>"false", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"9", "stars"=>"4", "dimension"=>"ocena", "show_user_rating"=>"false"}
+  [4;35;1mZdjecie Load (2.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 9) [0m
+  [4;36;1mUzytkownik Load (2.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;35;1mRate Load (2.2ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mRate Update (1.0ms)[0m   [0mUPDATE "rates" SET "updated_at" = '2010-04-21 16:11:04', "stars" = 4 WHERE "id" = 8[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mRate Load (3.2ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+Completed in 749ms (View: 282, DB: 12) | 200 OK [http://localhost/zdjecia/9/rate]
+
+
+Processing ZdjeciaController#rate (for 127.0.0.1 at 2010-04-21 18:11:08) [POST]
+  Parameters: {"small"=>"false", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"9", "stars"=>"3", "dimension"=>"ocena", "show_user_rating"=>"false"}
+  [4;35;1mZdjecie Load (2.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 9) [0m
+  [4;36;1mUzytkownik Load (2.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;35;1mRate Load (2.6ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mRate Update (0.6ms)[0m   [0mUPDATE "rates" SET "updated_at" = '2010-04-21 16:11:08', "stars" = 3 WHERE "id" = 8[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mRate Load (1.9ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+Completed in 427ms (View: 127, DB: 10) | 200 OK [http://localhost/zdjecia/9/rate]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:11:12) [GET]
+  [4;35;1mZdjecie Load (5.1ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (2.8ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mUzytkownik Load (2.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 558ms (View: 377, DB: 10) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-04-21 18:11:16) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 9) [0m
+  [4;35;1mKomentarz Load (0.8ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 9) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mUzytkownik Load (1.5ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mRate Load (3.7ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 9 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mTag Load (1.9ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 9) [0m
+Completed in 933ms (View: 531, DB: 12) | 200 OK [http://localhost/zdjecia/9]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-04-21 18:11:23) [GET]
+  [4;36;1mZdjecie Load (54.6ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (4.6ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mUzytkownik Load (2.1ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."id" = '1') LIMIT 1[0m
+Completed in 494ms (View: 299, DB: 61) | 200 OK [http://localhost/]

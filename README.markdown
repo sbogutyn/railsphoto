@@ -11,11 +11,11 @@
 * Kazdy tag w edycji zdjecia powinien byc odnośnikiem do strony z listą zdjęć zawierającą ten tag
 * Chmura tagów
 * Ocenianie zdjęć (zalogowany użytkownik może oceniać zdjęcia)
+* Tworzenie galerii
+* Dodawanie zdjęć do galerii
 
 ## Do zrobienia:
 
-* Tworzenie galerii
-* Dodawanie zdjęć do galerii
 * Grupy użytkowników
 * Dodawanie znajomych
 * Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :galerie
+
 
   map.resources :zdjecia, :has_many => :komentarze
   map.resources :uzytkownicy
@@ -40,7 +42,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "zdjecia"
+  map.root :controller => "galerie"
 
   # See how all your routes lay out with "rake routes"
 

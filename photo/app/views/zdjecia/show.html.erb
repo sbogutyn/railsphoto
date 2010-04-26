@@ -3,6 +3,7 @@
 <p>
   <strong>Opis:</strong>
   <%=h @zdjecie.opis %>
+
 </p>
 <p>
 <%= ratings_for @zdjecie, :dimension => :ocena %>
@@ -18,9 +19,9 @@
     <% end %>
 </p>
 <p>
-  <%= link_to "Edycja", edit_zdjecie_path(@zdjecie) %> |
-  <%= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> |
-  <%= link_to "Pokaż wszystkie", zdjecia_path %>
+  <%= link_to "Edycja", edit_zdjecie_path(@zdjecie) %> 
+  <%#= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> |
+  <%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %>
 </p>
 
 <p>

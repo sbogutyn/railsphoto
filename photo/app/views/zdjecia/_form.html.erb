@@ -4,6 +4,7 @@
     <%= f.label :opis %><br />
     <%= f.text_field :opis %>
   </p>
+  
   <p>
     <%= f.label 'Zdjęcie' %><br />
     <%= f.file_field :photo %>
@@ -11,6 +12,9 @@
   <p>
     <%= f.label 'Tagi (oddzielone przecinkiem):' %><br />
     <%= f.text_field :tag_list %>
+	<%#ponizej: numer galerii, do ktorej nalezy zdjecie %>
+	<%= f.hidden_field :galeria_id, :value => params[:nr_galerii] %>
+
   </p>
   <p><%= f.submit "Utwórz" %></p>
 <% end %>

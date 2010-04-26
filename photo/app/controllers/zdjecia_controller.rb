@@ -41,7 +41,7 @@ class ZdjeciaController < ApplicationController
     @zdjecie = Zdjecie.new(params[:zdjecie])
     if @zdjecie.save
       flash[:notice] = "Pomyślnie dodano zdjęcie!"
-      redirect_to @zdjecie
+      redirect_to galerie_url
     else
       render :action => 'new'
     end
@@ -67,4 +67,5 @@ class ZdjeciaController < ApplicationController
     flash[:notice] = "Zdjęcie zostało zniszczone."
     redirect_to zdjecia_url
   end
+  
 end

@@ -1,0 +1,9 @@
+one:
+  nazwa: MyString
+  autor: MyString
+  opis: MyText
+
+two:
+  nazwa: MyString
+  autor: MyString
+  opis: MyText

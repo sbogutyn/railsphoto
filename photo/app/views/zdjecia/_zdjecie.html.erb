@@ -1,0 +1,32 @@
+<%# widok czesciowy, potrzebny do pokazania lub do skasowania zdjec nalezacych do danej galerii%>
+
+
+<% div_for zdjecie do %>
+
+<p>
+    <% if zdjecie.photo.exists? %>
+	<p><a href="<%= zdjecie_path zdjecie.id %>"><%= image_tag zdjecie.photo.url(:thumb) %></a>
+    <%#= image_tag zdjecie.photo.url(:thumb) %></p>
+    <% else %>
+    <p> Brak zdjęcia, dodaj je. </p>
+    <% end %>
+</p>
+
+    <p>    	
+    <strong>Opis: <%=h zdjecie.opis %></strong><br />
+    <strong>Dodany <%= time_ago_in_words(zdjecie.created_at) %> temu </strong><br />
+
+  <%= link_to "Komentarze, oceny, edycja tego zdjęcia", zdjecie_path(zdjecie) %>
+</p>
+
+ <% if params[:kasowanie] == "tak" %>
+  <p>
+  <%= link_to "Edycja", edit_zdjecie_path(zdjecie) %> |
+  <%= link_to "Usuń", zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> |
+  <%= link_to "Pokaż wszystkie", zdjecia_path %>
+  </p>
+ <% end %>
+	
+	
+	
+  <% end %>

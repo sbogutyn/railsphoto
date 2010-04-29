@@ -6,10 +6,20 @@
 
 <% form_tag zdjecia_path, :method => 'get' do %>
   <p>
+  <%= text_field_tag :szukaj_opisu, params[:szukaj_opisu] %>
+  <%= submit_tag "Szukaj zdjęć według ich opisu", :name => nil %>
+  </p>
+<% end %>
+
+
+<!--
+<% form_tag zdjecia_path, :method => 'get' do %>
+  <p>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Szukaj", :name => nil %>
   </p>
 <% end %>
+-->
 
 <% for tag in @tags %>
   <%= link_to tag.name, { :search => tag.name } %>

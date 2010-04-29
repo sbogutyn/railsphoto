@@ -13,9 +13,11 @@
 * Ocenianie zdjęć (zalogowany użytkownik może oceniać zdjęcia)
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
+* Wyszukiwanie zdjęć po opisach
 
 ## Do zrobienia:
 
+* Na liście galerii poza nazwą i opisem powinien sie pokazywać 1 obrazek reprezentujący daną galerie (może to być pierwszy obrazek z galerii lub z najwyższą oceną)
 * Grupy użytkowników
 * Dodawanie znajomych
 * Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami

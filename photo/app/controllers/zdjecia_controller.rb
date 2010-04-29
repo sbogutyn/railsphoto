@@ -1,14 +1,25 @@
 class ZdjeciaController < ApplicationController
 
   def index
+    # wyszukiwanie: wedlug tagow, potem wedlug opisow, jezeli szukana fraza nie jest pusta
     if params[:search]
       @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
+      tag_cloud
+    elsif params[:szukaj_opisu]
+      if params[:szukaj_opisu].length == 0
+        flash[:notice] = "Nie znaleziono żadnego zdjęcia, należy wpisać jakiś tekst do wyszukiwarki!"
+        redirect_to galerie_path       
+      end
+      @zdjecia = Zdjecie.find(:all, :conditions => [ "opis LIKE ?","%" + params[:szukaj_opisu] +"%"]) 
       tag_cloud
     else
       @zdjecia = Zdjecie.all
       tag_cloud
     end
   end
+
+  
+  
   
   def tag
     @zdjecia = Zdjecie.tagged_with(params[:id], :on => :tags)

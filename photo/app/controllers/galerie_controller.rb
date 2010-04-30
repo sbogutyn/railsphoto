@@ -37,7 +37,7 @@ class GalerieController < ApplicationController
   def create
     @galeria = Galeria.new(params[:galeria])
     if @galeria.save
-      flash[:notice] = "Successfully created galeria."
+      flash[:notice] = "Utworzono nową galerię."
       redirect_to @galeria
     else
       render :action => 'new'
@@ -51,7 +51,7 @@ class GalerieController < ApplicationController
   def update
     @galeria = Galeria.find(params[:id])
     if @galeria.update_attributes(params[:galeria])
-      flash[:notice] = "Successfully updated galeria."
+      flash[:notice] = "Zaktualizowano galerię."
       redirect_to @galeria
     else
       render :action => 'edit'
@@ -61,7 +61,7 @@ class GalerieController < ApplicationController
   def destroy
     @galeria = Galeria.find(params[:id])
     @galeria.destroy
-    flash[:notice] = "Successfully destroyed galeria."
+    flash[:notice] = "Usunięto galerię."
     redirect_to galerie_url
   end
   

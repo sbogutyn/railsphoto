@@ -13,6 +13,8 @@
 * Ocenianie zdjęć (zalogowany użytkownik może oceniać zdjęcia)
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
+* Pokazywanie pierwszego zdjęcia z galerii w spisie głównym
+* Link "Pokaż całą tę galerię" przy poszczególnym zdjęciu
 
 ## Do zrobienia:
 

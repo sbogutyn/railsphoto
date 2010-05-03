@@ -17,14 +17,18 @@
 * Pokazywanie pierwszego zdjęcia z galerii w spisie głównym
 * Link "Pokaż całą tę galerię" przy poszczególnym zdjęciu
 
-## Do zrobienia:
+## Aktualnie wykonywane:
 
-* Na liście galerii poza nazwą i opisem powinien sie pokazywać 1 obrazek reprezentujący daną galerie (może to być pierwszy obrazek z galerii lub z najwyższą oceną)
-* Grupy użytkowników
-* Dodawanie znajomych
-* Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
 * Zmiana rozmiaru zdjęcia podczas dodawania (użyć jCrop)
 * Dostosowanie wyglądu strony do szablonu css
+
+## Do zrobienia:
+
+* Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
+* Dodawanie komentarzy przez zalogowanych użytkowników bez podawania autora (automatyczne rozpoznawanie), niezalogowani bez zmian
 * Kategorie zdjęć
+* Grupy użytkowników
+* Dodawanie znajomych
 * System wiadomości
+* Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii, znajomych, wiadomośći
 * Geolokalizacja

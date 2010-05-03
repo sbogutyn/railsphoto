@@ -49587,3 +49587,17 @@ Rendering zdjecia/index
   [4;35;1mTag Load (4.0ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
   [4;36;1mUzytkownik Load (24.0ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
 Completed in 788ms (View: 548, DB: 36) | 200 OK [http://localhost/zdjecia?szukaj_opisu=mi%C5%9B]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-03 20:32:19) [GET]
+  [4;36;1mGaleria Load (8.0ms)[0m   [0;1mSELECT * FROM "galerie" [0m
+  [4;35;1mZdjecie Load (12.0ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;36;1mTag Load (12.0ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (0.0ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (0.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (4.0ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;36;1mZdjecie Load (4.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;35;1mUzytkownik Load (0.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+Completed in 1149ms (View: 640, DB: 40) | 200 OK [http://localhost/]

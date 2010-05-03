@@ -14,6 +14,8 @@
 * Tworzenie galerii
 * Dodawanie zdjęć do galerii
 * Wyszukiwanie zdjęć po opisach
+* Pokazywanie pierwszego zdjęcia z galerii w spisie głównym
+* Link "Pokaż całą tę galerię" przy poszczególnym zdjęciu
 
 ## Do zrobienia:
 

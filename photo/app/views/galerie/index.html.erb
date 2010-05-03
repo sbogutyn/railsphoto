@@ -1,11 +1,5 @@
 <% title "Galerie zdjęć" %>
 
-<% content_for :head do %>
-    <%= stylesheet_link_tag 'zdjecia' %>
-    <%= ajaxful_rating_style %>  
-<% end %>
-
-
 <% form_tag zdjecia_path, :method => 'get' do %>
   <p>
   <%= text_field_tag :szukaj_opisu, params[:szukaj_opisu] %>
@@ -35,12 +29,19 @@ Szukaj zdjęć według tagów:<br>
     <th>Nazwa</th>
     <th>Autor</th>
     <th>Opis</th>
+	<td span="6"></td>
   </tr>
   <% for galeria in @galerie %>
     <tr>
       <td><%=h galeria.nazwa %></td>
       <td><%=h galeria.autor %></td>
       <td><%=h galeria.opis %></td>
+	  <td>
+	  	<%# pokazanie pierwszego zdjecia z galerii %>
+	  	<%if galeria.zdjecia.exists? %>
+	  	<%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb) %>
+		<%end %>
+	  </td>
       <td><%= link_to "Pokaż galerię", galeria %></td>
       <td><%= link_to "Edytuj opis galerii", edit_galeria_path(galeria) %></td>
       <td><%= link_to "Usuń galerię", galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %></td>

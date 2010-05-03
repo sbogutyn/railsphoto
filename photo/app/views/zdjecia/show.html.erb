@@ -1,4 +1,4 @@
-<% title "Zdjecie" %>
+<% title "Zdjęcie" %>
 
 <p>
   <strong>Opis:</strong>
@@ -13,7 +13,7 @@
 <% end %>
 <p>
     <% if @zdjecie.photo.exists? %>
-    <p><%= image_tag @zdjecie.photo.url(:small) %></p>
+    <p><%= image_tag @zdjecie.photo.url %></p>
     <% else %>
     <p> Brak zdjęcia, dodaj je. </p>
     <% end %>
@@ -23,7 +23,9 @@
   <%#= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> |
   <%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %>
 </p>
-
+<p> 
+  <%= link_to "Pokaż całą tę galerię", { :controller => "galerie", :action => "show", :id => @zdjecie.galeria_id} %>
+</p>
 <p>
 <strong>Tagi:</strong>
 <% for tag in @zdjecie.tag_list %>
@@ -47,4 +49,3 @@
     </p>
     <p> <%= f.submit "Dodaj komentarz" %> <p> 
 <% end %>
-

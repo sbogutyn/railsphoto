@@ -9,11 +9,11 @@
     <tr>
       <td><%=h komentarz.autor %></td>
       <td><%=h komentarz.tresc %></td>
-      <td><%= link_to "Show", komentarz %></td>
-      <td><%= link_to "Edit", edit_komentarz_path(komentarz) %></td>
-      <td><%= link_to "Destroy", komentarz, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Pokaż", komentarz %></td>
+      <td><%= link_to "Edytuj", edit_komentarz_path(komentarz) %></td>
+      <td><%= link_to "Usuń", komentarz, :confirm => 'Na pewno usunąć?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Komentarz", new_komentarz_path %></p>
+<p><%= link_to "Nowy Komentarz", new_komentarz_path %></p>

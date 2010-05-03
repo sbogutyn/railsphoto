@@ -10,7 +10,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_komentarz_path(@komentarz) %> |
-  <%= link_to "Destroy", @komentarz, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", komentarze_path %>
+  <%= link_to "Edytuj", edit_komentarz_path(@komentarz) %> |
+  <%= link_to "Usuń komentarz", @komentarz, :confirm => 'Na pewno usunąć ten komentarz?', :method => :delete %> |
+  <%= link_to "Pokaż wszystkie komentarze", komentarze_path %>
 </p>

@@ -1,0 +1,32 @@
+<% title "Przytnij zdjęcie" %>  
+  <% content_for (:head) do %>  
+  <%= stylesheet_link_tag "jquery.Jcrop" %>  
+  <%= javascript_include_tag "jquery.min", "jquery.Jcrop.min" %>  
+  <script type="text/javascript">  
+    function update_crop(coords) {  
+      var ratio = <%= @zdjecie.photo_geometry(:original).width %> / <%= @zdjecie.photo_geometry(:large).width %>;
+      $('#crop_x').val(Math.round(coords.x * ratio));  
+      $('#crop_y').val(Math.round(coords.y * ratio));  
+      $('#crop_w').val(Math.round(coords.w * ratio));  
+      $('#crop_h').val(Math.round(coords.h * ratio));  
+    }    
+
+    $(function() {  
+      $('#cropbox').Jcrop({  
+        onChange: update_crop,  
+        onSelect: update_crop,  
+        aspectRatio: 1  
+      });  
+    });
+
+ </script>  
+  <% end %>  
+
+  <%= image_tag @zdjecie.photo.url(:large), :id => "cropbox" %> 
+  
+  <% form_for @zdjecie do |form| %>  
+    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+      <%= form.hidden_field attribute, :id => attribute %>  
+    <% end %>  
+    <p><%= form.submit "Przytnij" %></p>  
+  <% end %>  

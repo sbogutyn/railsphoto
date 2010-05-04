@@ -16,10 +16,10 @@
 * Wyszukiwanie zdjęć po opisach
 * Pokazywanie pierwszego zdjęcia z galerii w spisie głównym
 * Link "Pokaż całą tę galerię" przy poszczególnym zdjęciu
+* Zmiana rozmiaru zdjęcia podczas dodawania (użyć jCrop)
 
 ## Aktualnie wykonywane:
 
-* Zmiana rozmiaru zdjęcia podczas dodawania (użyć jCrop)
 * Dostosowanie wyglądu strony do szablonu css
 
 ## Do zrobienia:

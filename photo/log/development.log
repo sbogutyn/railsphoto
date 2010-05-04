@@ -49601,3 +49601,920 @@ Rendering galerie/index
   [4;36;1mZdjecie Load (4.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
   [4;35;1mUzytkownik Load (0.0ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
 Completed in 1149ms (View: 640, DB: 40) | 200 OK [http://localhost/]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-04 22:52:09) [GET]
+  [4;36;1mGaleria Load (5.0ms)[0m   [0;1mSELECT * FROM "galerie" [0m
+  [4;35;1mZdjecie Load (6.6ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;36;1mTag Load (4.4ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (0.8ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (1.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (0.8ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;36;1mZdjecie Load (2.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+Completed in 547ms (View: 336, DB: 21) | 200 OK [http://localhost/]
+
+
+Processing GalerieController#show (for 127.0.0.1 at 2010-05-04 22:52:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mGaleria Load (1.6ms)[0m   [0mSELECT * FROM "galerie" WHERE ("galerie"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering galerie/show
+  [4;36;1mZdjecie Load (2.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) [0m
+Rendered zdjecia/_zdjecie (220.6ms)
+Rendered zdjecia/_zdjecie (10.9ms)
+Rendered zdjecia/_zdjecie (11.5ms)
+Rendered zdjecia/_zdjecie (8.7ms)
+Completed in 467ms (View: 436, DB: 4) | 200 OK [http://localhost/galerie/1]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 22:52:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+  [4;36;1mKomentarz Load (1.1ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.2ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 1) [0m
+Rendered komentarze/_komentarz (6.2ms)
+Completed in 322ms (View: 229, DB: 5) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:52:35) [GET]
+  [4;35;1mZdjecie Load (2.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (2.2ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 468ms (View: 150, DB: 5) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 22:52:39) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 5) [0m
+  [4;36;1mKomentarz Load (0.6ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 5) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 5 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.2ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 5) [0m
+Completed in 253ms (View: 166, DB: 4) | 200 OK [http://localhost/zdjecia/5]
+
+
+Processing GalerieController#show (for 127.0.0.1 at 2010-05-04 22:52:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mGaleria Load (1.1ms)[0m   [0mSELECT * FROM "galerie" WHERE ("galerie"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering galerie/show
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) [0m
+Rendered zdjecia/_zdjecie (24.2ms)
+Completed in 193ms (View: 156, DB: 2) | 200 OK [http://localhost/galerie/2]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-04 22:52:50) [GET]
+  [4;35;1mGaleria Load (3.5ms)[0m   [0mSELECT * FROM "galerie" [0m
+  [4;36;1mZdjecie Load (5.9ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;35;1mTag Load (2.3ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (0.9ms)[0m   [0;1mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.1ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (0.8ms)[0m   [0;1mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+Completed in 563ms (View: 237, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:00) [GET]
+  Parameters: {"search"=>"pies i kot"}
+  [4;36;1mTag Load (0.9ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'pies i kot') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (2.1ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (1.3ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_piesikot_202 ON zdjecia_taggings_piesikot_202.taggable_id = zdjecia.id AND zdjecia_taggings_piesikot_202.taggable_type = 'Zdjecie' AND zdjecia_taggings_piesikot_202.tag_id = 1 AND zdjecia_taggings_piesikot_202.context = 'tags' [0m
+Completed in 188ms (View: 107, DB: 4) | 200 OK [http://localhost/zdjecia?search=pies+i+kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:04) [GET]
+  Parameters: {"search"=>"pies i kot"}
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'pies i kot') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (2.2ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_piesikot_118 ON zdjecia_taggings_piesikot_118.taggable_id = zdjecia.id AND zdjecia_taggings_piesikot_118.taggable_type = 'Zdjecie' AND zdjecia_taggings_piesikot_118.tag_id = 1 AND zdjecia_taggings_piesikot_118.context = 'tags' [0m
+Completed in 192ms (View: 108, DB: 4) | 200 OK [http://localhost/zdjecia?search=pies+i+kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:06) [GET]
+  Parameters: {"search"=>"pies"}
+  [4;36;1mTag Load (1.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'pies') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (2.1ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (1.3ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_pies_669 ON zdjecia_taggings_pies_669.taggable_id = zdjecia.id AND zdjecia_taggings_pies_669.taggable_type = 'Zdjecie' AND zdjecia_taggings_pies_669.tag_id = 2 AND zdjecia_taggings_pies_669.context = 'tags' [0m
+Completed in 428ms (View: 352, DB: 5) | 200 OK [http://localhost/zdjecia?search=pies]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:09) [GET]
+  Parameters: {"search"=>"pies"}
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'pies') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (2.1ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_pies_197 ON zdjecia_taggings_pies_197.taggable_id = zdjecia.id AND zdjecia_taggings_pies_197.taggable_type = 'Zdjecie' AND zdjecia_taggings_pies_197.tag_id = 2 AND zdjecia_taggings_pies_197.context = 'tags' [0m
+Completed in 179ms (View: 102, DB: 4) | 200 OK [http://localhost/zdjecia?search=pies]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:11) [GET]
+  Parameters: {"search"=>"kot"}
+  [4;36;1mTag Load (0.9ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (5.5ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_kot_745 ON zdjecia_taggings_kot_745.taggable_id = zdjecia.id AND zdjecia_taggings_kot_745.taggable_type = 'Zdjecie' AND zdjecia_taggings_kot_745.tag_id = 3 AND zdjecia_taggings_kot_745.context = 'tags' [0m
+Completed in 205ms (View: 118, DB: 8) | 200 OK [http://localhost/zdjecia?search=kot]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:14) [GET]
+  Parameters: {"search"=>"mi\305\233"}
+  [4;35;1mTag Load (1.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'miś') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (2.1ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (6.2ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_mi_210 ON zdjecia_taggings_mi_210.taggable_id = zdjecia.id AND zdjecia_taggings_mi_210.taggable_type = 'Zdjecie' AND zdjecia_taggings_mi_210.tag_id = 5 AND zdjecia_taggings_mi_210.context = 'tags' [0m
+Completed in 187ms (View: 109, DB: 10) | 200 OK [http://localhost/zdjecia?search=mi%C5%9B]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 22:53:17) [GET]
+  Parameters: {"search"=>"rower"}
+  [4;36;1mTag Load (0.9ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'rower') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (2.7ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (1.3ms)[0m   [0;1mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_rower_433 ON zdjecia_taggings_rower_433.taggable_id = zdjecia.id AND zdjecia_taggings_rower_433.taggable_type = 'Zdjecie' AND zdjecia_taggings_rower_433.tag_id = 6 AND zdjecia_taggings_rower_433.context = 'tags' [0m
+Completed in 182ms (View: 102, DB: 5) | 200 OK [http://localhost/zdjecia?search=rower]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-04 22:53:20) [GET]
+  [4;35;1mGaleria Load (2.3ms)[0m   [0mSELECT * FROM "galerie" [0m
+  [4;36;1mZdjecie Load (2.5ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;35;1mTag Load (2.5ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mZdjecie Load (0.8ms)[0m   [0;1mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (0.8ms)[0m   [0;1mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+Completed in 483ms (View: 157, DB: 11) | 200 OK [http://localhost/]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-04 23:14:27) [GET]
+  [4;36;1mGaleria Load (2.5ms)[0m   [0;1mSELECT * FROM "galerie" [0m
+  [4;35;1mZdjecie Load (2.5ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;36;1mTag Load (2.4ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (1.4ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.4ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+Completed in 345ms (View: 201, DB: 13) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-05-04 23:14:34) [GET]
+  Parameters: {"nr_galerii"=>"1"}
+Rendering template within layouts/application
+Rendering zdjecia/new
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (52.2ms)
+Completed in 230ms (View: 159, DB: 1) | 200 OK [http://localhost/zdjecia/new?nr_galerii=1]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-05-04 23:14:58) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100504-3705-za2l7q-0>, "opis"=>"Kot", "galeria_id"=>"1", "tag_list"=>"kot, szachy"}}
+  [4;36;1mZdjecie Create (1.2ms)[0m   [0;1mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "galeria_id", "photo_content_type") VALUES('2010-05-04 21:15:00', 207292, 'Kot', '2010-05-04 21:15:00', '3262_mieszne_kot.jpg', 1, 'image/jpeg')[0m
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT "tags".id FROM "tags" WHERE ("tags"."name" = 'szachy') LIMIT 1[0m
+  [4;35;1mTag Create (0.5ms)[0m   [0mINSERT INTO "tags" ("name") VALUES('szachy')[0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (3.1ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+  [4;36;1mTagging Load (0.5ms)[0m   [0;1mSELECT "taggings".id FROM "taggings" WHERE ("taggings"."tag_id" = 3 AND "taggings".taggable_type = 'Zdjecie' AND "taggings".taggable_id = 6 AND "taggings".context = 'tags' AND "taggings".tagger_id IS NULL AND "taggings".tagger_type IS NULL) LIMIT 1[0m
+  [4;35;1mTagging Create (1.8ms)[0m   [0mINSERT INTO "taggings" ("tagger_id", "created_at", "tag_id", "taggable_id", "context", "tagger_type", "taggable_type") VALUES(NULL, '2010-05-04 21:15:00', 3, 6, 'tags', NULL, 'Zdjecie')[0m
+  [4;36;1mTagging Load (252.2ms)[0m   [0;1mSELECT "taggings".id FROM "taggings" WHERE ("taggings"."tag_id" = 7 AND "taggings".taggable_type = 'Zdjecie' AND "taggings".taggable_id = 6 AND "taggings".context = 'tags' AND "taggings".tagger_id IS NULL AND "taggings".tagger_type IS NULL) LIMIT 1[0m
+  [4;35;1mTagging Create (0.5ms)[0m   [0mINSERT INTO "taggings" ("tagger_id", "created_at", "tag_id", "taggable_id", "context", "tagger_type", "taggable_type") VALUES(NULL, '2010-05-04 21:15:01', 7, 6, 'tags', NULL, 'Zdjecie')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+Completed in 3347ms (View: 289, DB: 262) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:15:31) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"crop_h"=>"768", "crop_w"=>"768", "crop_x"=>"256", "crop_y"=>"0"}}
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTag Load (0.9ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (9.0ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 4185ms (DB: 12) | 302 Found [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:15:36) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (2.4ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mKomentarz Load (0.6ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 534ms (View: 372, DB: 6) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-05-04 23:17:25) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+  [4;36;1mTag Load (1.2ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (34.7ms)
+Completed in 477ms (View: 405, DB: 2) | 200 OK [http://localhost/zdjecia/6/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:17:38) [PUT]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100504-3705-o0vvit-0>, "opis"=>"Kot", "galeria_id"=>"1", "tag_list"=>"kot, szachy"}}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mTag Load (1.1ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (0.7ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+Completed in 2818ms (View: 469, DB: 4) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:17:59) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"crop_h"=>"733", "crop_w"=>"733", "crop_x"=>"291", "crop_y"=>"29"}}
+  [4;35;1mZdjecie Load (11.7ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+  [4;36;1mTag Load (1.2ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (0.7ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 3506ms (DB: 14) | 302 Found [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:18:03) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (2.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mKomentarz Load (0.6ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (9.3ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mTag Load (9.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 1007ms (View: 291, DB: 22) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-05-04 23:21:46) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (33.3ms)
+Completed in 173ms (View: 95, DB: 3) | 200 OK [http://localhost/zdjecia/6/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:21:56) [PUT]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100504-3705-1elr23o-0>, "opis"=>"Kot", "galeria_id"=>"1", "tag_list"=>"kot, szachy"}}
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;36;1mTag Load (1.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (0.7ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+Completed in 2468ms (View: 139, DB: 4) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:23:25) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"crop_h"=>"639", "crop_w"=>"639", "crop_x"=>"315", "crop_y"=>"39"}}
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+  [4;35;1mTag Load (1.6ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTag Load (4.0ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (0.8ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 2736ms (DB: 8) | 302 Found [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:23:28) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.6ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mKomentarz Load (0.6ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 400ms (View: 268, DB: 8) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-05-04 23:32:23) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+  [4;36;1mTag Load (1.1ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (34.9ms)
+Completed in 177ms (View: 101, DB: 2) | 200 OK [http://localhost/zdjecia/6/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:32:30) [PUT]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100504-3705-3djcbl-0>, "opis"=>"Kot", "galeria_id"=>"1", "tag_list"=>"kot, szachy"}}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mTag Load (1.2ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;35;1mTag Load (1.7ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (1.2ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+Completed in 2476ms (View: 158, DB: 5) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:32:53) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"crop_h"=>"635", "crop_w"=>"635", "crop_x"=>"254", "crop_y"=>"96"}}
+  [4;35;1mZdjecie Load (8.5ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+  [4;36;1mTag Load (2.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (0.7ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 3404ms (DB: 12) | 302 Found [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:32:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mKomentarz Load (0.6ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mSQL (13.1ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mTag Load (17.4ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 466ms (View: 295, DB: 34) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-04 23:42:11) [GET]
+  [4;36;1mGaleria Load (3.4ms)[0m   [0;1mSELECT * FROM "galerie" [0m
+  [4;35;1mZdjecie Load (3.7ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;36;1mTag Load (2.5ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (0.7ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (1.1ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (0.8ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;36;1mZdjecie Load (1.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+Completed in 340ms (View: 200, DB: 13) | 200 OK [http://localhost/]
+
+
+Processing GalerieController#show (for 127.0.0.1 at 2010-05-04 23:42:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mGaleria Load (1.4ms)[0m   [0mSELECT * FROM "galerie" WHERE ("galerie"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering galerie/show
+  [4;36;1mZdjecie Load (3.5ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) [0m
+Rendered zdjecia/_zdjecie (134.4ms)
+Rendered zdjecia/_zdjecie (11.4ms)
+Rendered zdjecia/_zdjecie (9.0ms)
+Rendered zdjecia/_zdjecie (10.7ms)
+Rendered zdjecia/_zdjecie (8.7ms)
+Completed in 383ms (View: 351, DB: 5) | 200 OK [http://localhost/galerie/1]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:42:28) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mKomentarz Load (0.6ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 275ms (View: 185, DB: 5) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:45:05) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mKomentarz Load (0.6ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (2.2ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.2ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 503ms (View: 180, DB: 6) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing GalerieController#show (for 127.0.0.1 at 2010-05-04 23:45:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mGaleria Load (2.0ms)[0m   [0mSELECT * FROM "galerie" WHERE ("galerie"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering galerie/show
+  [4;36;1mZdjecie Load (2.7ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) [0m
+Rendered zdjecia/_zdjecie (22.6ms)
+Rendered zdjecia/_zdjecie (12.4ms)
+Rendered zdjecia/_zdjecie (8.8ms)
+Rendered zdjecia/_zdjecie (9.0ms)
+Rendered zdjecia/_zdjecie (255.3ms)
+Completed in 492ms (View: 460, DB: 5) | 200 OK [http://localhost/galerie/1]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:45:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+  [4;36;1mKomentarz Load (1.9ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (2.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 1) [0m
+Rendered komentarze/_komentarz (5.3ms)
+Completed in 284ms (View: 197, DB: 7) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-04 23:45:22) [GET]
+
+ActionController::RoutingError (No route matches "/system/photos/1/large/587_pies_i_kot_smieja_sie_zabawnie.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:45:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 1) [0m
+  [4;36;1mKomentarz Load (1.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 1) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 1 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 1) [0m
+Rendered komentarze/_komentarz (2.3ms)
+Completed in 289ms (View: 198, DB: 6) | 200 OK [http://localhost/zdjecia/1]
+
+
+Processing GalerieController#show (for 127.0.0.1 at 2010-05-04 23:46:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mGaleria Load (1.0ms)[0m   [0mSELECT * FROM "galerie" WHERE ("galerie"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering galerie/show
+  [4;36;1mZdjecie Load (3.5ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) [0m
+Rendered zdjecia/_zdjecie (23.5ms)
+Rendered zdjecia/_zdjecie (12.6ms)
+Rendered zdjecia/_zdjecie (9.4ms)
+Rendered zdjecia/_zdjecie (10.5ms)
+Rendered zdjecia/_zdjecie (14.9ms)
+Completed in 249ms (View: 213, DB: 4) | 200 OK [http://localhost/galerie/1]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:46:07) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.7ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mKomentarz Load (0.7ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (234.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 481ms (View: 163, DB: 238) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-05-04 23:46:16) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+  [4;36;1mTag Load (1.1ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (43.0ms)
+Completed in 212ms (View: 140, DB: 2) | 200 OK [http://localhost/zdjecia/6/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:46:24) [PUT]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100504-4402-df4306-0>, "opis"=>"Kot", "galeria_id"=>"1", "tag_list"=>"kot, szachy"}}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mTag Load (3.5ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;35;1mTag Load (2.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (1.0ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+Completed in 3367ms (View: 171, DB: 8) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:46:38) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"crop_h"=>"672", "crop_w"=>"672", "crop_x"=>"315", "crop_y"=>"37"}}
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+  [4;36;1mTag Load (1.2ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTag Load (0.9ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (0.7ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 3177ms (DB: 4) | 302 Found [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:46:42) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mKomentarz Load (0.6ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mTag Load (1.1ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 284ms (View: 181, DB: 6) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 23:47:20) [GET]
+  [4;36;1mZdjecie Load (2.8ms)[0m   [0;1mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;35;1mTag Load (2.9ms)[0m   [0mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 532ms (View: 455, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:47:25) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (1.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mKomentarz Load (0.6ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mTag Load (1.1ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 253ms (View: 160, DB: 4) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#edit (for 127.0.0.1 at 2010-05-04 23:47:30) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mZdjecie Load (1.8ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/edit
+  [4;35;1mTag Load (2.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (39.2ms)
+Completed in 196ms (View: 118, DB: 4) | 200 OK [http://localhost/zdjecia/6/edit]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:47:42) [PUT]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100504-4402-sso9yy-0>, "opis"=>"Kot", "galeria_id"=>"1", "tag_list"=>"kot, szachy"}}
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;35;1mTag Load (1.2ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;36;1mTag Load (2.8ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (0.7ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] deleting /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+Completed in 3059ms (View: 196, DB: 6) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-04 23:48:00) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"Iutii/rvC7vOQEBBXr4oOwtbVTThk0q2xNcy0SDB730=", "id"=>"6", "zdjecie"=>{"crop_h"=>"672", "crop_w"=>"672", "crop_x"=>"297", "crop_y"=>"43"}}
+  [4;36;1mZdjecie Load (1.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/large/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/original/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/small/3262_mieszne_kot.jpg
+[paperclip] saving /home/mwszelak/studia/rails/projekty/railsphoto/photo/public/system/photos/6/thumb/3262_mieszne_kot.jpg
+  [4;35;1mTag Load (1.2ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTag Load (8.5ms)[0m   [0;1mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'szachy') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mTagging Load (0.7ms)[0m   [0;1mSELECT * FROM "taggings" WHERE ((("taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tag_id" IN (NULL) AND "taggings"."tagger_id" IS NULL) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/6
+Completed in 3452ms (DB: 12) | 302 Found [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-04 23:48:04) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 6) [0m
+  [4;36;1mKomentarz Load (0.6ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 6 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mTag Load (1.1ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 6) [0m
+Completed in 474ms (View: 304, DB: 4) | 200 OK [http://localhost/zdjecia/6]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 23:48:11) [GET]
+  [4;35;1mZdjecie Load (2.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (3.4ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Completed in 508ms (View: 432, DB: 6) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#index (for 127.0.0.1 at 2010-05-04 23:48:16) [GET]
+  Parameters: {"search"=>"szachy"}
+  [4;35;1mTag Load (1.0ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'szachy') [0m
+Rendering template within layouts/application
+Rendering zdjecia/index
+  [4;36;1mTag Load (3.2ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_szachy_463 ON zdjecia_taggings_szachy_463.taggable_id = zdjecia.id AND zdjecia_taggings_szachy_463.taggable_type = 'Zdjecie' AND zdjecia_taggings_szachy_463.tag_id = 7 AND zdjecia_taggings_szachy_463.context = 'tags' [0m
+Completed in 199ms (View: 115, DB: 5) | 200 OK [http://localhost/zdjecia?search=szachy]

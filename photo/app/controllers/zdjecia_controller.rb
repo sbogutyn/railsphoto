@@ -52,12 +52,16 @@ class ZdjeciaController < ApplicationController
     @zdjecie = Zdjecie.new(params[:zdjecie])
     if @zdjecie.save
       flash[:notice] = "Pomyślnie dodano zdjęcie!"
-      redirect_to galerie_url
-    else
+      if params[:zdjecie][:photo].blank?
+        redirect_to @zdjecie
+      else
+        render :action => 'crop'
+      end
+   else
       render :action => 'new'
     end
   end
-  
+
   def edit
     @zdjecie = Zdjecie.find(params[:id])
   end
@@ -66,7 +70,11 @@ class ZdjeciaController < ApplicationController
     @zdjecie = Zdjecie.find(params[:id])
     if @zdjecie.update_attributes(params[:zdjecie])
       flash[:notice] = "Pomyślnie zmieniono zdjęcie."
-      redirect_to @zdjecie
+      if params[:zdjecie][:photo].blank?
+        redirect_to @zdjecie
+      else
+        render :action => 'crop'
+      end
     else
       render :action => 'edit'
     end

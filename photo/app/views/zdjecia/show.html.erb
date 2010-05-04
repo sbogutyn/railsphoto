@@ -13,7 +13,7 @@
 <% end %>
 <p>
     <% if @zdjecie.photo.exists? %>
-    <p><%= image_tag @zdjecie.photo.url %></p>
+    <p><%= image_tag @zdjecie.photo.url(:small) %></p>
     <% else %>
     <p> Brak zdjęcia, dodaj je. </p>
     <% end %>

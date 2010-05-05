@@ -21,6 +21,7 @@
 ## Aktualnie wykonywane:
 
 * Dostosowanie wyglądu strony do szablonu css
+* Geolokalizacja
 
 ## Do zrobienia:
 
@@ -31,4 +32,3 @@
 * Dodawanie znajomych
 * System wiadomości
 * Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii, znajomych, wiadomośći
-* Geolokalizacja

@@ -50518,3 +50518,135 @@ Rendering zdjecia/index
   [4;36;1mTag Load (3.2ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
   [4;35;1mZdjecie Load (1.3ms)[0m   [0mSELECT "zdjecia".* FROM "zdjecia" JOIN taggings zdjecia_taggings_szachy_463 ON zdjecia_taggings_szachy_463.taggable_id = zdjecia.id AND zdjecia_taggings_szachy_463.taggable_type = 'Zdjecie' AND zdjecia_taggings_szachy_463.tag_id = 7 AND zdjecia_taggings_szachy_463.context = 'tags' [0m
 Completed in 199ms (View: 115, DB: 5) | 200 OK [http://localhost/zdjecia?search=szachy]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-05 17:49:01) [GET]
+  [4;36;1mGaleria Load (5.5ms)[0m   [0;1mSELECT * FROM "galerie" [0m
+  [4;35;1mZdjecie Load (15.6ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;36;1mTag Load (5.7ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (1.1ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (5.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.2ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;36;1mZdjecie Load (2.2ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;35;1mUzytkownik Load (2.4ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+Completed in 940ms (View: 552, DB: 39) | 200 OK [http://localhost/]
+
+
+Processing ZdjeciaController#new (for 127.0.0.1 at 2010-05-05 17:49:13) [GET]
+  Parameters: {"nr_galerii"=>"1"}
+Rendering template within layouts/application
+Rendering zdjecia/new
+  [4;36;1mTag Load (0.8ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+Rendered zdjecia/_form (98.7ms)
+  [4;35;1mUzytkownik Load (10.7ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+Completed in 537ms (View: 317, DB: 12) | 200 OK [http://localhost/zdjecia/new?nr_galerii=1]
+
+
+Processing ZdjeciaController#create (for 127.0.0.1 at 2010-05-05 18:32:49) [POST]
+  Parameters: {"commit"=>"Utwórz", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "zdjecie"=>{"photo"=>#<File:/tmp/RackMultipart20100505-2667-1vn40nd-0>, "opis"=>"tenis", "galeria_id"=>"1", "tag_list"=>"tenis, kot"}}
+  [4;36;1mZdjecie Create (5.8ms)[0m   [0;1mINSERT INTO "zdjecia" ("created_at", "photo_file_size", "opis", "updated_at", "photo_file_name", "galeria_id", "photo_content_type") VALUES('2010-05-05 16:32:53', 44883, 'tenis', '2010-05-05 16:32:53', '9Ds5b.jpg', 1, 'image/jpeg')[0m
+  [4;35;1mTag Load (18.0ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'tenis' OR name LIKE 'kot') [0m
+  [4;36;1mTag Load (0.5ms)[0m   [0;1mSELECT "tags".id FROM "tags" WHERE ("tags"."name" = 'tenis') LIMIT 1[0m
+  [4;35;1mTag Create (0.7ms)[0m   [0mINSERT INTO "tags" ("name") VALUES('tenis')[0m
+  [4;36;1mTag Load (1.6ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (0.8ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)) AND ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Zdjecie')) [0m
+  [4;36;1mTagging Load (0.6ms)[0m   [0;1mSELECT "taggings".id FROM "taggings" WHERE ("taggings"."tag_id" = 3 AND "taggings".taggable_type = 'Zdjecie' AND "taggings".taggable_id = 7 AND "taggings".context = 'tags' AND "taggings".tagger_id IS NULL AND "taggings".tagger_type IS NULL) LIMIT 1[0m
+  [4;35;1mTagging Create (1.0ms)[0m   [0mINSERT INTO "taggings" ("tagger_id", "created_at", "tag_id", "taggable_id", "context", "tagger_type", "taggable_type") VALUES(NULL, '2010-05-05 16:32:54', 3, 7, 'tags', NULL, 'Zdjecie')[0m
+  [4;36;1mTagging Load (0.7ms)[0m   [0;1mSELECT "taggings".id FROM "taggings" WHERE ("taggings"."tag_id" = 8 AND "taggings".taggable_type = 'Zdjecie' AND "taggings".taggable_id = 7 AND "taggings".context = 'tags' AND "taggings".tagger_id IS NULL AND "taggings".tagger_type IS NULL) LIMIT 1[0m
+  [4;35;1mTagging Create (0.2ms)[0m   [0mINSERT INTO "taggings" ("tagger_id", "created_at", "tag_id", "taggable_id", "context", "tagger_type", "taggable_type") VALUES(NULL, '2010-05-05 16:32:54', 8, 7, 'tags', NULL, 'Zdjecie')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/thumb/9Ds5b.jpg
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/original/9Ds5b.jpg
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/large/9Ds5b.jpg
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/small/9Ds5b.jpg
+Rendering template within layouts/application
+Rendering zdjecia/crop
+  [4;36;1mUzytkownik Load (1.8ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+Completed in 8173ms (View: 2155, DB: 32) | 200 OK [http://localhost/zdjecia]
+
+
+Processing ZdjeciaController#update (for 127.0.0.1 at 2010-05-05 18:33:25) [PUT]
+  Parameters: {"commit"=>"Przytnij", "authenticity_token"=>"emEWUw2jTR1RV4J7aMvPUT5kygVWYJ/Ln6VnwD3B0Bo=", "id"=>"7", "zdjecie"=>{"crop_h"=>"389", "crop_w"=>"389", "crop_x"=>"38", "crop_y"=>"40"}}
+  [4;35;1mZdjecie Load (2.3ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/thumb/9Ds5b.jpg
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/original/9Ds5b.jpg
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/large/9Ds5b.jpg
+[paperclip] saving /home/slavo/rails/photo-jcrop/railsphoto/photo/public/system/photos/7/small/9Ds5b.jpg
+  [4;36;1mTag Load (3.1ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTag Load (2.1ms)[0m   [0mSELECT * FROM "tags" WHERE (name LIKE 'kot' OR name LIKE 'tenis') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mTagging Load (1.1ms)[0m   [0mSELECT * FROM "taggings" WHERE ((("taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)) AND ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Zdjecie')) AND ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Zdjecie')) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/zdjecia/7
+Completed in 4989ms (DB: 9) | 302 Found [http://localhost/zdjecia/7]
+
+
+Processing ZdjeciaController#show (for 127.0.0.1 at 2010-05-05 18:33:31) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mZdjecie Load (63.3ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia"."id" = 7) [0m
+  [4;35;1mKomentarz Load (2.1ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 7) [0m
+Rendering template within layouts/application
+Rendering zdjecia/show
+  [4;36;1mUzytkownik Load (2.6ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("rates".stars) AS sum_stars FROM "rates" WHERE ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) [0m
+  [4;35;1mRate Load (1.7ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rates" WHERE ("rates"."rater_id" = 1) AND ("rates".rateable_id = 7 AND "rates".rateable_type = 'Zdjecie' AND ("rates"."dimension" = 'ocena')) LIMIT 1[0m
+  [4;36;1mTag Load (17.6ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Zdjecie') AND ((taggings.tagger_id IS NULL AND taggings.context = 'tags'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "komentarze" WHERE ("komentarze".zdjecie_id = 7) [0m
+Completed in 3904ms (View: 1533, DB: 89) | 200 OK [http://localhost/zdjecia/7]
+
+
+Processing GalerieController#index (for 127.0.0.1 at 2010-05-05 18:33:56) [GET]
+  [4;36;1mGaleria Load (3.0ms)[0m   [0;1mSELECT * FROM "galerie" [0m
+  [4;35;1mZdjecie Load (6.9ms)[0m   [0mSELECT * FROM "zdjecia" [0m
+Rendering template within layouts/application
+Rendering galerie/index
+  [4;36;1mTag Load (5.5ms)[0m   [0;1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN zdjecia ON zdjecia.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Zdjecie') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mZdjecie Load (1.1ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;36;1mZdjecie Load (1.9ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) LIMIT 1[0m
+  [4;35;1mZdjecie Load (1.7ms)[0m   [0mSELECT "zdjecia".id FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;36;1mZdjecie Load (2.0ms)[0m   [0;1mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 2) LIMIT 1[0m
+  [4;35;1mUzytkownik Load (2.2ms)[0m   [0mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+Completed in 888ms (View: 610, DB: 24) | 200 OK [http://localhost/]
+
+
+Processing GalerieController#show (for 127.0.0.1 at 2010-05-05 18:34:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGaleria Load (1.8ms)[0m   [0;1mSELECT * FROM "galerie" WHERE ("galerie"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering galerie/show
+  [4;35;1mZdjecie Load (20.0ms)[0m   [0mSELECT * FROM "zdjecia" WHERE ("zdjecia".galeria_id = 1) [0m
+Rendered zdjecia/_zdjecie (936.0ms)
+Rendered zdjecia/_zdjecie (25.4ms)
+Rendered zdjecia/_zdjecie (30.7ms)
+Rendered zdjecia/_zdjecie (23.8ms)
+Rendered zdjecia/_zdjecie (31.3ms)
+Rendered zdjecia/_zdjecie (50.3ms)
+  [4;36;1mUzytkownik Load (5.1ms)[0m   [0;1mSELECT * FROM "uzytkownicy" WHERE ("uzytkownicy"."persistence_token" = 'bf45fcdea0fe0deb0f68bae6dea0019486705d1fd41559d1f173ac5f2102c29f531eee7d3a2d92c7fe90a7087a80f56d1116aeadc691781152f63fbc70ff67de') LIMIT 1[0m
+Completed in 2139ms (View: 1613, DB: 27) | 200 OK [http://localhost/galerie/1]

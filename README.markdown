@@ -17,6 +17,8 @@
 * Pokazywanie pierwszego zdjęcia z galerii w spisie głównym
 * Link "Pokaż całą tę galerię" przy poszczególnym zdjęciu
 * Zmiana rozmiaru zdjęcia podczas dodawania (użyć jCrop)
+* Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
+* Dodawanie komentarzy przez zalogowanych użytkowników bez podawania autora (automatyczne rozpoznawanie), niezalogowani bez zmian
 
 ## Aktualnie wykonywane:
 
@@ -25,8 +27,6 @@
 
 ## Do zrobienia:
 
-* Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
-* Dodawanie komentarzy przez zalogowanych użytkowników bez podawania autora (automatyczne rozpoznawanie), niezalogowani bez zmian
 * Kategorie zdjęć
 * Grupy użytkowników
 * Dodawanie znajomych

@@ -5,8 +5,7 @@
     <%= f.text_field :nazwa %>
   </p>
   <p>
-    <%= f.label :autor %><br />
-    <%= f.text_field :autor %>
+    <%= f.hidden_field :autor , :value => current_user[:login] %>
   </p>
   <p>
     <%= f.label :opis %><br />

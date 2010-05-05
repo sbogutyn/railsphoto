@@ -1,12 +1,17 @@
 <% form_for @komentarz do |f| %>
   <%= f.error_messages %>
-  <p>
+  <% if current_user %>
+    <%= f.hidden_field :autor, :value => current_user[:login] %>
+  <% else %>
+    <p>
     <%= f.label :autor %><br />
     <%= f.text_field :autor %>
-  </p>
+    </p>
+  <% end %>
   <p>
     <%= f.label :tresc %><br />
     <%= f.text_area :tresc %>
-  </p>
+    </p>
+    <p> TEST </p>
   <p><%= f.submit "Dodaj komentarz" %></p>
 <% end %>

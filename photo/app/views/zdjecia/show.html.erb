@@ -39,10 +39,14 @@
 </div>
 
 <% form_for [@zdjecie, Komentarz.new] do |f| %>
+  <% if current_user %>
+    <%= f.hidden_field :autor, :value => current_user[:login] %>
+  <% else %>
   <p>
     <%= f.label :autor, "Autor" %><br />
     <%= f.text_field :autor %>
-  </p>
+    </p>
+  <% end %>
   <p>
     <%= f.label :tresc, "Treść" %><br />
     <%= f.text_area :tresc %>

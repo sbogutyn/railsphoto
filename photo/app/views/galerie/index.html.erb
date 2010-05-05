@@ -7,16 +7,6 @@
   </p>
 <% end %>
 
-
-<!--
-<% form_tag zdjecia_path, :method => 'get' do %>
-  <p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Szukaj zdjęć", :name => nil %>
-  </p>
-<% end %>
--->
-
 Szukaj zdjęć według tagów:<br>
 <% for tag in @tags %>
   <%= link_to tag.name, { :controller => 'zdjecia',  :action => 'index', :search => tag.name} %>
@@ -25,12 +15,6 @@ Szukaj zdjęć według tagów:<br>
 
 
 <table>
-  <tr>
-    <th>Nazwa</th>
-    <th>Autor</th>
-    <th>Opis</th>
-	<td span="6"></td>
-  </tr>
   <% for galeria in @galerie %>
     <tr>
       <td><%=h galeria.nazwa %></td>
@@ -38,18 +22,24 @@ Szukaj zdjęć według tagów:<br>
       <td><%=h galeria.opis %></td>
 	  <td>
 	  	<%# pokazanie pierwszego zdjecia z galerii %>
-	  	<%if galeria.zdjecia.exists? %>
-	  	<%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb) %>
-		<%end %>
-	  </td>
-      <td><%= link_to "Pokaż galerię", galeria %></td>
-      <td><%= link_to "Edytuj opis galerii", edit_galeria_path(galeria) %></td>
-      <td><%= link_to "Usuń galerię", galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %></td>
-	  <td><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => galeria.id} %></td>
-	  <td><%= link_to "Edytuj/usuń zdjęcie", { :action => "show", :id => galeria.id, :kasowanie => "tak" } %></td>
+	  	<% if galeria.zdjecia.exists? %>
+          <%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb) %>
+		<% end %>
+      </td>
+      <% if current_user && current_user[:login] == galeria.autor %>
+      <td><ul>
+          <li><%= link_to "Pokaż galerię", galeria %>
+          <li><%= link_to "Edytuj opis galerii", edit_galeria_path(galeria) %>
+          <li><%= link_to "Usuń galerię", galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
+          <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => galeria.id} %>
+          <li><%= link_to "Edytuj/usuń zdjęcie", { :action => "show", :id => galeria.id, :kasowanie => "tak" } %>
+      </ul></td>
+    <% end %>
     </tr>
   <% end %>
 </table>
-
-<p><%= link_to "Utwórz nową galerię", new_galeria_path %></p>
+<% if current_user %>
+  <p><%= link_to "Utwórz nową galerię", new_galeria_path %></p>
+  <p> <%=h current_user[:login] %>
+<% end %>
 <p><%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %></p>

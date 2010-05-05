@@ -21,10 +21,12 @@ Szukaj zdjęć według tagów:<br>
       <td><%=h galeria.autor %></td>
       <td><%=h galeria.opis %></td>
 	  <td>
-	  	<%# pokazanie pierwszego zdjecia z galerii %>
+        <%# pokazanie pierwszego zdjecia z galerii %>
+        <% link_to galeria do %>
 	  	<% if galeria.zdjecia.exists? %>
           <%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb) %>
-		<% end %>
+        <% end %>
+        <% end %>
       </td>
       <% if current_user && current_user[:login] == galeria.autor %>
       <td><ul>

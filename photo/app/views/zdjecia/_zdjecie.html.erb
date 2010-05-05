@@ -16,7 +16,6 @@
     <strong>Opis: <%=h zdjecie.opis %></strong><br />
     <strong>Dodany <%= time_ago_in_words(zdjecie.created_at) %> temu </strong><br />
 
-  <%= link_to "Komentarze, oceny, edycja tego zdjęcia", zdjecie_path(zdjecie) %>
 </p>
 
  <% if params[:kasowanie] == "tak" %>

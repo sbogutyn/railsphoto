@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'paperclip', :version => '2.3.1.1'
   config.gem 'authlogic'
-  config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '2.0.0.rc1'
+  config.gem "acts-as-taggable-on" #, :source => "http://gemcutter.org", :version => '2.0.0.rc1'
   config.gem "ajaxful_rating"
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

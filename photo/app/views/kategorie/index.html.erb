@@ -1,0 +1,17 @@
+<% title "Kategorie" %>
+
+<table>
+  <tr>
+    <th>Nazwa</th>
+  </tr>
+  <% for kategoria in @kategorie %>
+    <tr>
+      <td><%=h kategoria.nazwa %></td>
+      <td><%= link_to "Show", kategoria %></td>
+      <td><%= link_to "Edit", edit_kategoria_path(kategoria) %></td>
+      <td><%= link_to "Destroy", kategoria, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Kategoria", new_kategoria_path %></p>

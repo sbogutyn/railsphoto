@@ -1,0 +1,17 @@
+<% title "Kategoria" %>
+
+<p>
+  <strong>Nazwa:</strong>
+  <%=h @kategoria.nazwa %><br />
+  <% for zdjecie in @kategoria.zdjecia.all %>
+
+    <%= image_tag zdjecie.photo.url(:thumb) %><br />
+    <%=h zdjecie.opis %><br />
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_kategoria_path(@kategoria) %> |
+  <%= link_to "Destroy", @kategoria, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", kategorie_path %>
+</p>

@@ -1,0 +1,8 @@
+<% form_for @kategoria do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :nazwa %><br />
+    <%= f.text_field :nazwa %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

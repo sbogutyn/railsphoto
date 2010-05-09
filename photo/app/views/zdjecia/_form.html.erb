@@ -8,7 +8,11 @@
   <p>
     <%= f.label 'Zdjęcie' %><br />
     <%= f.file_field :photo %>
-  </p>
+    </p>
+    <p>
+    <%= f.label 'Kategoria' %><br />
+    <%= collection_select(:zdjecie, :kategoria_id, Kategoria.all, :id, :nazwa) %>
+    </p>
   <p>
     <%= f.label 'Tagi (oddzielone przecinkiem):' %><br />
     <%= f.text_field :tag_list %>

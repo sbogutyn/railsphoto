@@ -9,6 +9,7 @@ class Zdjecie < ActiveRecord::Base
         :processors => [:cropper]
     has_many :komentarze, :dependent=> :destroy
     belongs_to :galeria
+    belongs_to :kategoria
     ajaxful_rateable :dimensions => [:ocena], :allow_update => true
 
     after_update :reprocess_photo, :if => :cropping?

@@ -19,16 +19,24 @@
 * Zmiana rozmiaru zdjęcia podczas dodawania (użyć jCrop)
 * Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
 * Dodawanie komentarzy przez zalogowanych użytkowników bez podawania autora (automatyczne rozpoznawanie), niezalogowani bez zmian
+* Kategorie zdjęć
 
 ## Aktualnie wykonywane:
 
 * Dostosowanie wyglądu strony do szablonu css
-* Geolokalizacja
 
 ## Do zrobienia:
 
-* Kategorie zdjęć
+* Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii
+* Walidacje
+* Paginacja galerii, zdjęć, komentarzy
+* Poprawienie wyświetlania systemu ocen (jeśli się uda to zamiast dwóch pasków z gwiazdkami zrobić jeden)
+* Dodawanie komentarzy z użyciem Ajaxa
+
+
+## Na koniec jeśli starczy czasu:
+
+* Geolokalizacja
 * Grupy użytkowników
 * Dodawanie znajomych
 * System wiadomości
-* Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii, znajomych, wiadomośći

@@ -4,7 +4,7 @@ class KategorieController < ApplicationController
   end
   
   def show
-    @kategoria = Kategoria.find(params[:id])
+    @kategoria = Kategoria.find(params[:id], :include => [:zdjecia])
   end
   
   def new

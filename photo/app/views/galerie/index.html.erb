@@ -1,5 +1,12 @@
 <% title "Galerie zdjęć" %>
 
+<% content_for :head do %>
+  <%= GMap.header %>
+  <%= @map.to_html %>
+<% end %>
+
+<%= @map.div(:width => 600, :height => 400) %>
+
 <% form_tag zdjecia_path, :method => 'get' do %>
   <p>
   <%= text_field_tag :szukaj_opisu, params[:szukaj_opisu] %>

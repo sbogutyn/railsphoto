@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic'
   config.gem "acts-as-taggable-on" #, :source => "http://gemcutter.org", :version => '2.0.0.rc1'
   config.gem "ajaxful_rating"
+  config.gem "ym4r"
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

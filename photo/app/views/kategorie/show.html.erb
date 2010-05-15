@@ -1,17 +1,51 @@
-<% title "Kategoria" %>
+<% title "Rails Photo - Kategorie" %>
 
-<p>
-  <strong>Nazwa:</strong>
-  <%=h @kategoria.nazwa %><br />
-  <% for zdjecie in @kategoria.zdjecia.all %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'style' %>
+  <style>
+    .thumb {
+      width: 150px;
+      height: 105px;
+    }
+    .thumbflat {
+      width: 142px;
+      height: 50px;
+    }
+  </style>
+<% end %>
 
-    <%= image_tag zdjecie.photo.url(:thumb) %><br />
-    <%=h zdjecie.opis %><br />
-  <% end %>
-</p>
+<div id="menu">
+  <ul>
+    <li><%= link_to "HOME", root_url %></li> 
+    <li><%= link_to "KATEGORIE", kategorie_path, :class => :selected %></li>
+    <li><%= link_to "GALERIE", galerie_path %></li>
+  </ul>
+</div>
 
-<p>
-  <%= link_to "Edit", edit_kategoria_path(@kategoria) %> |
-  <%= link_to "Destroy", @kategoria, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", kategorie_path %>
-</p>
+<div id="site_content">
+  <div id="side_menu">
+    <% for kategoria in @kategorie %>
+      <% if kategoria.zdjecia.exists? %>
+        <div class="side_menu_item">
+          <% link_to kategoria do %>
+            <%= image_tag kategoria.zdjecia.find(:first).photo.url(:thumb), :class => :thumbflat %>
+          <% end %>
+          <span><%= h kategoria.nazwa %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="content">
+    <h1>Kategoria: <%= @wybrana.nazwa %></h1>
+    <ul>
+      <% for zdjecie in @wybrana.zdjecia.all %>
+          <li>
+          <% link_to zdjecie do %>
+            <%= image_tag zdjecie.photo.url(:thumb), :class => :thumb %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

@@ -1,10 +1,12 @@
 class KategorieController < ApplicationController
   def index
     @kategorie = Kategoria.all
+    @pierwsza = Kategoria.find(1 , :include => [:zdjecia])
   end
   
   def show
-    @kategoria = Kategoria.find(params[:id], :include => [:zdjecia])
+    @kategorie = Kategoria.all
+    @wybrana = Kategoria.find(params[:id], :include => [:zdjecia])
   end
   
   def new

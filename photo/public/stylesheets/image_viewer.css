@@ -1,4 +1,4 @@
-/* CSS Image Viewer from CSSplay (www.cssplay.co.uk) */
+/* CSS Image Viewer  */
 
 #gallery 
 { position: relative; 
@@ -30,8 +30,8 @@
 
 #thumbs a:hover img 
 { position: absolute; 
-  width: auto; 
-  height: auto; 
+  width: 450px;
+  height:450px;
   right: 196px; 
   top: 8px; 
   padding: 2px;

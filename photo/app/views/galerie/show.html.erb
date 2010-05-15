@@ -1,5 +1,66 @@
 <% title "Galeria" %>
 
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'style' %>
+  <style>
+    .thumb {
+      width: 150px;
+      height: 105px;
+    }
+    .thumbflat {
+      width: 142px;
+      height: 50px;
+    }
+  </style>
+<% end %>
+
+<div id="menu">
+  <ul>
+    <li><%= link_to "HOME", root_url %></li> 
+    <li><%= link_to "KATEGORIE", kategorie_path %></li>
+    <% if current_user %>
+      <li><%= link_to "MOJE GALERIE", galerie_path, :class => :selected %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="site_content">
+  <div id="side_menu">
+    <% for galeria in @galerie %>
+      <% if galeria.zdjecia.exists? %>
+        <div class="side_menu_item">
+          <% link_to galeria do %>
+            <%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb), :class => :thumbflat %>
+          <% end %>
+          <span><%= h galeria.nazwa %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="content">
+    <h1>Galeria: <%= @galeria.nazwa %></h1>
+    <h2>Opis: <%= @galeria.opis %></h2>
+
+    <% if current_user && current_user[:login] == @galeria.autor %>
+      <ul>
+          <li><%= link_to "Edytuj opis galerii", edit_galeria_path(@galeria) %>
+          <li><%= link_to "Usuń galerię", @galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
+          <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galeria.id} %>
+      </ul>
+    <% end %>
+    <ul>
+      <% for zdjecie in @galeria.zdjecia.all %>
+        <li>
+        <% link_to zdjecie do %>
+          <%= image_tag zdjecie.photo.url(:thumb), :class => :thumb %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<% if false %>
 <p>
   <strong>Nazwa:</strong>
   <%=h @galeria.nazwa %>
@@ -21,4 +82,5 @@
 
 <p>
   <%= link_to "Pokaż wszystkie galerie", galerie_path %>
-</p>
+  </p>
+<% end %>

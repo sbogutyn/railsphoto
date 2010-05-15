@@ -1,56 +1,77 @@
 <% title "Zdjęcie" %>
 
-<p>
-<strong>Opis:</strong>
-<%=h @zdjecie.opis %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'd_zdjecie' %>
+  <%= ajaxful_rating_style %>  
+<% end %>
 
-</p>
-<p>
-<%= ratings_for @zdjecie, :dimension => :ocena %>
-</p>
-<% if current_user %>
-  Twoja ocena: <%= ratings_for @zdjecie, :force_static => true, :dimension => :ocena, :small => true, :show_user_rating => true %>
-<% end %>
-<p>
-<% if current_user && current_user[:login] == @zdjecie.galeria.autor %>
-  <% link_to edit_zdjecie_path(@zdjecie) do %>
-  <%= render :partial => 'image' %>
-  <% end %>
-<% else %>
-  <%= render :partial => 'image' %>
-<% end %>
-</p>
-<p>
-<%#= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> 
-<%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %>
-</p>
-<p> 
-<%= link_to "Pokaż całą tę galerię", { :controller => "galerie", :action => "show", :id => @zdjecie.galeria_id} %>
-</p>
-<p>
-<strong>Tagi:</strong>
-<% for tag in @zdjecie.tag_list %>
-  <%= link_to tag, :controller => "zdjecia", :search => tag %>
-<% end %>
-</p>
-
-<h2> Komentarze: </h2>
-<div id="komentarze">
-  <%= render :partial => @zdjecie.komentarze %>
+<div id="menu">
+  <ul>
+    <li><%= link_to "HOME", root_url %></li> 
+    <li><%= link_to "KATEGORIE", kategorie_path %></li>
+    <% if current_user %>
+      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
+    <% end %>
+  </ul>
 </div>
-
-<% form_for [@zdjecie, Komentarz.new] do |f| %>
-  <% if current_user %>
-    <%= f.hidden_field :autor, :value => current_user[:login] %>
-  <% else %>
+<div id="site_content">
+  <div id="content">
+    <div id="content_d_zdjecie">
     <p>
-    <%= f.label :autor, "Autor" %><br />
-    <%= f.text_field :autor %>
+    <% if current_user && current_user[:login] == @zdjecie.galeria.autor %>
+      <% link_to edit_zdjecie_path(@zdjecie) do %>
+        <%= render :partial => 'image' %>
+      <% end %>
+    <% else %>
+      <%= render :partial => 'image' %>
+    <% end %>
     </p>
-  <% end %>
-  <p>
-  <%= f.label :tresc, "Treść" %><br />
-  <%= f.text_area :tresc %>
-  </p>
-  <p> <%= f.submit "Dodaj komentarz" %> <p> 
-<% end %>
+    <p>
+    <strong>Opis:</strong>
+    <%=h @zdjecie.opis %>
+
+    </p>
+    <p>
+    <%= ratings_for @zdjecie, :dimension => :ocena %>
+    </p>
+    <% if current_user %>
+      Twoja ocena: <%= ratings_for @zdjecie, :force_static => true, :dimension => :ocena, :small => true, :show_user_rating => true %>
+    <% end %>
+    <p>
+    <%#= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> 
+    <%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %>
+    </p>
+    <p> 
+    <%= link_to "Pokaż całą tę galerię", { :controller => "galerie", :action => "show", :id => @zdjecie.galeria_id} %>
+    </p>
+    <p>
+    <strong>Tagi:</strong>
+    <% for tag in @zdjecie.tag_list %>
+      <%= link_to tag, :controller => "zdjecia", :search => tag %>
+    <% end %>
+    </p>
+  </div>
+  <div id="content_formularz">
+    <h2> Komentarze: </h2>
+    <div id="komentarze">
+      <%= render :partial => @zdjecie.komentarze %>
+    </div>
+
+    <% form_for [@zdjecie, Komentarz.new] do |f| %>
+      <% if current_user %>
+        <%= f.hidden_field :autor, :value => current_user[:login] %>
+      <% else %>
+        <p>
+        <%= f.label :autor, "Autor" %><br />
+        <%= f.text_field :autor %>
+        </p>
+      <% end %>
+      <p>
+      <%= f.label :tresc, "Treść" %><br />
+      <%= f.text_area :tresc %>
+      </p>
+      <p> <%= f.submit "Dodaj komentarz" %> <p> 
+    <% end %>
+  </div>
+  </div>
+</div>

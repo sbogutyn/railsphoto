@@ -1,0 +1,2 @@
+module GlownaHelper
+end

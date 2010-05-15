@@ -1,0 +1,65 @@
+
+<% title "Rails Photo - Strona Główna" %>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'style' %>
+  <%= stylesheet_link_tag 'image_viewer' %>
+  <style>
+    .thumb {
+      width: 150px;
+      height: 105px;
+    }
+    .thumbflat {
+      width: 142px;
+      height: 50px;
+    }
+  </style>
+<% end %>
+<div id="menu">
+  <ul>
+    <li><%= link_to "HOME", root_url, :class => :selected %></li> 
+    <li><%= link_to "KATEGORIE", kategorie_path %></li>
+    <% if current_user %>
+      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
+    <% end %>
+  </ul>
+</div>
+<div id="site_content">
+  <div id="tag_cloud">
+    <% form_tag zdjecia_path, :method => 'get' do %>
+      <p>
+      <%= text_field_tag :szukaj_opisu, params[:szukaj_opisu] %>
+      <%= submit_tag "Szukaj zdjęć według ich opisu", :name => nil %>
+      </p>
+    <% end %>
+
+    Szukaj zdjęć według tagów:<br>
+    <% for tag in @tags %>
+      <%= link_to tag.name, { :controller => 'zdjecia',  :action => 'index', :search => tag.name} %>
+    <% end %>
+    <br><br>
+  </div>
+  <div id="side_menu">
+    <div class="side_menu_item"> <a class="selected" href="#"><img src="images/series/series_one.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_One</span> </div>
+    <div class="side_menu_item"> <a href="#"><img src="images/series/series_two.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Two</span> </div>
+    <div class="side_menu_item"> <a href="#"><img src="images/series/series_three.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Three</span> </div>
+    <div class="side_menu_item"> <a href="#"><img src="images/series/series_four.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Four</span> </div>
+    <div class="side_menu_item"> <a href="#"><img src="images/series/series_five.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Five</span> </div>
+  </div>
+
+  <div id="content"> 
+    <h1>kategorie zdjęć</h1>
+    <ul> 
+      <% for kategoria in @kategorie %>
+        <li>
+        <% link_to kategoria do %>
+          <% if kategoria.zdjecia.exists? %>
+            <%= image_tag kategoria.zdjecia.first.photo.url(:thumb), :class => :thumb %>
+          <% end %>
+          <span><%= kategoria.nazwa %></span>
+        <% end %>
+        </li>
+      <% end %>
+    </ul> 
+  </div> 
+</div>

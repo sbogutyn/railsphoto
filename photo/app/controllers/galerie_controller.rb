@@ -1,15 +1,7 @@
 class GalerieController < ApplicationController
   def index
-    @galerie = Galeria.all
+    @galerie = Galeria.all(:include => :zdjecia)
     
-    if params[:search]
-      @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
-      tag_cloud
-      
-    else
-      @zdjecia = Zdjecie.all
-      tag_cloud
-    end
   end
   
   def tag
@@ -23,7 +15,8 @@ class GalerieController < ApplicationController
   
   
   def show
-    @galeria = Galeria.find(params[:id])
+    @galerie = Galeria.all(:include => :zdjecia)
+    @galeria = Galeria.find(params[:id], :include => :zdjecia)
   end
   
     def dodaj_kasuj

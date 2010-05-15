@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+    <head>
+        <title>railsphoto</title>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+        <link rel="stylesheet" type="text/css" href="style/colour.css" />
+        <link rel="stylesheet" type="text/css" href="style/d_zdjecie.css"/>
+        <script type="text/javascript" src="java_script/przegladarka.js"></script>
+    </head>
+
+    <body>
+
+        <div id="logo">
+            <h1>railsphoto</h1>
+            <div id="links">
+                <a href="http://www.dcarter.co.uk">ZALOGUJ</a><br />
+                <a href="http://www.cssplay.co.uk">WYLOGUJ </a>
+            </div>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="kategoria.html">KATEGORIE</a></li>
+                <li><a href="galeria_uzytkownika.html">MOJA GALERIA</a></li>
+                <li><a class="selected" href="duze_zdjecie.html">SLIDESHOW</a></li>
+                <li><a href="about.html">O NAS</a></li>
+            </ul>
+        </div>
+        <div id="site_content">
+
+            <div id="content">
+
+                <div id="content_d_zdjecie">
+
+                    <script type="text/javascript">
+                        // <![CDATA[
+                        var przegladarka_zdjec = new PrzegladarkaZdjec
+                        ('przegladarka_zdjec', new Array
+                        (
+                        new Array('images/tomek/zdjecia_duze/1.jpg', '1', 'Opis'),
+                        new Array('images/tomek/zdjecia_duze/2.jpg', '2'),
+                        new Array('images/tomek/zdjecia_duze/3.jpg', '3'),
+                        new Array('images/tomek/zdjecia_duze/4.jpg', '4'),
+                        new Array('images/tomek/zdjecia_duze/5.jpg', '5'),
+                        new Array('images/tomek/zdjecia_duze/6.jpg', '6'),
+                        new Array('images/tomek/zdjecia_duze/7.jpg', '7'),
+                        new Array('images/tomek/zdjecia_duze/8.jpg', '8'),
+                        new Array('images/tomek/zdjecia_duze/9.jpg', '9'),
+                        new Array('images/tomek/zdjecia_duze/10.jpg', '10'),
+                        new Array('images/tomek/zdjecia_duze/11.jpg', '11'),
+                        new Array('images/tomek/zdjecia_duze/12.jpg', '12'),
+                        new Array('images/tomek/zdjecia_duze/13.jpg', '13'),
+                        new Array('images/tomek/zdjecia_duze/14.jpg', '14'),
+                        new Array('images/tomek/zdjecia_duze/15.jpg', '15', 'Opis'),
+                        new Array('images/tomek/zdjecia_duze/16.jpg', '16'),
+                        new Array('images/tomek/zdjecia_duze/17.jpg', '17'),
+                        new Array('images/tomek/zdjecia_duze/18.jpg', '18'),
+                        new Array('images/tomek/zdjecia_duze/19.jpg', '19'),
+                        new Array('images/tomek/zdjecia_duze/20.jpg', '20'),
+                        new Array('images/tomek/zdjecia_duze/21.jpg', '21'),
+                        new Array('images/tomek/zdjecia_duze/22.jpg', '22'),
+                        new Array('images/tomek/zdjecia_duze/23.jpg', '23'),
+                        new Array('images/tomek/zdjecia_duze/24.jpg', '24'),
+                        new Array('images/tomek/zdjecia_duze/25.jpg', '25'),
+                        new Array('images/tomek/zdjecia_duze/26.jpg', '26'),
+                        new Array('images/tomek/zdjecia_duze/27.jpg', '27'),
+                        new Array('images/tomek/zdjecia_duze/28.jpg', '28'),
+                        new Array('style/series_four.jpg', '29')
+                    )
+                    );
+                        // ]]>
+                    </script>
+
+                </div>
+
+
+                <h1>TWÓJ KOMENTARZ</h1>
+
+                <div id="content_formularz">
+
+                    <form id="contact" method="post" action="http://www.free-css.com/">
+                        <div class="row1"> <span class="formlabel">AUTOR</span> <span class="forminput">
+                                <input type="text" name="name" />
+                            </span> </div>
+
+                        <div class="row1"> <span class="formlabel">KOMENTARZ</span> <span class="forminput">
+                                <textarea cols="50" rows="10" name="enquiry" class="textarea"></textarea>
+                            </span> </div>
+                        <div class="spacer">&nbsp;</div>
+
+                        <div class="row2">
+                            <span class="formlabel"></span>
+                            <span class="forminput">
+                                <input type="submit" value="dodaj komentarz" class="submit" />
+                            </span> 
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <h1>KOMENTARZE</h1>
+
+                <div id ="komentarze">
+                    <table id="komentarze_tab">
+
+                        <tr>
+                            <td id="a1">AUTOR</td>
+                            <td id="a2">Tomek</td>
+                        </tr>
+
+                        <tr>
+                            <td id="k1">KOMENTARZ</td>
+                            <td id="k2" colspan="2">ladne zdjecie<br/>ladne zdjecie <br/> test komentarza</td>
+                        </tr>
+
+                        <tr>
+                            <td id="data1">DODANY</td>
+                            <td id="data2">19 dni temu </td>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

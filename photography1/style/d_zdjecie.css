@@ -1,0 +1,393 @@
+/* global */
+
+
+@font-face
+{
+    font-family: kunstler script;
+    src: url(kuenstl1.ttf);
+}
+
+html
+{
+    height: 100%;
+}
+
+body
+{ font-family: verdana, arial, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  font-size: .68em;
+}
+
+p
+{ margin: 0px;
+  padding: 0px 0px 16px 0px;
+  line-height: 1.7em;
+}
+
+h1
+{ font-family: arial, sans-serif;
+  letter-spacing: .1em;
+  font-weight: normal;
+  padding: 16px 0px 5px 0px;
+  margin: 0px 0px 12px 0px;
+  border-bottom: 1px solid;
+  font-size: 150%;
+}
+
+.sub
+{
+    font-size: 55%;
+    padding-left: 12px;
+    letter-spacing: .1em;
+}
+
+img
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+a
+{
+    outline: none;
+}
+
+/* block quote */
+
+blockquote
+{
+    margin: 20px 0px 20px 0px;
+    padding: 10px 20px 0px 20px;
+    border-left: 8px solid;
+}
+
+/* unordered list */
+ul
+{ margin: 2px 0px 18px 16px;
+  padding: 0px;
+}
+
+ul li
+{ list-style-type: square;
+  margin: 0px 0px 6px 0px;
+  padding: 0px;
+}
+
+/* ordered list */
+ol
+{
+    margin: 8px 0px 0px 24px;
+    padding: 0px;
+}
+
+ol li
+{
+    margin: 0px 0px 11px 0px;
+    padding: 0px;
+}
+
+/* margin lefts / margin rights - to centre content */
+
+#logo, #menu, #site_content
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* logo */
+#logo
+{
+    width: 880px;
+    height: 95px;
+    border-top: 5px solid;
+}
+
+#logo h1
+{ font-family: KuenstlerScript-Medium;
+  font-size: 600%;
+  font-weight: normal;
+  padding: 0px 0px 0px 14px;
+  border: 0px;
+  float: left;
+  letter-spacing: 0px;
+}
+
+#links
+{
+    margin: 15px 9px 0px 0px;
+    font-size: 80%;
+    text-align: right;
+    padding: 20px 10px 0px 0px;
+    text-transform: uppercase;
+}
+
+#links a, #links a:hover
+{
+    padding: 0px 0px 2px 0px;
+    text-decoration: none;
+}
+
+/* navigation menu */
+#menu
+{
+    height: 44px;
+    width: 880px;
+    border-bottom: 2px solid;
+}
+
+#menu ul
+{
+    margin: 0px auto;
+}
+
+#menu li
+{ float: left;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#menu li a
+{ display: block;
+  float: left;
+  height: 38px;
+  text-decoration: none;
+  padding: 6px 19px 0px 19px;
+  border-right: 2px solid;
+  font-weight: bold;
+}
+
+/* main content */
+#site_content
+{ width: 878px;
+  overflow: hidden;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+
+/* page content */
+#content
+{
+    text-align: left;
+    width: 850px;
+    float: left;
+    padding: 18px 14px 18px 14px;
+}
+
+/*duże_zdjęcie*/
+#content_d_zdjecie
+{
+    margin: 10px 10px 10px 10px;
+    padding: 16px 10px 16px 10px;
+}
+
+.zdjecia {
+    text-align: center;
+}
+
+.zdjecia_menu
+{
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.zdjecia_menu input, .zdjecia_menu select {
+    font-size: 10px;
+}
+
+.zdjecia_opis
+{
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* form */
+#content_formularz
+{
+    text-align: left;
+}
+
+
+content_formularz form
+{
+    margin: 3px 3px 3px 3px;
+    padding: 10px 10px 10px 10px;
+
+}
+
+form#contact
+{
+    height: 220px;
+}
+
+div.row1
+{ 
+    width: 850px;
+    clear: both;
+}
+
+div.row1 span.formlabel
+{
+    float: left;
+    width: 164px;
+    text-align: left;
+
+}
+
+div.row1 span.forminput
+{
+    float: left;
+    text-align: left;
+    border: 1px solid gray;
+}
+
+div.row2
+{
+    width: 850px;
+}
+
+div.row2 span.formlabel
+{
+    float: left;
+    width: 164px;
+    text-align: left;
+}
+
+div.row2 span.forminput
+{
+    float: left;
+    text-align: left;
+}
+
+#contact input, #contact textarea
+{
+    width: 500px;
+    font-family: verdana, arial, sans-serif;
+    font-size: 100%;
+    border: 1px solid;
+    overflow: auto;
+    margin: 2px;
+    border: 1px solid gray;
+}
+
+#contact input.submit
+{
+    width: 100px;
+    margin: 8px 0px 0px 220px;
+    height: 22px;
+    cursor: pointer;
+    text-align: left;
+    border: none;
+}
+
+
+/*komentarze*/
+
+#komentarze
+{
+    width: 850px;
+}
+
+#komentarze_tab
+{
+    text-align: center;
+    width: 820px;
+    border-spacing: 8px;
+
+}
+
+#a1
+{
+    float: left;
+    width: 164px;
+    text-align: left
+}
+
+#a2
+{
+    float: left;
+    width: 500px;
+    text-align: left;
+    color: gray;
+    border: 1px solid gray;
+}
+
+#k1
+{
+    float: left;
+    width: 164px;
+    text-align: left;
+}
+
+#k2
+{
+    float: left;
+    width: 500px;
+    text-align: left;
+    color: gray;
+    border: 1px solid gray;
+
+
+}
+
+#data1
+{
+    float: left;
+    width: 164px;
+    text-align: left;
+}
+
+#data2
+{
+    float: left;
+    width: 500px;
+    text-align: left;
+    border: 1px solid gray;
+}
+/* kategorie - Photo gallery template ||| Joshuaink.com ||| March 2005 ||| Free to use but this credit must remain in place */
+
+
+
+#content li{
+    width:160px;
+    border:solid #CCC;
+    border-width:0 1px 1px 0;
+    /* uncomment and adjust this if you want a rounded frame in Mozilla browsers
+	moz-border-radius:20px;
+    */
+    background:#FFF;
+    padding:10px;
+    text-align:center;
+    position:relative;
+    float:left;
+    display:inline;
+    margin:5px;
+}
+
+
+#content a span{
+    position:absolute;
+    left:-9999px;
+    top:0px;
+    left:0px;
+    width:180px;
+    font-weight:bold;
+    background:#FFF;
+    color:#999;
+    padding:5px 0 5px 0;
+    text-transform:uppercase;
+    font-size:80%;
+    border:1px solid #EEE;
+    border-width:0 0 10px 0;
+    filter: alpha(opacity= 100);
+    /*-moz-opacity:.8;
+		opacity:.80;*/
+
+}
+
+

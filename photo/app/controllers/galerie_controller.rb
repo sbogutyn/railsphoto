@@ -1,6 +1,6 @@
 class GalerieController < ApplicationController
   def index
-    @galerie = Galeria.all(:include => :zdjecia)
+    @galerie = Galeria.all(:conditions => {:autor => current_user[:login] } ,:include => :zdjecia)
     
   end
   
@@ -15,7 +15,7 @@ class GalerieController < ApplicationController
   
   
   def show
-    @galerie = Galeria.all(:include => :zdjecia)
+    @galerie = Galeria.all(:conditions => {:autor => current_user[:login] }, :include => :zdjecia)
     @galeria = Galeria.find(params[:id], :include => :zdjecia)
   end
   

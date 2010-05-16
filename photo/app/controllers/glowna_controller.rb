@@ -3,10 +3,10 @@ class GlownaController < ApplicationController
     @kategorie = Kategoria.all
 
     if params[:search]
-      @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
+      # @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
       tag_cloud
     else
-      @zdjecia = Zdjecie.all
+      # @zdjecia = Zdjecie.all
       tag_cloud
     end
     @markery = Marker.all(:include => :galerie)
@@ -15,7 +15,12 @@ class GlownaController < ApplicationController
     @map.center_zoom_init([54.37,18.64],10)
     for marker in @markery
       if marker.galerie.exists?
-      @map.overlay_init(GMarker.new([marker.wysokosc, marker.szerokosc],:title => "test", :info_window => "<a href=\"galerie/#{marker.galerie.first.id}\"><img src=\"#{marker.galerie.first.zdjecia.first.photo.url(:small)}\" width=\"50px\" height=\"50px\"></a>"))
+        info = ""
+        for galeria in marker.galerie.all
+          tmp = "<a href=\"galerie/#{galeria.id}\"><img src=\"#{galeria.zdjecia.first.photo.url(:small)}\" width=\"50px\" height=\"50px\"></a>"
+          info += tmp
+        end
+          @map.overlay_init(GMarker.new([marker.wysokosc, marker.szerokosc],:title => "test", :info_window => info))
       end
     end
   end

@@ -10,5 +10,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'komentarz', 'komentarze'
   inflect.irregular 'galeria', 'galerie'
   inflect.irregular 'kategoria', 'kategorie'
+  inflect.irregular 'marker', 'markery'
 #   inflect.uncountable %w( fish sheep )
 end

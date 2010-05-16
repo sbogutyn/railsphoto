@@ -1,0 +1,20 @@
+<h1>Editing marker</h1>
+
+<% form_for(@marker) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :wysokosc %><br />
+    <%= f.text_field :wysokosc %>
+  </p>
+  <p>
+    <%= f.label :szerokosc %><br />
+    <%= f.text_field :szerokosc %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @marker %> |
+<%= link_to 'Back', markery_path %>

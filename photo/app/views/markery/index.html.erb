@@ -1,0 +1,22 @@
+<h1>Listing markery</h1>
+
+<table>
+  <tr>
+    <th>Wysokosc</th>
+    <th>Szerokosc</th>
+  </tr>
+
+<% @markery.each do |marker| %>
+  <tr>
+    <td><%=h marker.wysokosc %></td>
+    <td><%=h marker.szerokosc %></td>
+    <td><%= link_to 'Show', marker %></td>
+    <td><%= link_to 'Edit', edit_marker_path(marker) %></td>
+    <td><%= link_to 'Destroy', marker, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New marker', new_marker_path %>

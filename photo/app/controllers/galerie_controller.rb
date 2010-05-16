@@ -1,7 +1,6 @@
 class GalerieController < ApplicationController
   def index
     @galerie = Galeria.all(:conditions => {:autor => current_user[:login] } ,:include => :zdjecia)
-    
   end
   
   def tag

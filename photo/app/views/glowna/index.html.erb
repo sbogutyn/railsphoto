@@ -14,7 +14,10 @@
       height: 50px;
     }
   </style>
+  <%= GMap.header %>
+  <%= @map.to_html %>
 <% end %>
+
 <div id="menu">
   <ul>
     <li><%= link_to "HOME", root_url, :class => :selected %></li> 
@@ -25,6 +28,7 @@
   </ul>
 </div>
 <div id="site_content">
+  <%= @map.div(:width => 600, :height => 400) %>
   <div id="tag_cloud">
     <% form_tag zdjecia_path, :method => 'get' do %>
       <p>

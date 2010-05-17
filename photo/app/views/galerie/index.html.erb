@@ -16,9 +16,10 @@
 <div id="menu">
   <ul>
     <li><%= link_to "HOME", root_url %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path, :class => :selected %></li>
+    <li><%= link_to "KATEGORIE", kategorie_path %></li>
     <% if current_user %>
-      <li><%= link_to "GALERIE", galerie_path %></li>
+      <li><%= link_to "GALERIE", galerie_path, :class => :selected %></li>
+      <li><%= link_to "DODAJ LOKALIZACJE NA MAPIE", new_marker_path %></li>
     <% end %>
   </ul>
 </div>
@@ -26,14 +27,16 @@
 <div id="site_content">
   <div id="side_menu">
     <% for galeria in @galerie %>
-      <% if galeria.zdjecia.exists? %>
-        <div class="side_menu_item">
+      <div class="side_menu_item">
+        <% if galeria.zdjecia.exists? %>
           <% link_to galeria do %>
             <%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb), :class => :thumbflat %>
           <% end %>
-          <span><%= h galeria.nazwa %></span>
-        </div>
-      <% end %>
+        <% else %>
+          <%= link_to galeria.nazwa, galeria %>
+        <% end %>
+        <span><%= h galeria.nazwa %></span>
+      </div>
     <% end %>
   </div>
   <div id="content">

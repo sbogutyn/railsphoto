@@ -46,6 +46,7 @@
           <li><%= link_to "Edytuj opis galerii", edit_galeria_path(@galeria) %>
           <li><%= link_to "Usuń galerię", @galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
           <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galeria.id} %>
+          <li><%= link_to "Dodaj galerię", new_galeria_path %>
       </ul>
     <% end %>
     <ul>

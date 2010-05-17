@@ -17,8 +17,10 @@ class GlownaController < ApplicationController
       if marker.galerie.exists?
         info = ""
         for galeria in marker.galerie.all
-          tmp = "<a href=\"galerie/#{galeria.id}\"><img src=\"#{galeria.zdjecia.first.photo.url(:small)}\" width=\"50px\" height=\"50px\"></a>"
-          info += tmp
+          if galeria.zdjecia.exists?
+            tmp = "<a href=\"galerie/#{galeria.id}\"><img src=\"#{galeria.zdjecia.first.photo.url(:small)}\" width=\"50px\" height=\"50px\"></a>"
+            info += tmp
+          end
         end
           @map.overlay_init(GMarker.new([marker.wysokosc, marker.szerokosc],:title => "test", :info_window => info))
       end

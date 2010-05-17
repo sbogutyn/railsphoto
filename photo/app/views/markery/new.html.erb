@@ -1,19 +1,33 @@
-<h1>New marker</h1>
+<h1>Nowy marker</h1>
 
 <% form_for(@marker) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :wysokosc %><br />
-    <%= f.text_field :wysokosc %>
+  <%= f.label :wysokosc %><br />
+  <%= f.text_field :wysokosc %>
   </p>
   <p>
-    <%= f.label :szerokosc %><br />
-    <%= f.text_field :szerokosc %>
+  <%= f.label :szerokosc %><br />
+  <%= f.text_field :szerokosc %>
   </p>
+  <% f.fields_for :galerie do |builder| %>
+    <p>
+    <%= builder.hidden_field :autor, :value => current_user[:login] %>
+    </p>
+    <p>
+    <%= builder.label :nazwa, "nazwa" %><br />
+    <%= builder.text_field :nazwa %>
+    </p>
+    <p>
+    <%= builder.label :opis, "opis" %><br />
+    <%= builder.text_area :opis %>
+    </p>
+  <% end %>
+
   <p>
-    <%= f.submit 'Create' %>
+  <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', markery_path %>
+<%= link_to 'Wróc', galerie_path  %>

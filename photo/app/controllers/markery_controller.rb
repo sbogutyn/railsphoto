@@ -25,6 +25,7 @@ class MarkeryController < ApplicationController
   # GET /markery/new.xml
   def new
     @marker = Marker.new
+    @marker.galerie.build
 
     respond_to do |format|
       format.html # new.html.erb

@@ -20,23 +20,24 @@
 * Edycja/Usuwanie zdjęć tylko przez osobe, do której należy galeria/e z tymi zdjęciami
 * Dodawanie komentarzy przez zalogowanych użytkowników bez podawania autora (automatyczne rozpoznawanie), niezalogowani bez zmian
 * Kategorie zdjęć
+* Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii
+* Geolokalizacja (po zalogowaniu i kliknięciu galerie pojawia się opcja dodaj marker, można tam stworzyć nową galerie z jej lokalizacją)
 
 ## Aktualnie wykonywane:
 
 * Dostosowanie wyglądu strony do szablonu css
+* Dodanie geolokacji przy tworzeniu galerii z markerem (wpisywanie miejsca słownie zamiast wysokosc, szerokosc) i zmiana styli nowego kontrolera
 
 ## Do zrobienia:
 
-* Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii
 * Walidacje
 * Paginacja galerii, zdjęć, komentarzy
 * Poprawienie wyświetlania systemu ocen (jeśli się uda to zamiast dwóch pasków z gwiazdkami zrobić jeden)
 * Dodawanie komentarzy z użyciem Ajaxa
 
 
-## Na koniec jeśli starczy czasu:
+## Na to nie starczyło czasu :)
 
-* Geolokalizacja
 * Grupy użytkowników
 * Dodawanie znajomych
 * System wiadomości

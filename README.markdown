@@ -22,6 +22,7 @@
 * Kategorie zdjęć
 * Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii
 * Geolokalizacja (po zalogowaniu i kliknięciu galerie pojawia się opcja dodaj marker, można tam stworzyć nową galerie z jej lokalizacją)
+* Podgląd miejsca, w którym dodajemy galerię po wpisaniu wysokosc, szerokosc i kliknieciu sprawdz (wymaga dopracowania o walidacje i usuwanie poprzedniego markera)
 
 ## Aktualnie wykonywane:
 

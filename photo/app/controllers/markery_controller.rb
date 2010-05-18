@@ -1,36 +1,24 @@
 class MarkeryController < ApplicationController
   # GET /markery
-  # GET /markery.xml
   def index
     @markery = Marker.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @markery }
-    end
   end
 
   # GET /markery/1
-  # GET /markery/1.xml
   def show
     @marker = Marker.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @marker }
-    end
   end
 
   # GET /markery/new
-  # GET /markery/new.xml
   def new
     @marker = Marker.new
     @marker.galerie.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @marker }
-    end
+
+    # dla mapy
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+    @map.center_zoom_init([54.37,18.64],10)
   end
 
   # GET /markery/1/edit

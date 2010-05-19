@@ -5,10 +5,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :galerie
 
-
   map.resources :zdjecia, :has_many => :komentarze
   map.resources :uzytkownicy
   map.resources :zdjecia, :member => {:rate => :post} 
+  
+  map.mapa 'mapa', :controller => 'mapa', :action => 'index'
   
   # Logowanie
   map.login 'login', :controller => 'uzytkownik_sessions', :action => 'new'

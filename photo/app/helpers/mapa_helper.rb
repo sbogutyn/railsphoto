@@ -1,0 +1,2 @@
+module MapaHelper
+end

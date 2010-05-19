@@ -41,6 +41,7 @@ class ZdjeciaController < ApplicationController
 
   def show
     @zdjecie = Zdjecie.find(params[:id])
+ #   @zdjecie.update_attribute( :licznik, @zdjecie.licznik + 1 )
     @komentarze = @zdjecie.komentarze.all
   end
   

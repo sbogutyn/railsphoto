@@ -1,43 +1,18 @@
 <% title "Zdjęcia" %>
-<% content_for :head do %>
-    <%= stylesheet_link_tag 'zdjecia' %>
-    <%= ajaxful_rating_style %>  
-<% end %>
 
-<% form_tag zdjecia_path, :method => 'get' do %>
-  <p>
-  <%= text_field_tag :szukaj_opisu, params[:szukaj_opisu] %>
-  <%= submit_tag "Szukaj zdjęć według ich opisu", :name => nil %>
-  </p>
-<% end %>
-
-
-<!--
-<% form_tag zdjecia_path, :method => 'get' do %>
-  <p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Szukaj", :name => nil %>
-  </p>
-<% end %>
--->
-
-<% for tag in @tags %>
-  <%= link_to tag.name, { :search => tag.name } %>
-<% end %>
-
+<section id="content">
+<article id="zdjecia">
 <ul>
 <% for zdjecie in @zdjecia %>
 <li>
-    <div class="zdjecie">
         <% if zdjecie.photo.exists? %>
-            <a href="<%= zdjecie_path zdjecie.id %>"><%= image_tag zdjecie.photo.url(:thumb) %></a>
+            <a href="<%= zdjecie_path zdjecie.id %>"><%= image_tag zdjecie.photo.url(:small) %></a>
         <% else %>
             <p>[brak zdjęcia]</p>
         <% end %>
-        <p class="opis"><%=h zdjecie.opis %></p>
-    </div>
+        <span class="info"><%=h zdjecie.opis %></span>
 </li>
 <% end %>
 </ul>
-<p><%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %></p>
-
+</article>
+</section>

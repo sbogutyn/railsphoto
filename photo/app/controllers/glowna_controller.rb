@@ -2,6 +2,8 @@ class GlownaController < ApplicationController
   def index
     @kategorie = Kategoria.all
 
+    @ostatnie = Zdjecie.all(:order => "created_at DESC", :limit => 10) 
+    
     if params[:search]
       # @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
       tag_cloud

@@ -22,10 +22,11 @@
 * Kategorie zdjęć
 * Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii
 * Geolokalizacja (po zalogowaniu i kliknięciu galerie pojawia się opcja dodaj marker, można tam stworzyć nową galerie z jej lokalizacją)
+* Licznik odwiedzin zdjęcia
 
 ## Aktualnie wykonywane:
 
-* Dostosowanie wyglądu strony do szablonu css
+* Walka z widokami
 * Dodanie geolokacji przy tworzeniu galerii z markerem (wpisywanie miejsca słownie zamiast wysokosc, szerokosc) i zmiana styli nowego kontrolera
 
 ## Do zrobienia:

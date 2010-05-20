@@ -46,10 +46,28 @@
 <% for tag in @tags %>
   <%= link_to tag.name, { :controller => "zdjecia", :search => tag.name } %>
 <% end %>
-
-
 					</section>
-					 </section>
+       
+               <section id="right">
+		  <h1>Najczęściej odwiedzane</h1>
+		  <ul>
+      <% for najczesciej in @najczesciej %>
+        <li>
+        <% link_to najczesciej do %>
+          <%= image_tag najczesciej.photo.url(:thumb) %>
+        <% end %>
+        <span class="info"><%= najczesciej.opis %></span> 
+        <% end %>
+          </li>
+      
+              </ul>
+            </section>
+
+
+               
+               
+               
+               </section>
 					 </section>
 
 

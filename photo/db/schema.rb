@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20100519220729) do
     t.integer  "photo_file_size"
     t.integer  "galeria_id"
     t.integer  "kategoria_id"
-    t.integer  "licznik"
+    t.integer  "licznik",            :default => 0
   end
 
 end

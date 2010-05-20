@@ -5,7 +5,7 @@
 <% end %>
 		  <section id="content">
 				<article id="show"> 
-            <h1><%=h @zdjecie.opis %> | Wyświetlono: <%h @zdjecie.licznik %></h1>
+            <h1><%=h @zdjecie.opis %> | Wyświetlono: <%=h @zdjecie.licznik %></h1>
    <%= ratings_for @zdjecie, :dimension => :ocena %>
 				 <% if current_user %>
       Twoja ocena: <%= ratings_for @zdjecie, :force_static => true, :dimension => :ocena, :small => true, :show_user_rating => true %>

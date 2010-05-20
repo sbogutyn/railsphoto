@@ -8,7 +8,7 @@ class ZdjeciaController < ApplicationController
     elsif params[:szukaj_opisu]
       if params[:szukaj_opisu].length == 0
         flash[:notice] = "Nie znaleziono żadnego zdjęcia, należy wpisać jakiś tekst do wyszukiwarki!"
-        redirect_to galerie_path       
+        redirect_to root_path       
       end
       @zdjecia = Zdjecie.find(:all, :conditions => [ "opis LIKE ?","%" + params[:szukaj_opisu] +"%"]) 
       tag_cloud
@@ -17,9 +17,6 @@ class ZdjeciaController < ApplicationController
       tag_cloud
     end
   end
-
-  
-  
   
   def tag
     @zdjecia = Zdjecie.tagged_with(params[:id], :on => :tags)
@@ -41,8 +38,12 @@ class ZdjeciaController < ApplicationController
 
   def show
     @zdjecie = Zdjecie.find(params[:id])
- #   @zdjecie.update_attribute( :licznik, @zdjecie.licznik + 1 )
     @komentarze = @zdjecie.komentarze.all
+    Zdjecie.transaction do
+      z = Zdjecie.find(params[:id])
+      z.update_attribute( :licznik, z.licznik + 1 )
+    end
+#   @next = Kategoria.first(:conditions => "Zdjecia.id > :id")
   end
   
   def new

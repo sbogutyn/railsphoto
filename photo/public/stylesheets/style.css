@@ -381,14 +381,67 @@ padding:0 0 0 4px;
 }
 
 
+#right ul
+{
+		  margin: 0;
+		  padding: 0;
+}
+
+#right li
+{
+		  padding:10px 0 10px 10px;
+		  float:left;
+		  display:inline;
+		  background: #FFFFFF;
+		  margin:4px;
+		  width: 94px;    
+		  padding: 6px 3px 8px 3px;
+		  height: 120px;
+}
+
+
+#right li a
+{ 
+		  background: #EEEEEE;
+		  float: left; 
+		  width: 94px; 
+		  height: 94px; 
+		  border-color:#2C2C2A;
+}
+
+#right li a.selected, #right li a:hover, #right li a.selected:hover
+{
+		  background: #D5D5D5;
+		  border-color: #929280;
+}
+
+#right img
+{ 
+		  display: block; 
+		  margin: auto;
+		  padding: 2px;
+}
+
+
+
+
+
 #tags {
 display: block;
 }
 
 #tags a {
 font-size: 1.3em;
+font-style: none;
+color: #4B9786;
+
 }
 
+#tags a.selected, #tags a:hover
+{
+		  background: #D5D5D5;
+		  border-color: #929280;
+}
 
 section#komentarze h1 {
 border:0 none;

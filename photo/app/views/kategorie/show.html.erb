@@ -1,53 +1,36 @@
 <% title "Rails Photo - Kategorie" %>
 
 <% content_for :head do %>
-  <%= stylesheet_link_tag 'style' %>
-  <style>
-    .thumb {
-      width: 150px;
-      height: 105px;
-    }
-    .thumbflat {
-      width: 142px;
-      height: 50px;
-    }
-  </style>
 <% end %>
 
-<div id="menu">
-  <ul>
-    <li><%= link_to "HOME", root_url %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path, :class => :selected %></li>
-    <% if current_user %>
-      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
-    <% end %>
-  </ul>
-</div>
-
-<div id="site_content">
-  <div id="side_menu">
-    <% for kategoria in @kategorie %>
-      <% if kategoria.zdjecia.exists? %>
-        <div class="side_menu_item">
-          <% link_to kategoria do %>
-            <%= image_tag kategoria.zdjecia.find(:first).photo.url(:thumb), :class => :thumbflat %>
-          <% end %>
-          <span><%= h kategoria.nazwa %></span>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div id="content">
-    <h1>Kategoria: <%= @wybrana.nazwa %></h1>
+<section id="content">
+<section id="left_k">
+<h1>Kategorie zdjęć</h1>
     <ul>
-      <% for zdjecie in @wybrana.zdjecia.all %>
-          <li>
-          <% link_to zdjecie do %>
-            <%= image_tag zdjecie.photo.url(:thumb), :class => :thumb %>
-          </li>
-        <% end %>
+ <% for kategoria in @kategorie %>
+      <% if kategoria.zdjecia.exists? %>
+      <li>
+        <% link_to kategoria do %>
+          <%= image_tag kategoria.zdjecia.find(:first).photo.url(:smaller), :class => :smaller %>
+          <% end %>
+          <span class="info"><%= h kategoria.nazwa %></span>
+        </li>
       <% end %>
-    </ul>
-  </div>
-</div>
+    <% end %>
+</ul>
+</section>
+
+<article id="kat"> 
+<h1>Zdjęcia z kategorii <%= @wybrana.nazwa %></h1>
+<ul> 
+      <% for zdjecie in @wybrana.zdjecia.all %>
+  <li>
+          <% link_to zdjecie do %>
+            <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
+      <% end %>
+  </li>
+        <% end %>
+</ul> 
+</article> 
+</section>
 

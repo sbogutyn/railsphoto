@@ -1,4 +1,6 @@
 class GalerieController < ApplicationController
+before_filter :require_user, :except => [:show, :index]
+
   def index
     @galerie = Galeria.all(:conditions => {:autor => current_user[:login] } ,:include => :zdjecia)
   end

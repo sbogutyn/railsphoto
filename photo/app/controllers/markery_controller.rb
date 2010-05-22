@@ -1,4 +1,6 @@
 class MarkeryController < ApplicationController
+before_filter :require_user, :except => [:show, :index]
+
   # GET /markery
   def index
     @markery = Marker.all

@@ -1,5 +1,5 @@
 <% if @zdjecie.photo.exists? %>
-  <p><%= image_tag @zdjecie.photo.url(:small) %></p>
+  <%= image_tag @zdjecie.photo.url(:large), :class => :large %>
 <% else %>
-  <p> Brak zdjęcia, dodaj je. </p>
+  Brak zdjęcia, dodaj je.
 <% end %>

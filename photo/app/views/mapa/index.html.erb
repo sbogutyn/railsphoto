@@ -1,0 +1,15 @@
+<% title "Rails Photo - Strona Główna" %>
+
+<% content_for :head do %>
+  <%= GMap.header %>
+  <%= @map.to_html %>
+<% end %>
+
+		  <section id="content">
+
+  <%= @map.div(:width => 960, :height => 600) %>
+
+        </section>
+
+
+

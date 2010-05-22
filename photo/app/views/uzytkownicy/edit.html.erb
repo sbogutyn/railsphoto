@@ -1,13 +1,4 @@
 <% title "Edycja użytkownika" %>
-<div id="menu">
-  <ul>
-    <li><%= link_to "HOME", root_url %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path %></li>
-    <% if current_user %>
-      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
-    <% end %>
-  </ul>
-</div>
 <div id="site_content">
   <%= render @uzytkownik %>
 </div>

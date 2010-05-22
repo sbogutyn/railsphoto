@@ -1,0 +1,10 @@
+
+results = Geocoding::get(params[:adres])
+if results.status == Geocoding::GEO_SUCCESS
+  coord = results[0].latlon
+  page << "alert(\"Wysokosc: #{coord[0]}, Szerokosc: #{coord[1]}\")";
+  page[:marker_wysokosc].value = coord[0]
+  page[:marker_szerokosc].value = coord[1]
+else
+  page << "alert(\"Nie znaleziono lokalizacji\")"
+end

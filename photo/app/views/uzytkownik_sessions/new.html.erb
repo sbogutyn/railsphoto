@@ -1,29 +1,19 @@
 <% title "Zaloguj się" %>
-<div id="menu">
-  <ul>
-    <li><%= link_to "HOME", root_url %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path %></li>
-    <% if current_user %>
-      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
-    <% end %>
-  </ul>
-</div>
-<div id="site_content"> 
-  <% form_for @uzytkownik_session do |form| %>
+
+<section id="content">
+
+<% form_for @uzytkownik_session do |form| %>
     <%= form.error_messages %>
-    <ol class="formList">
-      <li>
+      <p>
       <%= form.label :login, "Login" %>
       <%= form.text_field :login %>
-      </li>
-      <li>
+      </p>
+      <p>
       <%= form.label :password, "Hasło" %>
       <%= form.password_field :password %>
-      </li>
-      <li>
+      </p>
+      <p>
       <%= form.submit "Zaloguj" %>
-      </li>
-    </ol>
-
-  <% end %>
-</div>
+      </p>
+    <% end %>
+  </section>

@@ -1,21 +1,12 @@
 <% content_for :head do %>
-  <%= stylesheet_link_tag 'style' %>
-
   <%= GMap.header %>
   <%= @map.to_html %>
 <% end %>
 
-<div id="menu">
-  <ul>
-    <li><%= link_to "HOME", root_url %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path %></li>
-    <% if current_user %>
-      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
-    <% end %>
-  </ul>
-</div>
-<div id="site_content">
-  <%= @map.div(:width => 878, :height => 400) %>
+<section id="content">
+<%= @map.div(:width => 960, :height => 500) %>
+<input id="adres"></input>
+<%= link_to_remote "Sprawdź lokalizację na mapie", :url => { :action => 'sprawdz_lokalizacje' }, :with => "'adres=' + $('adres').value"%>
 <% form_for(@marker) do |f| %>
   <%= f.error_messages %>
   <h2> Pozycja na mapie: </h2>
@@ -64,4 +55,4 @@
 <% end %>
 
 <%= link_to 'Wróc', galerie_path  %>
-</div>
+</section>

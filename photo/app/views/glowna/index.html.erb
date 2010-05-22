@@ -1,68 +1,70 @@
 <% title "Rails Photo - Strona Główna" %>
 
 <% content_for :head do %>
-  <%= stylesheet_link_tag 'style' %>
-  <%= stylesheet_link_tag 'image_viewer' %>
-  <style>
-    .thumb {
-      width: 150px;
-      height: 105px;
-    }
-    .thumbflat {
-      width: 142px;
-      height: 50px;
-    }
-  </style>
-  <%= GMap.header %>
-  <%= @map.to_html %>
 <% end %>
 
-<div id="menu">
-  <ul>
-    <li><%= link_to "HOME", root_url, :class => :selected %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path %></li>
-    <% if current_user %>
-      <li><%= link_to "MOJE GALERIE", galerie_path %></li>
+<section id="content">
+<section id="left">
+<h1>Ostatnio dodane</h1>
+<ul>
+  <% for ostatnie in @ostatnie %>
+    <li>
+    <% link_to ostatnie do %>
+      <%= image_tag ostatnie.photo.url(:thumb), :class => :thumb %>
     <% end %>
-  </ul>
-</div>
-<div id="site_content">
-  <%= @map.div(:width => 878, :height => 400) %>
-  <div id="tag_cloud">
-    <% form_tag zdjecia_path, :method => 'get' do %>
-      <p>
-      <%= text_field_tag :szukaj_opisu, params[:szukaj_opisu] %>
-      <%= submit_tag "Szukaj zdjęć według ich opisu", :name => nil %>
-      </p>
-    <% end %>
+    <span class="info"><%= ostatnie.opis %></span> 
+  <% end %>
+  </li>
 
-    Szukaj zdjęć według tagów:<br>
-    <% for tag in @tags %>
-      <%= link_to tag.name, { :controller => 'zdjecia',  :action => 'index', :search => tag.name} %>
-    <% end %>
-    <br><br>
-  </div>
-  <div id="side_menu">
-    <div class="side_menu_item"> <a class="selected" href="#"><img src="images/series/series_one.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_One</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="images/series/series_two.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Two</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="images/series/series_three.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Three</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="images/series/series_four.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Four</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="images/series/series_five.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Five</span> </div>
-  </div>
+</ul>
+</section>
 
-  <div id="content"> 
-    <h1>kategorie zdjęć</h1>
-    <ul> 
-      <% for kategoria in @kategorie %>
-        <li>
-        <% link_to kategoria do %>
-          <% if kategoria.zdjecia.exists? %>
-            <%= image_tag kategoria.zdjecia.first.photo.url(:thumb), :class => :thumb %>
-          <% end %>
-          <span><%= kategoria.nazwa %></span>
-        <% end %>
-        </li>
+
+
+<article> 
+<ul> 
+  <% for kategoria in @kategorie %>
+    <li>
+    <% link_to kategoria do %>
+      <span><%= kategoria.nazwa %></span>
+      <% if kategoria.zdjecia.exists? %>
+        <%= image_tag kategoria.zdjecia.first.photo.url(:smaller), :class => :smaller %>
       <% end %>
-    </ul> 
-  </div> 
-</div>
+    <% end %>
+    </li>
+  <% end %>
+</ul> 
+</article>
+
+<section id="right">
+<section id="tags">
+<h1>tagi</h1>				
+<% for tag in @tags %>
+  <%= link_to tag.name, { :controller => "zdjecia", :search => tag.name } %>
+<% end %>
+</section>
+
+<section id="right">
+<h1>Najczęściej odwiedzane</h1>
+<ul>
+  <% for najczesciej in @najczesciej %>
+    <li>
+    <% link_to najczesciej do %>
+      <%= image_tag najczesciej.photo.url(:thumb), :class => :thumb  %>
+    <% end %>
+    <span class="info"><%= najczesciej.opis %></span> 
+  <% end %>
+  </li>
+
+</ul>
+</section>
+
+
+
+
+
+</section>
+</section>
+
+
+

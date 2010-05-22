@@ -2,13 +2,26 @@ class GlownaController < ApplicationController
   def index
     @kategorie = Kategoria.all
 
+    @ostatnie = Zdjecie.all(:order => "created_at DESC", :limit => 10) 
+
+    @najczesciej = Zdjecie.all(:order => "licznik DESC", :limit => 3) 
+
     if params[:search]
-      # @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
+      @zdjecia = Zdjecie.tagged_with(params[:search], :on => :tags)
+      tag_cloud
+    elsif params[:szukaj_opisu]
+      if params[:szukaj_opisu].length == 0
+        flash[:notice] = "Nie znaleziono żadnego zdjęcia, należy wpisać jakiś tekst do wyszukiwarki!"
+        redirect_to root_path       
+      end
+      @zdjecia = Zdjecie.find(:all, :conditions => [ "opis LIKE ?","%" + params[:szukaj_opisu] +"%"]) 
       tag_cloud
     else
-      # @zdjecia = Zdjecie.all
+      @zdjecia = Zdjecie.all
       tag_cloud
     end
+ 
+
     @markery = Marker.all(:include => :galerie)
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)

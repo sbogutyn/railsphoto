@@ -1,4 +1,6 @@
 class KategorieController < ApplicationController
+before_filter :require_user, :except => [:show, :index]
+ 
   def index
     @kategorie = Kategoria.all
     @pierwsza = Kategoria.find(1 , :include => [:zdjecia])

@@ -1,73 +1,55 @@
 <% title "Galerie zdjęć" %>
 
 <% content_for :head do %>
-  <%= stylesheet_link_tag 'style' %>
-  <style>
-    .thumb {
-      width: 150px;
-      height: 105px;
-    }
-    .thumbflat {
-      width: 142px;
-      height: 50px;
-    }
-  </style>
 <% end %>
-<div id="menu">
-  <ul>
-    <li><%= link_to "HOME", root_url %></li> 
-    <li><%= link_to "KATEGORIE", kategorie_path %></li>
-    <% if current_user %>
-      <li><%= link_to "GALERIE", galerie_path, :class => :selected %></li>
-      <li><%= link_to "DODAJ LOKALIZACJE NA MAPIE", new_marker_path %></li>
-    <% end %>
-  </ul>
-</div>
-
-<div id="site_content">
-  <div id="side_menu">
-    <% for galeria in @galerie %>
-      <div class="side_menu_item">
+<% if false %>
+<section id="content">
+<section id="left_k">
+<h1>Galerie zdjęć</h1>
+    <ul>
+      <% for galeria in @galerie %>
         <% if galeria.zdjecia.exists? %>
-          <% link_to galeria do %>
-            <%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb), :class => :thumbflat %>
-          <% end %>
-        <% else %>
-          <%= link_to galeria.nazwa, galeria %>
+          <li>
+            <% link_to galeria do %>
+            <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller) %>
+            <span class="info"><%= h galeria.nazwa %></span>
+          </li>
         <% end %>
-        <span><%= h galeria.nazwa %></span>
-      </div>
-    <% end %>
-  </div>
-  <div id="content">
-    <h1>Galeria: <%= @galerie.first.nazwa %></h1>
-    <h2>Opis: <%= @galerie.first.opis %></h2>
-
-    <% if current_user && current_user[:login] == @galerie.first.autor %>
+        <% else %>
+            <%= link_to galeria.nazwa, galeria %>
+            <span class="info"><%= h galeria.nazwa %></span>
+        <% end %>
+      <% end %>
+    </ul>
+    </section>
+ 
+  <% if current_user && current_user[:login] == @galerie.first.autor %>
       <ul>
           <li><%= link_to "Edytuj opis galerii", edit_galeria_path(@galerie.first) %>
           <li><%= link_to "Usuń galerię", @galerie.first, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
           <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galerie.first.id} %>
       </ul>
     <% end %>
-    <ul>
+
+
+     <ul>
       <% for zdjecie in @galerie.first.zdjecia.all %>
         <li>
         <% link_to zdjecie do %>
-          <%= image_tag zdjecie.photo.url(:thumb), :class => :thumb %>
+          <%= image_tag zdjecie.photo.url(:small) %>
           </li>
         <% end %>
-      <% end %>
+        <% end %>
     </ul>
-  </div>
-</div>
-<% if false %>
-  <table>
+        <% end %>
+
+
+    <% if true %>
+  <table border="1">
     <% for galeria in @galerie %>
       <tr>
-        <td><%=h galeria.nazwa %></td>
-        <td><%=h galeria.autor %></td>
-        <td><%=h galeria.opis %></td>
+        <td style="width:150px;"><%=h galeria.nazwa %></td>
+        <td style="width:250px;"><%=h galeria.opis %></td>
         <td>
           <%# pokazanie pierwszego zdjecia z galerii %>
           <% link_to galeria do %>
@@ -83,13 +65,17 @@
               <li><%= link_to "Usuń galerię", galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
               <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => galeria.id} %>
               <li><%= link_to "Edytuj/usuń zdjęcie", { :action => "show", :id => galeria.id, :kasowanie => "tak" } %>
-          </ul></td>
+            
+            </ul></td>
         <% end %>
       </tr>
     <% end %>
   </table>
+    <% end %>
+     
+ 
   <% if current_user %>
     <p><%= link_to "Utwórz nową galerię", new_galeria_path %></p>
-  <% end %>
-  <p><%= link_to "Pokaż wszystkie zdjęcia", zdjecia_path %></p>
-<% end %>
+    <p><%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path %></p>
+    <% end %>
+

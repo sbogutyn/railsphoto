@@ -30,5 +30,10 @@ class Zdjecie < ActiveRecord::Base
     def reprocess_photo
       photo.reprocess!
     end
+
+    def self.per_page
+      50
+    end
+
 end
 

@@ -1,4 +1,5 @@
 class ZdjeciaController < ApplicationController
+before_filter :require_user, :except => [:show, :index]
 
   def index
     # wyszukiwanie: wedlug tagow, potem wedlug opisow, jezeli szukana fraza nie jest pusta

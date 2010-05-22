@@ -6,8 +6,11 @@
 		  src: url(kuenstl1.ttf);
 }
 
-.jaxful-rating-wrapper {
-margin:0;
+.ocena {
+left:8px;
+margin:0 0 -27px;
+position:relative;
+top:6px;
 }
 body
 { 
@@ -108,7 +111,6 @@ header li
 		  font-size: 80%;
 		  text-align: right;
 		  padding: 0px 15px 0px 0px;
-		  text-transform: uppercase;
 }
 
 header li a

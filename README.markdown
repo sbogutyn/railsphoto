@@ -23,6 +23,7 @@
 * Profil użytkownika - po zalogowaniu możliwość podglądu swoich galerii
 * Geolokalizacja (po zalogowaniu i kliknięciu galerie pojawia się opcja dodaj marker, można tam stworzyć nową galerie z jej lokalizacją)
 * Licznik odwiedzin zdjęcia
+* Niezalogowani użytkownicy mogą tylko przeglądać serwis
 
 ## Aktualnie wykonywane:
 
@@ -33,9 +34,7 @@
 
 * Walidacje
 * Paginacja galerii, zdjęć, komentarzy
-* Poprawienie wyświetlania systemu ocen (jeśli się uda to zamiast dwóch pasków z gwiazdkami zrobić jeden)
 * Dodawanie komentarzy z użyciem Ajaxa
-
 
 ## Na to nie starczyło czasu :)
 

@@ -3,16 +3,20 @@
 <% content_for :head do %>
   <%= ajaxful_rating_style %>  
 <% end %>
-		  <section id="content">
+
+<div class="ocena">
+   <%= ratings_for @zdjecie, :dimension => :ocena %>
+  </div>
+
+
+    <section id="content">
 				<article id="show"> 
             <h1><%=h @zdjecie.opis %> | Wyświetlono: <%=h @zdjecie.licznik %></h1>
-   <%= ratings_for @zdjecie, :dimension => :ocena %>
-				 <% if current_user %>
-      Twoja ocena: <%= ratings_for @zdjecie, :force_static => true, :dimension => :ocena, :small => true, :show_user_rating => true %>
-    <% end %>
 
-  <% if current_user && current_user[:login] == @zdjecie.galeria.autor %>
-      <li>
+
+            
+            <% if current_user && current_user[:login] == @zdjecie.galeria.autor %> 
+              <li>
       <% link_to edit_zdjecie_path(@zdjecie) do %>
         <%= render :partial => 'image' %>
         <%= link_to "Usuń", @zdjecie, :confirm => 'Na pewno usunąć to zdjęcie?', :method => :delete %> 

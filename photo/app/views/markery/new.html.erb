@@ -5,21 +5,25 @@
 
 <section id="content">
 <%= @map.div(:width => 960, :height => 500) %>
-<input id="adres"></input>
-<%= link_to_remote "Sprawdź lokalizację na mapie", :url => { :action => 'sprawdz_lokalizacje' }, :with => "'adres=' + $('adres').value"%>
-<% form_for(@marker) do |f| %>
+<% field_set_tag 'Sprawdzanie adresu' do %>
+<label for="adres">Adres:</label><br />
+<input type="text" id="adres" size="30" class="pole"></input><br />
+<%= button_to_remote "Sprawdź lokalizację na mapie", :url => { :action => 'sprawdz_lokalizacje' }, :with => "'adres=' + $('adres').value"%>
+<br />
+<% end %>
+<% form_for(@marker, :html => { :class => :duzy }) do |f| %>
   <%= f.error_messages %>
-  <h2> Pozycja na mapie: </h2>
+  <% field_set_tag 'Pozycja na mapie' do %>
   <p>
   <%= f.label :wysokosc %><br />
-  <%= f.text_field :wysokosc %>
+  <%= f.text_field :wysokosc, :class => :pole %>
   </p>
   <p>
   <%= f.label :szerokosc %><br />
-  <%= f.text_field :szerokosc %>
+  <%= f.text_field :szerokosc, :class => :pole %>
   </p>
   <p>
-  <%= link_to_function "Sprawdz"  do |page| 
+  <%= button_to_function "Pokaż wybrane koordynaty na mapie", :class => :przycisk  do |page| 
     @map = Variable.new("map")
 
     page << "var wysokosc = $('marker_wysokosc').value;"
@@ -33,26 +37,27 @@
   
   end
 %>
-  </p>
+</p>
+<% end %>
+<% field_set_tag 'Galeria:' do %>
   <% f.fields_for :galerie do |builder| %>
-    <h2> Galeria: </h2>
     <p>
     <%= builder.hidden_field :autor, :value => current_user[:login] %>
     </p>
     <p>
-    <%= builder.label :nazwa, "nazwa" %><br />
-    <%= builder.text_field :nazwa %>
+    <%= builder.label :nazwa, "Nazwa" %><br />
+    <%= builder.text_field :nazwa, :class => :pole %>
     </p>
     <p>
     <%= builder.label :opis, "opis" %><br />
-    <%= builder.text_area :opis %>
+    <%= builder.text_area :opis, :class => :pole %>
     </p>
   <% end %>
-
+<% end %>
   <p>
-  <%= f.submit 'Create' %>
+  <%= f.submit 'Utwórz', :class => :przycisk %>
   </p>
 <% end %>
 
-<%= link_to 'Wróc', galerie_path  %>
 </section>
+

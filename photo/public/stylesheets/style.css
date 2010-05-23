@@ -5,7 +5,52 @@
 		  font-family: kunstler script;
 		  src: url(kuenstl1.ttf);
 }
+#autorzy h1 {
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+  margin-left: 5px;
+}
+#autorzy li {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+}
+#profil ul {
+  list-style-type: none;
+}
 
+#profil .formlist label {
+  display: block;
+
+}
+.formlist input[type=text], .formlist input[type=submit] {
+  margin-top: 10px;
+}
+.duzy {
+}
+.duzy input[type=button] {
+  height: 30px;
+  margin-left: 10px;
+  margin-top:10px;
+}
+.pole {
+  margin-left: 20px;
+}
+.przycisk {
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.gopcje {
+  font-size: 12px;
+  
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+
+}
 .thumb {
   width: 90px;
   height: 90px;

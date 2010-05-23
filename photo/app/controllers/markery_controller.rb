@@ -36,7 +36,7 @@ before_filter :require_user, :except => [:show, :index]
     respond_to do |format|
       if @marker.save
         flash[:notice] = 'Marker was successfully created.'
-        format.html { redirect_to(@marker) }
+        format.html { redirect_to galerie_path }
         format.xml  { render :xml => @marker, :status => :created, :location => @marker }
       else
         format.html { render :action => "new" }

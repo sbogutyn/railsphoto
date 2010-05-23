@@ -25,11 +25,11 @@
 * Podgląd miejsca, w którym dodajemy galerię po wpisaniu wysokosc, szerokosc i kliknieciu sprawdz (wymaga dopracowania o walidacje i usuwanie poprzedniego markera)
 * Licznik odwiedzin zdjęcia
 * Niezalogowani użytkownicy mogą tylko przeglądać serwis
+* Dodanie geolokacji przy tworzeniu galerii z markerem (wpisywanie miejsca słownie zamiast wysokosc, szerokosc) i zmiana styli nowego kontrolera
 
 ## Aktualnie wykonywane:
 
 * Walka z widokami
-* Dodanie geolokacji przy tworzeniu galerii z markerem (wpisywanie miejsca słownie zamiast wysokosc, szerokosc) i zmiana styli nowego kontrolera
 
 ## Do zrobienia:
 

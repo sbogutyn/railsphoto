@@ -2,80 +2,50 @@
 
 <% content_for :head do %>
 <% end %>
-<% if false %>
+
 <section id="content">
 <section id="left_k">
 <h1>Galerie zdjęć</h1>
-    <ul>
-      <% for galeria in @galerie %>
-        <% if galeria.zdjecia.exists? %>
-          <li>
-            <% link_to galeria do %>
-            <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller) %>
-            <span class="info"><%= h galeria.nazwa %></span>
-          </li>
-        <% end %>
-        <% else %>
-            <%= link_to galeria.nazwa, galeria %>
-            <span class="info"><%= h galeria.nazwa %></span>
-        <% end %>
+<ul>
+  <% for galeria in @galerie %>
+    <% if galeria.zdjecia.exists? %>
+      <li>
+      <% link_to galeria do %>
+        <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller), :class => :smaller %>
       <% end %>
-    </ul>
-    </section>
- 
-  <% if current_user && current_user[:login] == @galerie.first.autor %>
-      <ul>
-          <li><%= link_to "Edytuj opis galerii", edit_galeria_path(@galerie.first) %>
-          <li><%= link_to "Usuń galerię", @galerie.first, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
-          <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galerie.first.id} %>
-      </ul>
+        <span class="info"><%= h galeria.nazwa %></span>
+        </li>
+    <% else %>
+      <%= link_to galeria.nazwa, galeria %>
+      <span class="info"><%= h galeria.nazwa %></span>
     <% end %>
+  <% end %>
+</ul>
+</section>
 
 
-     <ul>
+
+<article id="kat"> 
+<h1>Opcje galerii: </h1>
+<% if current_user && current_user[:login] == @galerie.first.autor %>
+  
+  <%= link_to "Edytuj opis galerii", edit_galeria_path(@galerie.first), :class => :gopcje %><br />
+  <%= link_to "Usuń galerię", @galerie.first, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete, :class => :gopcje %><br />
+  <%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galerie.first.id}, :class => :gopcje%><br />
+  
+  <%= link_to "Utwórz nową galerię", new_galeria_path, :class => :gopcje%><br />
+  <%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path, :class => :gopcje %><br />
+<% end %>
+<h1>Zdjęcia z galerii <%= @galerie.first.nazwa %></h1>
+<ul> 
       <% for zdjecie in @galerie.first.zdjecia.all %>
-        <li>
-        <% link_to zdjecie do %>
-          <%= image_tag zdjecie.photo.url(:small) %>
-          </li>
+  <li>
+          <% link_to zdjecie do %>
+            <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
+      <% end %>
+  </li>
         <% end %>
-        <% end %>
-    </ul>
-        <% end %>
-
-
-    <% if true %>
-  <table border="1">
-    <% for galeria in @galerie %>
-      <tr>
-        <td style="width:150px;"><%=h galeria.nazwa %></td>
-        <td style="width:250px;"><%=h galeria.opis %></td>
-        <td>
-          <%# pokazanie pierwszego zdjecia z galerii %>
-          <% link_to galeria do %>
-            <% if galeria.zdjecia.exists? %>
-              <%= image_tag galeria.zdjecia.find(:first).photo.url(:thumb) %>
-            <% end %>
-          <% end %>
-        </td>
-        <% if current_user && current_user[:login] == galeria.autor %>
-          <td><ul>
-              <li><%= link_to "Pokaż galerię", galeria %>
-              <li><%= link_to "Edytuj opis galerii", edit_galeria_path(galeria) %>
-              <li><%= link_to "Usuń galerię", galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
-              <li><%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => galeria.id} %>
-              <li><%= link_to "Edytuj/usuń zdjęcie", { :action => "show", :id => galeria.id, :kasowanie => "tak" } %>
-            
-            </ul></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
-    <% end %>
-     
- 
-  <% if current_user %>
-    <p><%= link_to "Utwórz nową galerię", new_galeria_path %></p>
-    <p><%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path %></p>
-    <% end %>
+</ul> 
+</article> 
+</section>
 

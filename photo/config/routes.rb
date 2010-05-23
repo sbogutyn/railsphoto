@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :zdjecia, :member => {:rate => :post} 
   
   map.mapa 'mapa', :controller => 'mapa', :action => 'index'
-  
+  map.about 'about', :controller => 'about', :action => 'index'
   # Logowanie
   map.login 'login', :controller => 'uzytkownik_sessions', :action => 'new'
   map.logout 'logout', :controller => 'uzytkownik_sessions', :action => 'destroy'

@@ -1,19 +1,22 @@
 <% title "Zaloguj się" %>
 
 <section id="content">
-
+<section id="profil">
+<ul class="formlist">
 <% form_for @uzytkownik_session do |form| %>
     <%= form.error_messages %>
-      <p>
+      <li>
       <%= form.label :login, "Login" %>
       <%= form.text_field :login %>
-      </p>
-      <p>
+      </li>
+      <li>
       <%= form.label :password, "Hasło" %>
       <%= form.password_field :password %>
-      </p>
-      <p>
+      </li>
+      <li>
       <%= form.submit "Zaloguj" %>
-      </p>
+      </li>
     <% end %>
+  </ul>
+    </section>
   </section>

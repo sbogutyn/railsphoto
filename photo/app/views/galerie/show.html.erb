@@ -1,52 +1,50 @@
 <% title "Galeria" %>
 
+<% title "Galerie zdjęć" %>
+
 <% content_for :head do %>
-  <% end %>
-
- <div id="content">
-    <h1>Galeria: <%= @galeria.nazwa %> | Opis: <%= @galeria.opis %></h1>
-
-    <% if current_user && current_user[:login] == @galeria.autor %>
-      <ul>
-          <li><%= link_to "Edytuj opis galerii", edit_galeria_path(@galeria) %>
-          <li><%= link_to "Usuń galerię", @galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete %>
-          <li><%= link_to "Dodaj nowe zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galeria.id} %>
-      </ul>
-    <% end %>
-    <ul>
-      <% for zdjecie in @galeria.zdjecia.all %>
-        <li>
-        <% link_to zdjecie do %>
-          <%= image_tag zdjecie.photo.url(:thumb), :class => :thumb %>
-
-        </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
-</div>
-
-<% if false %>
-<p>
-  <strong>Nazwa:</strong>
-  <%=h @galeria.nazwa %>
-</p>
-<p>
-  <strong>Autor:</strong>
-  <%=h @galeria.autor %>
-</p>
-<p>
-  <strong>Opis:</strong>
-  <%=h @galeria.opis %>
-</p>
-
-<%# Wywolanie widoku czesciowego, potrzebnego do pokazania lub do skasowania zdjec nalezacych do danej galerii %>
-<p id="gal_zdjecia"><strong>Zdjecia:</strong>
-    <%= render :partial => @galeria.zdjecia %>
-  </p>
-
-
-<p>
-  <%= link_to "Pokaż wszystkie galerie", galerie_path %>
-  </p>
 <% end %>
+
+<section id="content">
+<section id="left_k">
+<h1>Galerie zdjęć</h1>
+<ul>
+  <% for galeria in @galerie %>
+    <% if galeria.zdjecia.exists? %>
+      <li>
+      <% link_to galeria do %>
+        <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller), :class => :smaller %>
+      <% end %>
+        <span class="info"><%= h galeria.nazwa %></span>
+        </li>
+    <% else %>
+      <%= link_to galeria.nazwa, galeria %>
+      <span class="info"><%= h galeria.nazwa %></span>
+    <% end %>
+  <% end %>
+</ul>
+</section>
+
+<article id="kat"> 
+<h1>Opcje galerii: </h1>
+<% if current_user && current_user[:login] == @galeria.autor %>
+  
+  <%= link_to "Edytuj opis galerii", edit_galeria_path(@galeria), :class => :gopcje %><br />
+  <%= link_to "Usuń galerię", @galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete, :class => :gopcje %><br />
+  <%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galeria.id}, :class => :gopcje%><br />
+  
+  <%= link_to "Utwórz nową galerię", new_galeria_path, :class => :gopcje%><br />
+  <%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path, :class => :gopcje %><br />
+<% end %>
+<h1>Zdjęcia z galerii <%= @galeria.nazwa %></h1>
+<ul> 
+      <% for zdjecie in @galeria.zdjecia.all %>
+  <li>
+          <% link_to zdjecie do %>
+            <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
+      <% end %>
+  </li>
+        <% end %>
+</ul> 
+</article> 
+</section>

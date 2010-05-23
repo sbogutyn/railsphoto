@@ -5,6 +5,8 @@
     <title><%= h(yield(:title) || "Rails Photo") %></title>
     <%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'niceforms' %>
+    <%= stylesheet_link_tag 'uniform-default' %>
     <%= ajaxful_rating_style %>  
     <%= yield(:head) %>
   </head>
@@ -40,7 +42,7 @@
               <% if current_user %>
               <li><%= link_to "MOJE GALERIE", galerie_path %> </li>
               <% end %>
-              <li><a href="about.html">O NAS</a></li>
+              <li><%= link_to "O NAS", about_path %></li>
             </ul>
         </nav>
 

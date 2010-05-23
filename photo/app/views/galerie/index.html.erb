@@ -6,46 +6,50 @@
 <section id="content">
 <section id="left_k">
 <h1>Galerie zdjęć</h1>
-<ul>
+<ul
   <% for galeria in @galerie %>
-    <% if galeria.zdjecia.exists? %>
-      <li>
-      <% link_to galeria do %>
-        <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller), :class => :smaller %>
-      <% end %>
+      <% if galeria.zdjecia.exists? %>
+        <li>
+        <% link_to galeria do %>
+          <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller), :class => :smaller %>
+        <% end %>
         <span class="info"><%= h galeria.nazwa %></span>
         </li>
-    <% else %>
-      <%= link_to galeria.nazwa, galeria %>
-      <span class="info"><%= h galeria.nazwa %></span>
-    <% end %>
+      <% else %>
+        <%= link_to galeria.nazwa, galeria %>
+        <span class="info"><%= h galeria.nazwa %></span>
+      <% end %>
   <% end %>
 </ul>
 </section>
 
 
+<% if @galerie.first %>
+  <article id="kat"> 
+  <h1>Opcje galerii: </h1>
+  <% if current_user && current_user[:login] == @galerie.first.autor %>
 
-<article id="kat"> 
-<h1>Opcje galerii: </h1>
-<% if current_user && current_user[:login] == @galerie.first.autor %>
-  
-  <%= link_to "Edytuj opis galerii", edit_galeria_path(@galerie.first), :class => :gopcje %><br />
-  <%= link_to "Usuń galerię", @galerie.first, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete, :class => :gopcje %><br />
-  <%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galerie.first.id}, :class => :gopcje%><br />
-  
-  <%= link_to "Utwórz nową galerię", new_galeria_path, :class => :gopcje%><br />
-  <%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path, :class => :gopcje %><br />
-<% end %>
-<h1>Zdjęcia z galerii <%= @galerie.first.nazwa %></h1>
-<ul> 
-      <% for zdjecie in @galerie.first.zdjecia.all %>
-  <li>
-          <% link_to zdjecie do %>
-            <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
+    <%= link_to "Edytuj opis galerii", edit_galeria_path(@galerie.first), :class => :gopcje %><br />
+    <%= link_to "Usuń galerię", @galerie.first, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete, :class => :gopcje %><br />
+    <%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galerie.first.id}, :class => :gopcje%><br />
+
+    <%= link_to "Utwórz nową galerię", new_galeria_path, :class => :gopcje%><br />
+    <%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path, :class => :gopcje %><br />
+  <% end %>
+  <h1>Zdjęcia z galerii <%= @galerie.first.nazwa %></h1>
+  <ul> 
+    <% for zdjecie in @galerie.first.zdjecia.all %>
+      <li>
+      <% link_to zdjecie do %>
+        <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
       <% end %>
-  </li>
-        <% end %>
-</ul> 
+      </li>
+    <% end %>
+  </ul> 
+<% else %>
+    <%= link_to "Utwórz nową galerię", new_galeria_path, :class => :gopcje%><br />
+    <%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path, :class => :gopcje %><br />
+<% end %>
 </article> 
 </section>
 

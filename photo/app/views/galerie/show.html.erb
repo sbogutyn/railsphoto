@@ -7,6 +7,7 @@
 
 <section id="content">
 <section id="left_k">
+<% if current_user %>
 <h1>Galerie zdjęć</h1>
 <ul>
   <% for galeria in @galerie %>
@@ -15,36 +16,37 @@
       <% link_to galeria do %>
         <%= image_tag galeria.zdjecia.find(:first).photo.url(:smaller), :class => :smaller %>
       <% end %>
-        <span class="info"><%= h galeria.nazwa %></span>
-        </li>
+      <span class="info"><%= h galeria.nazwa %></span>
+      </li>
     <% else %>
       <%= link_to galeria.nazwa, galeria %>
       <span class="info"><%= h galeria.nazwa %></span>
     <% end %>
   <% end %>
 </ul>
+<% end %>
 </section>
 
 <article id="kat"> 
-<h1>Opcje galerii: </h1>
 <% if current_user && current_user[:login] == @galeria.autor %>
-  
+
+  <h1>Opcje galerii: </h1>
   <%= link_to "Edytuj opis galerii", edit_galeria_path(@galeria), :class => :gopcje %><br />
   <%= link_to "Usuń galerię", @galeria, :confirm => 'Na pewno usunąć tę galerię?', :method => :delete, :class => :gopcje %><br />
   <%= link_to "Dodaj zdjęcie", { :controller => 'zdjecia',  :action => 'new', :nr_galerii => @galeria.id}, :class => :gopcje%><br />
-  
+
   <%= link_to "Utwórz nową galerię", new_galeria_path, :class => :gopcje%><br />
   <%= link_to "Utwórz nową galerię z lokalizacją Google Maps", new_marker_path, :class => :gopcje %><br />
 <% end %>
 <h1>Zdjęcia z galerii <%= @galeria.nazwa %></h1>
 <ul> 
-      <% for zdjecie in @galeria.zdjecia.all %>
-  <li>
-          <% link_to zdjecie do %>
-            <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
-      <% end %>
-  </li>
-        <% end %>
+  <% for zdjecie in @galeria.zdjecia.all %>
+    <li>
+    <% link_to zdjecie do %>
+      <%= image_tag zdjecie.photo.url(:medium), :class => :medium %>
+    <% end %>
+    </li>
+  <% end %>
 </ul> 
 </article> 
 </section>

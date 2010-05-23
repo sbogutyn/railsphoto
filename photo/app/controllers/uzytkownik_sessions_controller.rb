@@ -6,7 +6,7 @@ class UzytkownikSessionsController < ApplicationController
   def create
     @uzytkownik_session = UzytkownikSession.new(params[:uzytkownik_session])
     if @uzytkownik_session.save
-      redirect_to root_url
+      redirect_to galerie_url
     else
       render :action => 'new'
     end

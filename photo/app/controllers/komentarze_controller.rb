@@ -1,5 +1,5 @@
 class KomentarzeController < ApplicationController
-before_filter :require_user, :except => [:show, :index]
+before_filter :require_user, :except => [:show, :index, :create, :new]
   
   def index
     @komentarze = Komentarz.all

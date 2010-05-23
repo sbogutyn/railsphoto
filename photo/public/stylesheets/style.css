@@ -5,6 +5,10 @@
 		  font-family: kunstler script;
 		  src: url(kuenstl1.ttf);
 }
+h3 {
+  font-size: 1em;
+  text-align: right;
+}
 #autorzy h1 {
   font-weight: bold;
   font-size: 24px;
